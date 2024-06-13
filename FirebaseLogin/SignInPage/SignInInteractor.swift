@@ -6,12 +6,11 @@
 //
 
 import Foundation
-import Firebase
 
 protocol SignInInteractorProtocol {
     func didFetchUser(username: String, password: String)
     func didLoginByOauth2()
-
+    
 }
 
 class SignInInteractor: SignInInteractorProtocol {
@@ -21,9 +20,9 @@ class SignInInteractor: SignInInteractorProtocol {
                 try await Appwrite.shared.onOAuth2Regist()
                 self.presenter?.signInSuccess()
             }
-              catch {
-                  self.presenter?.signInNotSuccess()
-              }
+            catch {
+                self.presenter?.signInNotSuccess()
+            }
         }
     }
     
@@ -31,17 +30,24 @@ class SignInInteractor: SignInInteractorProtocol {
     weak var presenter: SignInPresenterProtocol?
     
     func didFetchUser(username: String, password: String) {
-        DispatchQueue.main.async {
-            FirebaseAuth.Auth.auth().signIn(withEmail: username,
-                                            password: password)
-            { [weak self] result, error in
-                guard let self = self else { return }
-                if error != nil {
-                    self.presenter?.signInNotSuccess()
-                } else {
+        
+        Task {
+            do {
+                if let _ = Appwrite.shared.session  {
                     self.presenter?.signInSuccess()
+                } else {
+                    _ = try await Appwrite.shared.onLogin(username, password)
+                    
+                    self.presenter?.signInSuccess()
+                }
+            } catch { error
+                debugPrint(error)
+                DispatchQueue.main.async {
+                    self.presenter?.signInNotSuccess()
+                    
                 }
             }
         }
+ 
     }
 }

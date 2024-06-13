@@ -10,10 +10,11 @@ import UIKit
 protocol MainViewProtocol: AnyObject {
     func updateData(with: [Article])
     func updateData(with: String)
+    func showProfileName(name: String) 
 }
 
 class MainViewController: UIViewController, MainViewProtocol {
-
+    
     var presenter: MainPresenterProtocol?
     
     fileprivate var newsCollection: UICollectionView = {
@@ -40,6 +41,8 @@ class MainViewController: UIViewController, MainViewProtocol {
     }
     fileprivate var articles: [Article] = []
     
+    var profileItem: UIBarButtonItem?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -51,13 +54,21 @@ class MainViewController: UIViewController, MainViewProtocol {
     }
     
     func configureUI() {
+        profileItem = UIBarButtonItem(title: "🙂",
+                                          style: .done,
+                                          target: self,
+                                          action: #selector(handleProfileClickedEvent))
+        guard let profileItem = profileItem else { return }
         view.backgroundColor = UIColor(red: 0/255, green: 128/255, blue: 128/255, alpha: 1)
         title = "Top Headlines"
         navigationController?.navigationBar.tintColor = .black
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "TR",
-                                                  style: .done,
-                                                  target: self,
-                                                  action: #selector(changeRegionTr))
+        
+        let item1 = UIBarButtonItem(title: "TR",
+                                    style: .done,
+                                    target: self,
+                                    action: #selector(changeRegionTr))
+        
+        navigationItem.setRightBarButtonItems([profileItem,item1], animated: true)
         newsCollection.delegate = self
         newsCollection.dataSource = self
         view.addSubview(newsCollection)
@@ -82,18 +93,26 @@ class MainViewController: UIViewController, MainViewProtocol {
     }
     
     @objc private func changeRegionTr() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "US",
-                                                            style: .done,
-                                                            target: self,
-                                                            action: #selector(changeRegionUs))
+        let item1 = UIBarButtonItem(title: "US",
+                                    style: .done,
+                                    target: self,
+                                    action: #selector(changeRegionUs))
+        guard let profileItem = profileItem else { return }
+
+        navigationItem.setRightBarButtonItems([profileItem, item1], animated: true)
+        
         presenter?.notifyPresenterForTr()
     }
     
     @objc private func changeRegionUs() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "TR",
-                                                            style: .done,
-                                                            target: self,
-                                                            action: #selector(changeRegionTr))
+        let item1 = UIBarButtonItem(title: "TR",
+                                    style: .done,
+                                    target: self,
+                                    action: #selector(changeRegionTr))
+        guard let profileItem = profileItem else { return }
+
+        navigationItem.setRightBarButtonItems([profileItem, item1], animated: true)
+        
         presenter?.notifyPresenterForUs()
     }
     
@@ -111,6 +130,19 @@ class MainViewController: UIViewController, MainViewProtocol {
         let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(ok)
         present(alert, animated: true, completion: nil)
+    }
+    
+    
+    @objc func handleProfileClickedEvent() {
+        presenter?.showProfileButtonClickeEvent()
+    }
+    
+    func showProfileName(name: String) {
+        let alert = UIAlertController(title: name, message: "User is logined successfully!", preferredStyle: .actionSheet)
+        present(alert, animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
+            alert.dismiss(animated: true)
+        }
     }
 }
 

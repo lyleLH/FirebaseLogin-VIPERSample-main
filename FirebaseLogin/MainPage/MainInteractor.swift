@@ -6,12 +6,26 @@
 //
 
 import Foundation
+import AppwriteModels
 
 protocol MainInteractorProtocol {
     func fetchNewsData(url: URL)
+    func getUserProfile()
 }
 
 class MainInteractor: MainInteractorProtocol {
+    
+    func getUserProfile() {
+        Task {
+            do {
+                let user: User = try await Appwrite.shared.account.get()
+                self.presenter?.displayUserName(user.name)
+            } catch { error
+                debugPrint(error)
+            }
+        }
+    }
+    
     
     var presenter: MainPresenterProtocol?
     

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Firebase
 
 protocol SignUpViewProtocol: AnyObject {
     func userCreated()
@@ -46,7 +45,7 @@ class SignUpViewController: UIViewController, SignUpViewProtocol {
     
     private var facebookLoginButton: UIButton = {
         let button = MakeProperty.makeIconButton()
-        button.addTarget(self, action: #selector(handleCreateUserButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleOAuth2LoginButton), for: .touchUpInside)
         return button
     }()
     

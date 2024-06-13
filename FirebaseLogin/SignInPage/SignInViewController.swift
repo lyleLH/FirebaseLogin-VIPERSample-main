@@ -36,6 +36,14 @@ class SignInViewController: UIViewController, SignInViewControllerProtocol {
         return button
     }()
     
+    
+    private var facebookLoginButton: UIButton = {
+        let button = MakeProperty.makeIconButton()
+        button.addTarget(self, action: #selector(handleGoAppByGoogleLoginButton), for: .touchUpInside)
+        return button
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -48,16 +56,22 @@ class SignInViewController: UIViewController, SignInViewControllerProtocol {
         passwordTextField.text = ""
     }
     
-    @objc private func handleGoAppButton() {
-//        if (userNameTextField.text != "") && (passwordTextField.text != "") {
-//            guard let username = userNameTextField.text else { return }
-//            guard let password = passwordTextField.text else { return }
-//            presenter?.notifyDidButtonTapped(username: username, password: password)
-//        } else {
-//            self.showCommonAlert(title: "Error!", message: "You should fill username and password!")
-//        }
+    
+    @objc private func handleGoAppByGoogleLoginButton() {
+ 
         presenter?.notifyOauth2LoginUserButtonTapped()
     }
+    
+    
+    @objc private func handleGoAppButton() {
+        if (userNameTextField.text != "") && (passwordTextField.text != "") {
+            guard let username = userNameTextField.text else { return }
+            guard let password = passwordTextField.text else { return }
+            presenter?.notifyDidButtonTapped(username: username, password: password)
+        } else {
+            self.showCommonAlert(title: "Error!", message: "You should fill username and password!")
+        }
+     }
     
     func updateWithSuccess() {
         presenter?.routeToMain()
@@ -101,5 +115,16 @@ class SignInViewController: UIViewController, SignInViewControllerProtocol {
             goToAppButton.heightAnchor.constraint(equalToConstant: 50),
             goToAppButton.widthAnchor.constraint(equalToConstant: 300)
         ])
+        
+        view.addSubview(facebookLoginButton)
+        NSLayoutConstraint.activate([
+            facebookLoginButton.topAnchor.constraint(equalTo: goToAppButton.bottomAnchor, constant: 60),
+            facebookLoginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            facebookLoginButton.heightAnchor.constraint(equalToConstant: 50),
+            facebookLoginButton.widthAnchor.constraint(equalToConstant: 50)
+        ])
+        facebookLoginButton.layer.cornerRadius = 25
+        facebookLoginButton.layer.borderWidth = 1.0
+        facebookLoginButton.layer.borderColor = UIColor(red: 248/255, green: 248/255, blue: 0.7, alpha: 1).cgColor
     }
 }

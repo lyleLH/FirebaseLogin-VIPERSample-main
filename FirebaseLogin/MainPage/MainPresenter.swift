@@ -9,10 +9,13 @@ import Foundation
 
 protocol MainPresenterProtocol {
     func displayAlert(_ messaege: String)
+    func displayUserName(_ name: String) 
     func getTopNewsDataUs(_ dataModel: [Article])
     func routeToDetail(_ urlString: String)
+    
     func notifyPresenterForTr()
     func notifyPresenterForUs()
+    func showProfileButtonClickeEvent()
 }
 
 class MainPresenter: MainPresenterProtocol {
@@ -43,6 +46,10 @@ class MainPresenter: MainPresenterProtocol {
         interactor?.fetchNewsData(url: url)
     }
     
+    func showProfileButtonClickeEvent() {
+        interactor?.getUserProfile()
+    }
+    
     func getTopNewsDataUs(_ dataModel: [Article]) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
@@ -54,6 +61,13 @@ class MainPresenter: MainPresenterProtocol {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             self.view?.updateData(with: messaege)
+        }
+    }
+    
+    func displayUserName(_ name: String) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.view?.showProfileName(name: name)
         }
     }
     

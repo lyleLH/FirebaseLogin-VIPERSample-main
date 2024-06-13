@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,8 +19,6 @@ var window: UIWindow?
         window.makeKeyAndVisible()
         self.window = window
 
-        FirebaseApp.configure()
-        
         return true
     }
 

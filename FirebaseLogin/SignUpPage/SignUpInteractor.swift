@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Firebase
 
 protocol SignUpInteractorProtocol {
     func didCreateUser(username: String, password: String)
@@ -17,7 +16,7 @@ class SignUpInteractor: SignUpInteractorProtocol {
     func didOpenAuth2CreateUser() {
         Task {
             do {
-                 try await Appwrite.shared.onOAuth2Regist()
+                try await Appwrite.shared.onOAuth2Regist()
             } catch {
                 
             }
@@ -28,25 +27,23 @@ class SignUpInteractor: SignUpInteractorProtocol {
     weak var presenter: SignUpPresenterProtocol?
     
     func didCreateUser(username: String, password: String) {
-        FirebaseAuth.Auth.auth().signIn(withEmail: username, password: password) { [weak self] result, error in
-            guard let self = self else { return }
-            guard error != nil else {
-                self.presenter?.userCreateNotSuccess()
-                return
+        
+        Task {
+            do {
+                try await Appwrite.shared.onRegister(username, password)
+                DispatchQueue.main.async {
+                    self.presenter?.userCreateSuccess()
+                }
+            } catch { error
+                debugPrint(error)
+                DispatchQueue.main.async {
+                    self.presenter?.userCreateNotSuccess()
+                    
+                }
+                
+                
             }
-            self.showCreateAccount(username: username, password: password)
         }
-       
     }
     
-    func showCreateAccount(username: String, password: String) {
-        FirebaseAuth.Auth.auth().createUser(withEmail: username, password: password) { [weak self] result, error in
-            guard let self = self else { return }
-            guard error == nil else {
-                self.presenter?.userCreateNotSuccess()
-                return
-            }
-            self.presenter?.userCreateSuccess()
-        }
-    }
 }

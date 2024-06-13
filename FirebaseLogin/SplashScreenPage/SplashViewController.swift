@@ -74,7 +74,7 @@ class SplashViewController: UIViewController, SplashViewProtocol {
     
     //MARK: - View Configurations
     private func configureUI() {
-        view.backgroundColor = .clear
+        view.backgroundColor = .white
         view.addSubview(backgroundView)
         NSLayoutConstraint.activate([
             backgroundView.topAnchor.constraint(equalTo: view.topAnchor),

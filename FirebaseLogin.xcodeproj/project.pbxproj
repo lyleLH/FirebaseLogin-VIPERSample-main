@@ -44,10 +44,10 @@
 		6FC28A1D28203EDA008B1228 /* SignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC28A1C28203EDA008B1228 /* SignUpRouter.swift */; };
 		6FFEC11F28368BAB00FD8F76 /* SignUpEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFEC11E28368BAB00FD8F76 /* SignUpEntity.swift */; };
 		6FFEC12128368BB800FD8F76 /* SplashEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFEC12028368BB800FD8F76 /* SplashEntity.swift */; };
+		C8BC30882C1AF646005BB19A /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BC30872C1AF646005BB19A /* UserManager.swift */; };
 		C8CDFF562C1A9C88003D8DDC /* Appwrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CDFF552C1A9C88003D8DDC /* Appwrite.swift */; };
 		C8CDFF592C1A9DBE003D8DDC /* Appwrite in Frameworks */ = {isa = PBXBuildFile; productRef = C8CDFF582C1A9DBE003D8DDC /* Appwrite */; };
 		C8CDFF5C2C1AEE79003D8DDC /* GoodPersistence in Frameworks */ = {isa = PBXBuildFile; productRef = C8CDFF5B2C1AEE79003D8DDC /* GoodPersistence */; };
-		C8CDFF5F2C1AF06C003D8DDC /* LookinServer in Frameworks */ = {isa = PBXBuildFile; productRef = C8CDFF5E2C1AF06C003D8DDC /* LookinServer */; };
 		EBBCA19F87436469C6759C89 /* Pods_FirebaseLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8472CFC8935E6BA87CDA01 /* Pods_FirebaseLogin.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +93,7 @@
 		6FC28A1C28203EDA008B1228 /* SignUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRouter.swift; sourceTree = "<group>"; };
 		6FFEC11E28368BAB00FD8F76 /* SignUpEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEntity.swift; sourceTree = "<group>"; };
 		6FFEC12028368BB800FD8F76 /* SplashEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashEntity.swift; sourceTree = "<group>"; };
+		C8BC30872C1AF646005BB19A /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		C8CDFF552C1A9C88003D8DDC /* Appwrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appwrite.swift; sourceTree = "<group>"; };
 		FE8472CFC8935E6BA87CDA01 /* Pods_FirebaseLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -105,7 +106,6 @@
 				C8CDFF5C2C1AEE79003D8DDC /* GoodPersistence in Frameworks */,
 				C8CDFF592C1A9DBE003D8DDC /* Appwrite in Frameworks */,
 				EBBCA19F87436469C6759C89 /* Pods_FirebaseLogin.framework in Frameworks */,
-				C8CDFF5F2C1AF06C003D8DDC /* LookinServer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +157,7 @@
 				6F2FAA7D281F099300BBF644 /* MainPage */,
 				6FC1BBAD28299315005BA04F /* DetailPage */,
 				C8CDFF552C1A9C88003D8DDC /* Appwrite.swift */,
+				C8BC30872C1AF646005BB19A /* UserManager.swift */,
 			);
 			path = FirebaseLogin;
 			sourceTree = "<group>";
@@ -286,7 +287,6 @@
 			packageProductDependencies = (
 				C8CDFF582C1A9DBE003D8DDC /* Appwrite */,
 				C8CDFF5B2C1AEE79003D8DDC /* GoodPersistence */,
-				C8CDFF5E2C1AF06C003D8DDC /* LookinServer */,
 			);
 			productName = FirebaseLogin;
 			productReference = 6F19C4152815323900EEC276 /* FirebaseLogin.app */;
@@ -319,7 +319,6 @@
 			packageReferences = (
 				C8CDFF572C1A9DBE003D8DDC /* XCRemoteSwiftPackageReference "sdk-for-apple" */,
 				C8CDFF5A2C1AEE79003D8DDC /* XCRemoteSwiftPackageReference "GoodPersistence" */,
-				C8CDFF5D2C1AF06C003D8DDC /* XCRemoteSwiftPackageReference "LookinServer" */,
 			);
 			productRefGroup = 6F19C4162815323900EEC276 /* Products */;
 			projectDirPath = "";
@@ -408,6 +407,7 @@
 				6FC1BBA5282991EA005BA04F /* MainEntity.swift in Sources */,
 				6FC1BBA92829923F005BA04F /* MainNewsCell.swift in Sources */,
 				6FC1BBA3282991D6005BA04F /* MainInteractor.swift in Sources */,
+				C8BC30882C1AF646005BB19A /* UserManager.swift in Sources */,
 				6FC1BBAC28299308005BA04F /* DetailRouter.swift in Sources */,
 				6F19C41B2815323900EEC276 /* SceneDelegate.swift in Sources */,
 				6FFEC11F28368BAB00FD8F76 /* SignUpEntity.swift in Sources */,
@@ -664,14 +664,6 @@
 				minimumVersion = 2.3.0;
 			};
 		};
-		C8CDFF5D2C1AF06C003D8DDC /* XCRemoteSwiftPackageReference "LookinServer" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/QMUI/LookinServer/";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.8;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -684,11 +676,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C8CDFF5A2C1AEE79003D8DDC /* XCRemoteSwiftPackageReference "GoodPersistence" */;
 			productName = GoodPersistence;
-		};
-		C8CDFF5E2C1AF06C003D8DDC /* LookinServer */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C8CDFF5D2C1AF06C003D8DDC /* XCRemoteSwiftPackageReference "LookinServer" */;
-			productName = LookinServer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

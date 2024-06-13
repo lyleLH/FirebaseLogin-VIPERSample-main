@@ -9,6 +9,7 @@ class Appwrite {
     
     var client: Client
     var account: Account
+    var session: Session?
     
     private init() {
         self.client = Client()
@@ -33,16 +34,19 @@ class Appwrite {
         _ email: String,
         _ password: String
     ) async throws -> Session {
-        try await account.createEmailPasswordSession(
+       let session =  try await account.createEmailPasswordSession(
             email: email,
             password: password
         )
+        self.session = session
+        return session
     }
     
     func onLogout() async throws {
         _ = try await account.deleteSession(
             sessionId: "current"
         )
+        self.session = nil
     }
     
     

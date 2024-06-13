@@ -31,6 +31,7 @@ class SignInPresenter: SignInPresenterProtocol {
         interactor?.didFetchUser(username: username, password: password)
     }
     
+    @MainActor
     func signInSuccess() {
         view?.updateWithSuccess()
     }
