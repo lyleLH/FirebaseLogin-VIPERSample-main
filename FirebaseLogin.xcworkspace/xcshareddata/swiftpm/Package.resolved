@@ -1,5 +1,5 @@
 {
-  "originHash" : "49eaf120d41756509e62cac5c3ca7d0f4135cb36e3fef88c6f0bb36ad69bc469",
+  "originHash" : "47eb50b6b1ca7be5e3fce3d66fdd76ba006f020e03a272109adbe45151f7d9fd",
   "pins" : [
     {
       "identity" : "async-http-client",
@@ -17,6 +17,15 @@
       "state" : {
         "revision" : "d7b896fa9ca8b47fa7bcde6b43ef9b70bf8c1f56",
         "version" : "1.8.1"
+      }
+    },
+    {
+      "identity" : "datehelper",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lyleLH/DateHelper.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "573c18a6a8a1394da599ff90da966c7afe92dd71"
       }
     },
     {
@@ -44,6 +53,24 @@
       "state" : {
         "revision" : "84e546727d66f1adc5439debad16270d0fdd04e7",
         "version" : "4.2.2"
+      }
+    },
+    {
+      "identity" : "realm-core",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/realm/realm-core.git",
+      "state" : {
+        "revision" : "f3d7ae5f9f31d90b327a64536bb7801cc69fd85b",
+        "version" : "14.9.0"
+      }
+    },
+    {
+      "identity" : "realm-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/realm/realm-swift",
+      "state" : {
+        "branch" : "master",
+        "revision" : "2a28fec025f28241b0f1ceef606b4ff5fd182f51"
       }
     },
     {

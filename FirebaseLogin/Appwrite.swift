@@ -1,22 +1,43 @@
 import Foundation
 import Appwrite
 import JSONCodable
+import DateHelper
 
 let pId = "666a5e7b0004c231ffda"
 
-class Appwrite {
+
+protocol UserServerSateProtocol: NSObject {
+    func isUserLoggin(sessionId: String) async throws -> Bool
+}
+
+
+class Appwrite: NSObject, UserServerSateProtocol {
+  
+    
     static let shared = Appwrite()
     
     var client: Client
     var account: Account
     var session: Session?
     
-    private init() {
+    private override init() {
         self.client = Client()
             .setEndpoint("https://cloud.appwrite.io/v1")
             .setProject(pId)
         
         self.account = Account(client)
+    }
+    
+    
+    func isUserLoggin(sessionId: String) async throws -> Bool {
+        let session = try await account.getSession(sessionId: sessionId)
+        if let expireDate = Date(fromString: session.expire, format: Date.DateFormatType.isoDateTimeFull),
+           expireDate.compare(Date()) == .orderedAscending {
+            return false
+        } else {
+            LocalDataManager.shared.saveSessionId(sessionId)
+            return true
+        }
     }
     
     func onRegister(
@@ -39,6 +60,7 @@ class Appwrite {
             password: password
         )
         self.session = session
+        LocalDataManager.shared.saveSessionId(session.id)
         return session
     }
     

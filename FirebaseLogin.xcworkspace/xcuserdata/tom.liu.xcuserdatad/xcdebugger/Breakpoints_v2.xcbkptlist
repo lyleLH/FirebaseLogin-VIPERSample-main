@@ -7,66 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CD663401-644E-44D6-8BED-F951A2698FF9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FirebaseLogin/MainPage/MainInteractor.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "getUserProfile()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "CD663401-644E-44D6-8BED-F951A2698FF9 - 35076ffcb19dfaf8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FirebaseLogin.MainInteractor.getUserProfile() -&gt; ()"
-                  moduleName = "FirebaseLogin"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tom.liu/Downloads/FirebaseLogin-VIPERSample-main/FirebaseLogin/MainPage/MainInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19">
-               </Location>
-               <Location
-                  uuid = "CD663401-644E-44D6-8BED-F951A2698FF9 - bb40e8a6f4d787a0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable () async -&gt; () in FirebaseLogin.MainInteractor.getUserProfile() -&gt; ()"
-                  moduleName = "FirebaseLogin"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tom.liu/Downloads/FirebaseLogin-VIPERSample-main/FirebaseLogin/MainPage/MainInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19">
-               </Location>
-               <Location
-                  uuid = "CD663401-644E-44D6-8BED-F951A2698FF9 - 610558871fdc87fb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in FirebaseLogin.MainInteractor.getUserProfile() -&gt; ()"
-                  moduleName = "FirebaseLogin"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tom.liu/Downloads/FirebaseLogin-VIPERSample-main/FirebaseLogin/MainPage/MainInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "725DDC66-6384-450E-8CC9-848EA84328F1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"

@@ -21,13 +21,40 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        window.makeKeyAndVisible()
 //        self.window = window
         
-        let router = SplashRouter.createModule()
-        let initailVC = router.entry
         
-        let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = UINavigationController(rootViewController: initailVC!)
-        self.window = window
-        window.makeKeyAndVisible()
+//        let router = SplashRouter.createModule()
+//        let initailVC = router.entry
+//        
+//        let window = UIWindow(windowScene: windowScene)
+//        window.rootViewController = UINavigationController(rootViewController: initailVC!)
+//        self.window = window
+//        window.makeKeyAndVisible()
+        
+        
+        
+        let route = ModuleRoute()
+        let userStateManager = UserManager.shared
+        userStateManager.webService = Appwrite.shared
+        userStateManager.locaDataManager = LocalDataManager.shared
+        
+        let keyWindow = UIWindow(windowScene: windowScene)
+        keyWindow.rootViewController = UIViewController()
+        Task {
+            
+            do {
+                let uerState = try await UserManager.shared.getUserState()
+                DispatchQueue.main.async {
+                    if  uerState == .signedIn {
+                        keyWindow.rootViewController = route.routeToModuleRootPage(.Home, withWindow: keyWindow)
+                    } else if uerState == .signedOut {
+                        keyWindow.rootViewController = route.routeToModuleRootPage(.splashPage,withWindow: keyWindow)
+                    }
+                }
+            }
+        }
+        self.window = keyWindow
+        keyWindow.makeKeyAndVisible()
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
