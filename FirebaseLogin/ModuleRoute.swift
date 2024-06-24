@@ -32,7 +32,7 @@ class ModuleRoute: NSObject {
             vc = UINavigationController(rootViewController: SignInRouter.createModule())
             
         case .Home:
-            vc = UINavigationController(rootViewController: MainRouter.createModule())
+            vc = MTTabbarViewController()
         }
         self.window = withWindow
         

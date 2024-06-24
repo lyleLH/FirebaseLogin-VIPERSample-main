@@ -45,6 +45,45 @@
 		6FFEC11F28368BAB00FD8F76 /* SignUpEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFEC11E28368BAB00FD8F76 /* SignUpEntity.swift */; };
 		6FFEC12128368BB800FD8F76 /* SplashEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFEC12028368BB800FD8F76 /* SplashEntity.swift */; };
 		C81FE8052C1DA76100C4041A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C81FE8042C1DA76100C4041A /* RealmSwift */; };
+		C81FE81A2C22A9B200C4041A /* CanvasEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81FE8142C22A9B200C4041A /* CanvasEntity.swift */; };
+		C81FE81B2C22A9B200C4041A /* CanvasInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81FE8152C22A9B200C4041A /* CanvasInteractor.swift */; };
+		C81FE81C2C22A9B200C4041A /* CanvasPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81FE8162C22A9B200C4041A /* CanvasPresenter.swift */; };
+		C81FE81D2C22A9B200C4041A /* CanvasRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81FE8172C22A9B200C4041A /* CanvasRouter.swift */; };
+		C81FE81E2C22A9B200C4041A /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81FE8182C22A9B200C4041A /* CanvasViewController.swift */; };
+		C81FE8282C22B5D000C4041A /* UIViewController+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81FE8272C22B5D000C4041A /* UIViewController+Container.swift */; };
+		C81FE82A2C26946C00C4041A /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81FE8292C26946C00C4041A /* CanvasView.swift */; };
+		C81FE82C2C26948B00C4041A /* CanvasItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81FE82B2C26948B00C4041A /* CanvasItemView.swift */; };
+		C81FE82F2C26985E00C4041A /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81FE82E2C26985E00C4041A /* UIColor+Hex.swift */; };
+		C88474722C2932ED004C6C0A /* CGPoint+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88474662C2932ED004C6C0A /* CGPoint+Distance.swift */; };
+		C88474732C2932ED004C6C0A /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88474672C2932ED004C6C0A /* UIColor+Additions.swift */; };
+		C88474742C2932ED004C6C0A /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88474682C2932ED004C6C0A /* UIView+AutoLayout.swift */; };
+		C88474762C2932ED004C6C0A /* PTBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C884746B2C2932ED004C6C0A /* PTBarButton.swift */; };
+		C88474772C2932ED004C6C0A /* PTCardTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C884746C2C2932ED004C6C0A /* PTCardTabBar.swift */; };
+		C88474782C2932ED004C6C0A /* PTCardTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C884746D2C2932ED004C6C0A /* PTCardTabBarController.swift */; };
+		C88474792C2932ED004C6C0A /* PTIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C884746E2C2932ED004C6C0A /* PTIndicatorView.swift */; };
+		C884747B2C293346004C6C0A /* MTTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C884747A2C293346004C6C0A /* MTTabbarViewController.swift */; };
+		C88474982C2934D7004C6C0A /* RecordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88474922C2934D7004C6C0A /* RecordEntity.swift */; };
+		C88474992C2934D7004C6C0A /* RecordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88474932C2934D7004C6C0A /* RecordInteractor.swift */; };
+		C884749A2C2934D7004C6C0A /* RecordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88474942C2934D7004C6C0A /* RecordPresenter.swift */; };
+		C884749B2C2934D7004C6C0A /* RecordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88474952C2934D7004C6C0A /* RecordRouter.swift */; };
+		C884749C2C2934D7004C6C0A /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88474962C2934D7004C6C0A /* RecordViewController.swift */; };
+		C88474A32C2934E1004C6C0A /* ProfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C884749D2C2934E1004C6C0A /* ProfileEntity.swift */; };
+		C88474A42C2934E1004C6C0A /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C884749E2C2934E1004C6C0A /* ProfileInteractor.swift */; };
+		C88474A52C2934E1004C6C0A /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C884749F2C2934E1004C6C0A /* ProfilePresenter.swift */; };
+		C88474A62C2934E1004C6C0A /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88474A02C2934E1004C6C0A /* ProfileRouter.swift */; };
+		C88474A72C2934E1004C6C0A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88474A12C2934E1004C6C0A /* ProfileViewController.swift */; };
+		C88474AE2C2934EA004C6C0A /* TrainingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88474A82C2934EA004C6C0A /* TrainingEntity.swift */; };
+		C88474AF2C2934EA004C6C0A /* TrainingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88474A92C2934EA004C6C0A /* TrainingInteractor.swift */; };
+		C88474B02C2934EA004C6C0A /* TrainingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88474AA2C2934EA004C6C0A /* TrainingPresenter.swift */; };
+		C88474B12C2934EA004C6C0A /* TrainingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88474AB2C2934EA004C6C0A /* TrainingRouter.swift */; };
+		C88474B22C2934EA004C6C0A /* TrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88474AC2C2934EA004C6C0A /* TrainingViewController.swift */; };
+		C88474B42C29361A004C6C0A /* MTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88474B32C29361A004C6C0A /* MTViewController.swift */; };
+		C88474BB2C2936A5004C6C0A /* CreationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88474B52C2936A5004C6C0A /* CreationEntity.swift */; };
+		C88474BC2C2936A5004C6C0A /* CreationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88474B62C2936A5004C6C0A /* CreationInteractor.swift */; };
+		C88474BD2C2936A5004C6C0A /* CreationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88474B72C2936A5004C6C0A /* CreationPresenter.swift */; };
+		C88474BE2C2936A5004C6C0A /* CreationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88474B82C2936A5004C6C0A /* CreationRouter.swift */; };
+		C88474BF2C2936A5004C6C0A /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88474B92C2936A5004C6C0A /* CreationViewController.swift */; };
+		C88474C12C2936F7004C6C0A /* MTNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88474C02C2936F7004C6C0A /* MTNavigationViewController.swift */; };
 		C884DC352C1D90D00059B1AD /* DateHelper in Frameworks */ = {isa = PBXBuildFile; productRef = C884DC342C1D90D00059B1AD /* DateHelper */; };
 		C884DC382C1D91260059B1AD /* DateHelper in Frameworks */ = {isa = PBXBuildFile; productRef = C884DC372C1D91260059B1AD /* DateHelper */; };
 		C8BC30882C1AF646005BB19A /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BC30872C1AF646005BB19A /* UserManager.swift */; };
@@ -98,6 +137,45 @@
 		6FC28A1C28203EDA008B1228 /* SignUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRouter.swift; sourceTree = "<group>"; };
 		6FFEC11E28368BAB00FD8F76 /* SignUpEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEntity.swift; sourceTree = "<group>"; };
 		6FFEC12028368BB800FD8F76 /* SplashEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashEntity.swift; sourceTree = "<group>"; };
+		C81FE8142C22A9B200C4041A /* CanvasEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasEntity.swift; sourceTree = "<group>"; };
+		C81FE8152C22A9B200C4041A /* CanvasInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasInteractor.swift; sourceTree = "<group>"; };
+		C81FE8162C22A9B200C4041A /* CanvasPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasPresenter.swift; sourceTree = "<group>"; };
+		C81FE8172C22A9B200C4041A /* CanvasRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasRouter.swift; sourceTree = "<group>"; };
+		C81FE8182C22A9B200C4041A /* CanvasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
+		C81FE8272C22B5D000C4041A /* UIViewController+Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Container.swift"; sourceTree = "<group>"; };
+		C81FE8292C26946C00C4041A /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		C81FE82B2C26948B00C4041A /* CanvasItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasItemView.swift; sourceTree = "<group>"; };
+		C81FE82E2C26985E00C4041A /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		C88474662C2932ED004C6C0A /* CGPoint+Distance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Distance.swift"; sourceTree = "<group>"; };
+		C88474672C2932ED004C6C0A /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
+		C88474682C2932ED004C6C0A /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
+		C884746B2C2932ED004C6C0A /* PTBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTBarButton.swift; sourceTree = "<group>"; };
+		C884746C2C2932ED004C6C0A /* PTCardTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTCardTabBar.swift; sourceTree = "<group>"; };
+		C884746D2C2932ED004C6C0A /* PTCardTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTCardTabBarController.swift; sourceTree = "<group>"; };
+		C884746E2C2932ED004C6C0A /* PTIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTIndicatorView.swift; sourceTree = "<group>"; };
+		C884747A2C293346004C6C0A /* MTTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTTabbarViewController.swift; sourceTree = "<group>"; };
+		C88474922C2934D7004C6C0A /* RecordEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordEntity.swift; sourceTree = "<group>"; };
+		C88474932C2934D7004C6C0A /* RecordInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordInteractor.swift; sourceTree = "<group>"; };
+		C88474942C2934D7004C6C0A /* RecordPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordPresenter.swift; sourceTree = "<group>"; };
+		C88474952C2934D7004C6C0A /* RecordRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordRouter.swift; sourceTree = "<group>"; };
+		C88474962C2934D7004C6C0A /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		C884749D2C2934E1004C6C0A /* ProfileEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEntity.swift; sourceTree = "<group>"; };
+		C884749E2C2934E1004C6C0A /* ProfileInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
+		C884749F2C2934E1004C6C0A /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		C88474A02C2934E1004C6C0A /* ProfileRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		C88474A12C2934E1004C6C0A /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C88474A82C2934EA004C6C0A /* TrainingEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingEntity.swift; sourceTree = "<group>"; };
+		C88474A92C2934EA004C6C0A /* TrainingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingInteractor.swift; sourceTree = "<group>"; };
+		C88474AA2C2934EA004C6C0A /* TrainingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingPresenter.swift; sourceTree = "<group>"; };
+		C88474AB2C2934EA004C6C0A /* TrainingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingRouter.swift; sourceTree = "<group>"; };
+		C88474AC2C2934EA004C6C0A /* TrainingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingViewController.swift; sourceTree = "<group>"; };
+		C88474B32C29361A004C6C0A /* MTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTViewController.swift; sourceTree = "<group>"; };
+		C88474B52C2936A5004C6C0A /* CreationEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreationEntity.swift; sourceTree = "<group>"; };
+		C88474B62C2936A5004C6C0A /* CreationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreationInteractor.swift; sourceTree = "<group>"; };
+		C88474B72C2936A5004C6C0A /* CreationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreationPresenter.swift; sourceTree = "<group>"; };
+		C88474B82C2936A5004C6C0A /* CreationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreationRouter.swift; sourceTree = "<group>"; };
+		C88474B92C2936A5004C6C0A /* CreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
+		C88474C02C2936F7004C6C0A /* MTNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTNavigationViewController.swift; sourceTree = "<group>"; };
 		C8BC30872C1AF646005BB19A /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		C8BC308D2C1D4C3F005BB19A /* ModuleRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleRoute.swift; sourceTree = "<group>"; };
 		C8BC308F2C1D872E005BB19A /* LocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
@@ -158,18 +236,24 @@
 				6F19C41E2815323900EEC276 /* Main.storyboard */,
 				6F19C4232815323B00EEC276 /* LaunchScreen.storyboard */,
 				6F19C4212815323B00EEC276 /* Assets.xcassets */,
-				6F19C42E281564AD00EEC276 /* Asset */,
-				6FC1BBBC28299491005BA04F /* Extension+ */,
-				6F19C4362815720E00EEC276 /* Constants */,
-				6F2FAA71281F062C00BBF644 /* SplashScreenPage */,
-				6F2FAA7C281F093E00BBF644 /* SignUpPage */,
-				6F19C42F281564C900EEC276 /* SignInPage */,
-				6F2FAA7D281F099300BBF644 /* MainPage */,
-				6FC1BBAD28299315005BA04F /* DetailPage */,
 				C8CDFF552C1A9C88003D8DDC /* Appwrite.swift */,
 				C8BC30872C1AF646005BB19A /* UserManager.swift */,
 				C8BC308F2C1D872E005BB19A /* LocalDataManager.swift */,
 				C8BC308D2C1D4C3F005BB19A /* ModuleRoute.swift */,
+				C81FE8302C2932A700C4041A /* Shared */,
+				6F19C42E281564AD00EEC276 /* Asset */,
+				C81FE8192C22A9B200C4041A /* Canvas */,
+				6F19C4362815720E00EEC276 /* Constants */,
+				C88474BA2C2936A5004C6C0A /* Creation */,
+				6FC1BBAD28299315005BA04F /* DetailPage */,
+				6FC1BBBC28299491005BA04F /* Extension+ */,
+				C88474A22C2934E1004C6C0A /* Profile */,
+				C88474972C2934D7004C6C0A /* Record */,
+				6F2FAA71281F062C00BBF644 /* SplashScreenPage */,
+				6F2FAA7C281F093E00BBF644 /* SignUpPage */,
+				6F19C42F281564C900EEC276 /* SignInPage */,
+				C88474AD2C2934EA004C6C0A /* Training */,
+				6F2FAA7D281F099300BBF644 /* MainPage */,
 			);
 			path = FirebaseLogin;
 			sourceTree = "<group>";
@@ -263,6 +347,8 @@
 		6FC1BBBC28299491005BA04F /* Extension+ */ = {
 			isa = PBXGroup;
 			children = (
+				C81FE82E2C26985E00C4041A /* UIColor+Hex.swift */,
+				C81FE8272C22B5D000C4041A /* UIViewController+Container.swift */,
 				6FC1BBBA28299486005BA04F /* Extension+UIImageView.swift */,
 				6FC1BBBD282994BB005BA04F /* Extension+Date.swift */,
 			);
@@ -276,6 +362,125 @@
 				1218EF8CCA5934ED0A413D7D /* Pods-FirebaseLogin.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C81FE8192C22A9B200C4041A /* Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				C81FE8142C22A9B200C4041A /* CanvasEntity.swift */,
+				C81FE8152C22A9B200C4041A /* CanvasInteractor.swift */,
+				C81FE8162C22A9B200C4041A /* CanvasPresenter.swift */,
+				C81FE8172C22A9B200C4041A /* CanvasRouter.swift */,
+				C81FE8182C22A9B200C4041A /* CanvasViewController.swift */,
+				C81FE82D2C2694A700C4041A /* Views */,
+			);
+			path = Canvas;
+			sourceTree = "<group>";
+		};
+		C81FE82D2C2694A700C4041A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C81FE8292C26946C00C4041A /* CanvasView.swift */,
+				C81FE82B2C26948B00C4041A /* CanvasItemView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C81FE8302C2932A700C4041A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C88474702C2932ED004C6C0A /* PTCardTabBar */,
+				C884747A2C293346004C6C0A /* MTTabbarViewController.swift */,
+				C88474B32C29361A004C6C0A /* MTViewController.swift */,
+				C88474C02C2936F7004C6C0A /* MTNavigationViewController.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		C88474652C2932ED004C6C0A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		C88474692C2932ED004C6C0A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C88474662C2932ED004C6C0A /* CGPoint+Distance.swift */,
+				C88474672C2932ED004C6C0A /* UIColor+Additions.swift */,
+				C88474682C2932ED004C6C0A /* UIView+AutoLayout.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C884746F2C2932ED004C6C0A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C88474692C2932ED004C6C0A /* Extensions */,
+				C884746B2C2932ED004C6C0A /* PTBarButton.swift */,
+				C884746C2C2932ED004C6C0A /* PTCardTabBar.swift */,
+				C884746D2C2932ED004C6C0A /* PTCardTabBarController.swift */,
+				C884746E2C2932ED004C6C0A /* PTIndicatorView.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C88474702C2932ED004C6C0A /* PTCardTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				C88474652C2932ED004C6C0A /* Assets */,
+				C884746F2C2932ED004C6C0A /* Classes */,
+			);
+			path = PTCardTabBar;
+			sourceTree = "<group>";
+		};
+		C88474972C2934D7004C6C0A /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				C88474922C2934D7004C6C0A /* RecordEntity.swift */,
+				C88474932C2934D7004C6C0A /* RecordInteractor.swift */,
+				C88474942C2934D7004C6C0A /* RecordPresenter.swift */,
+				C88474952C2934D7004C6C0A /* RecordRouter.swift */,
+				C88474962C2934D7004C6C0A /* RecordViewController.swift */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		C88474A22C2934E1004C6C0A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C884749D2C2934E1004C6C0A /* ProfileEntity.swift */,
+				C884749E2C2934E1004C6C0A /* ProfileInteractor.swift */,
+				C884749F2C2934E1004C6C0A /* ProfilePresenter.swift */,
+				C88474A02C2934E1004C6C0A /* ProfileRouter.swift */,
+				C88474A12C2934E1004C6C0A /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		C88474AD2C2934EA004C6C0A /* Training */ = {
+			isa = PBXGroup;
+			children = (
+				C88474A82C2934EA004C6C0A /* TrainingEntity.swift */,
+				C88474A92C2934EA004C6C0A /* TrainingInteractor.swift */,
+				C88474AA2C2934EA004C6C0A /* TrainingPresenter.swift */,
+				C88474AB2C2934EA004C6C0A /* TrainingRouter.swift */,
+				C88474AC2C2934EA004C6C0A /* TrainingViewController.swift */,
+			);
+			path = Training;
+			sourceTree = "<group>";
+		};
+		C88474BA2C2936A5004C6C0A /* Creation */ = {
+			isa = PBXGroup;
+			children = (
+				C88474B52C2936A5004C6C0A /* CreationEntity.swift */,
+				C88474B62C2936A5004C6C0A /* CreationInteractor.swift */,
+				C88474B72C2936A5004C6C0A /* CreationPresenter.swift */,
+				C88474B82C2936A5004C6C0A /* CreationRouter.swift */,
+				C88474B92C2936A5004C6C0A /* CreationViewController.swift */,
+			);
+			path = Creation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,38 +616,77 @@
 				C8CDFF562C1A9C88003D8DDC /* Appwrite.swift in Sources */,
 				6F2FAA73281F067900BBF644 /* SignInPresenter.swift in Sources */,
 				6F3038D22819637F005EC476 /* MainViewController.swift in Sources */,
+				C88474B12C2934EA004C6C0A /* TrainingRouter.swift in Sources */,
+				C88474732C2932ED004C6C0A /* UIColor+Additions.swift in Sources */,
+				C88474792C2932ED004C6C0A /* PTIndicatorView.swift in Sources */,
+				C88474982C2934D7004C6C0A /* RecordEntity.swift in Sources */,
+				C88474992C2934D7004C6C0A /* RecordInteractor.swift in Sources */,
 				6FC28A1B28203EB0008B1228 /* SignUpInteractor.swift in Sources */,
 				6F19C43128156CE400EEC276 /* SignInViewController.swift in Sources */,
+				C884749C2C2934D7004C6C0A /* RecordViewController.swift in Sources */,
 				6FC28A1928203E80008B1228 /* SignUpPresenter.swift in Sources */,
 				6F19C41D2815323900EEC276 /* SplashViewController.swift in Sources */,
+				C81FE81C2C22A9B200C4041A /* CanvasPresenter.swift in Sources */,
+				C88474772C2932ED004C6C0A /* PTCardTabBar.swift in Sources */,
+				C88474A52C2934E1004C6C0A /* ProfilePresenter.swift in Sources */,
+				C81FE82A2C26946C00C4041A /* CanvasView.swift in Sources */,
 				6FC28A1D28203EDA008B1228 /* SignUpRouter.swift in Sources */,
+				C81FE81B2C22A9B200C4041A /* CanvasInteractor.swift in Sources */,
+				C88474BE2C2936A5004C6C0A /* CreationRouter.swift in Sources */,
 				6F19C4192815323900EEC276 /* AppDelegate.swift in Sources */,
+				C88474742C2932ED004C6C0A /* UIView+AutoLayout.swift in Sources */,
 				6FC1BBB128299359005BA04F /* DetailPresenter.swift in Sources */,
 				6FC1BBBE282994BB005BA04F /* Extension+Date.swift in Sources */,
 				6FC1BBA7282991FC005BA04F /* MainRouter.swift in Sources */,
+				C88474A42C2934E1004C6C0A /* ProfileInteractor.swift in Sources */,
+				C88474AF2C2934EA004C6C0A /* TrainingInteractor.swift in Sources */,
 				6FC28A15281FCD7A008B1228 /* SplashInteractor.swift in Sources */,
 				6FC1BBA5282991EA005BA04F /* MainEntity.swift in Sources */,
+				C81FE8282C22B5D000C4041A /* UIViewController+Container.swift in Sources */,
 				6FC1BBA92829923F005BA04F /* MainNewsCell.swift in Sources */,
 				6FC1BBA3282991D6005BA04F /* MainInteractor.swift in Sources */,
+				C88474BD2C2936A5004C6C0A /* CreationPresenter.swift in Sources */,
+				C81FE81D2C22A9B200C4041A /* CanvasRouter.swift in Sources */,
 				C8BC30882C1AF646005BB19A /* UserManager.swift in Sources */,
+				C88474BB2C2936A5004C6C0A /* CreationEntity.swift in Sources */,
+				C88474B02C2934EA004C6C0A /* TrainingPresenter.swift in Sources */,
 				6FC1BBAC28299308005BA04F /* DetailRouter.swift in Sources */,
+				C884747B2C293346004C6C0A /* MTTabbarViewController.swift in Sources */,
 				6F19C41B2815323900EEC276 /* SceneDelegate.swift in Sources */,
+				C88474A62C2934E1004C6C0A /* ProfileRouter.swift in Sources */,
+				C88474762C2932ED004C6C0A /* PTBarButton.swift in Sources */,
 				6FFEC11F28368BAB00FD8F76 /* SignUpEntity.swift in Sources */,
+				C88474BC2C2936A5004C6C0A /* CreationInteractor.swift in Sources */,
 				6FC1BBB528299372005BA04F /* DetailEntity.swift in Sources */,
 				6FC1BBAF28299349005BA04F /* DetailViewController.swift in Sources */,
+				C81FE82C2C26948B00C4041A /* CanvasItemView.swift in Sources */,
+				C88474AE2C2934EA004C6C0A /* TrainingEntity.swift in Sources */,
+				C88474B42C29361A004C6C0A /* MTViewController.swift in Sources */,
 				6F2FAA79281F08C100BBF644 /* SignInEntity.swift in Sources */,
 				6FFEC12128368BB800FD8F76 /* SplashEntity.swift in Sources */,
+				C88474B22C2934EA004C6C0A /* TrainingViewController.swift in Sources */,
 				6FC1BBBB28299486005BA04F /* Extension+UIImageView.swift in Sources */,
+				C884749A2C2934D7004C6C0A /* RecordPresenter.swift in Sources */,
+				C884749B2C2934D7004C6C0A /* RecordRouter.swift in Sources */,
 				6F2FAA77281F072B00BBF644 /* SignInRouter.swift in Sources */,
+				C81FE81A2C22A9B200C4041A /* CanvasEntity.swift in Sources */,
 				6FC28A17281FCE17008B1228 /* SplashRouter.swift in Sources */,
 				6FC1BBA1282991B3005BA04F /* MainPresenter.swift in Sources */,
 				6FC1BBB328299366005BA04F /* DetailInteractor.swift in Sources */,
+				C88474C12C2936F7004C6C0A /* MTNavigationViewController.swift in Sources */,
+				C88474A32C2934E1004C6C0A /* ProfileEntity.swift in Sources */,
 				C8BC30902C1D872E005BB19A /* LocalDataManager.swift in Sources */,
 				6F19C4332815718A00EEC276 /* SignUpViewController.swift in Sources */,
 				C8BC308E2C1D4C3F005BB19A /* ModuleRoute.swift in Sources */,
+				C88474722C2932ED004C6C0A /* CGPoint+Distance.swift in Sources */,
+				C81FE82F2C26985E00C4041A /* UIColor+Hex.swift in Sources */,
+				C81FE81E2C22A9B200C4041A /* CanvasViewController.swift in Sources */,
 				6FC1BBB728299413005BA04F /* ConstantsApi.swift in Sources */,
 				6F19C4352815720800EEC276 /* Constants.swift in Sources */,
 				6F2FAA75281F069600BBF644 /* SignInInteractor.swift in Sources */,
+				C88474A72C2934E1004C6C0A /* ProfileViewController.swift in Sources */,
+				C88474BF2C2936A5004C6C0A /* CreationViewController.swift in Sources */,
+				C88474782C2932ED004C6C0A /* PTCardTabBarController.swift in Sources */,
 				6FC28A13281FCD4B008B1228 /* SplashPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
