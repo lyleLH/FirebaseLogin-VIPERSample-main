@@ -26,7 +26,7 @@ class ModuleRoute: NSObject {
         var vc = UIViewController()
         switch module {
         case .splashPage:
-            vc = UINavigationController(rootViewController: SplashRouter.createModule() as! UIViewController)
+            vc = UINavigationController(rootViewController: SplashRouter.createModule().entry as! UIViewController)
             
         case .loginPage:
             vc = UINavigationController(rootViewController: SignInRouter.createModule())

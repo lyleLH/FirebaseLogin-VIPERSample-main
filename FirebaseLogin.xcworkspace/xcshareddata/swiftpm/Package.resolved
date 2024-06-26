@@ -1,5 +1,5 @@
 {
-  "originHash" : "47eb50b6b1ca7be5e3fce3d66fdd76ba006f020e03a272109adbe45151f7d9fd",
+  "originHash" : "0ae6c98e3b749d046b323ad32b9d4de00032799fd142949483c11311bc5e5db4",
   "pins" : [
     {
       "identity" : "async-http-client",
@@ -47,6 +47,15 @@
       }
     },
     {
+      "identity" : "gradients",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Gradients/Gradients",
+      "state" : {
+        "revision" : "0ec91855a90e8b376f7460457b1b5f3f204a1c3c",
+        "version" : "0.3.1"
+      }
+    },
+    {
       "identity" : "keychainaccess",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/kishikawakatsumi/KeychainAccess.git",
@@ -80,6 +89,15 @@
       "state" : {
         "revision" : "3b20b483dcc7a47ffb91cec8485c34b0e44e89c9",
         "version" : "6.0.0"
+      }
+    },
+    {
+      "identity" : "snapkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SnapKit/SnapKit",
+      "state" : {
+        "revision" : "2842e6e84e82eb9a8dac0100ca90d9444b0307f4",
+        "version" : "5.7.1"
       }
     },
     {
@@ -188,6 +206,15 @@
       "state" : {
         "revision" : "f9266c85189c2751589a50ea5aec72799797e471",
         "version" : "1.3.0"
+      }
+    },
+    {
+      "identity" : "visualeffectview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/efremidze/VisualEffectView",
+      "state" : {
+        "revision" : "df0121bbd2bb99c1ccd8eed5c5b932fb1648dfe4",
+        "version" : "4.1.5"
       }
     }
   ],

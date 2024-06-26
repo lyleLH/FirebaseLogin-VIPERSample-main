@@ -41,6 +41,7 @@ class RecordViewController: UIViewController, RecordViewProtocol {
     //MARK: - View Configurations
     private func configureUI() {
         view.backgroundColor = .white
+        embedViewController(containerView: view, controller: PeaceCometsViewController(), previous: nil)
 
     }
 }
