@@ -9,6 +9,12 @@ import UIKit
 
 class WorkoutActionCell: UICollectionViewCell {
     
+    @IBOutlet weak var selectionHoverView: UIImageView!{
+        didSet {
+            selectionHoverView.isHidden = true
+        }
+    }
+    
     @IBOutlet weak var nameLabel: UILabel?
     
     override init(frame: CGRect) {
@@ -33,9 +39,12 @@ class WorkoutActionCell: UICollectionViewCell {
         addCellShadowEffect(cornerRadius: 8)
     }
     
-    func configure(with action: WorkoutAction) {
+    func configure(with action: WorkoutAction, isSelected: Bool) {
         nameLabel?.text = action.name
+        selectionHoverView.isHidden = isSelected == false
     }
+    
+ 
 }
 
 

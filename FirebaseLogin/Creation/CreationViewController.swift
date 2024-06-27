@@ -28,10 +28,13 @@ struct WorkoutSection {
 
 
 protocol CreationViewProtocol: AnyObject {
-    
+    func updateSectionViewData(sections: [WorkoutSection])
+    func reloadSectionView(indexPath: IndexPath)
 }
 
 class CreationViewController: MTViewController, CreationViewProtocol, WorkoutGroupCellDelegate, WorkoutSectionCellDelegate, WorkoutSelectionCollectionViewDelegate {
+ 
+
 
     let cometsVc = CometsViewController()
     
@@ -96,40 +99,26 @@ class CreationViewController: MTViewController, CreationViewProtocol, WorkoutGro
         containerView.embedView(view: collectionView)
         
         collectionView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 200, right: 0)
-        // Mock data
-        let dumbbellActions = [WorkoutAction(name: "Dumbbell Bench Press", equipmentType: "Dumbbell"),
-                               WorkoutAction(name: "Dumbbell Fly", equipmentType: "Dumbbell"),
-                               WorkoutAction(name: "Dumbbell Bench Press", equipmentType: "Dumbbell"),
-                                                      WorkoutAction(name: "Dumbbell Fly", equipmentType: "Dumbbell"),
-                               WorkoutAction(name: "Dumbbell Bench Press", equipmentType: "Dumbbell"),
-                                                      WorkoutAction(name: "Dumbbell Fly", equipmentType: "Dumbbell"),
-                               WorkoutAction(name: "Dumbbell Bench Press", equipmentType: "Dumbbell"),
-                                                      WorkoutAction(name: "Dumbbell Fly", equipmentType: "Dumbbell")]
+
+        presenter?.notifyViewDidLoad()
         
-        let barbellActions = [WorkoutAction(name: "Barbell Squat", equipmentType: "Barbell"),
-                              WorkoutAction(name: "Barbell Deadlift", equipmentType: "Barbell")]
-        
-        let cableActions = [WorkoutAction(name: "Cable Crossover", equipmentType: "Cable"),
-                            WorkoutAction(name: "Cable Row", equipmentType: "Cable")]
-        
-        let machineActions = [WorkoutAction(name: "Leg Press", equipmentType: "Machine"),
-                              WorkoutAction(name: "Chest Press", equipmentType: "Machine")]
-        
-        let chestGroup = [WorkoutGroup(equipmentType: "Dumbbell", actions: dumbbellActions),
-                          WorkoutGroup(equipmentType: "Barbell", actions: barbellActions)]
-        
-        let backGroup = [WorkoutGroup(equipmentType: "Cable", actions: cableActions),
-                         WorkoutGroup(equipmentType: "Machine", actions: machineActions)]
-        
-        let sections = [WorkoutSection(title: "Chest", groups: chestGroup),
-                        WorkoutSection(title: "Back", groups: backGroup),
-                        WorkoutSection(title: "Chest", groups: chestGroup),
-                        WorkoutSection(title: "Chest", groups: chestGroup),
-        ]
-        
+    }
+    
+    func updateSectionViewData(sections: [WorkoutSection]) {
+       
         collectionView.sections = sections
-        
-        
+    }
+    
+    func reloadSectionView(indexPath: IndexPath) {
+        DispatchQueue.main.async {
+            UIView.performWithoutAnimation {
+                self.collectionView.reloadSections(IndexSet(integer: indexPath.section))
+            }
+        }
+    }
+    
+    func isActionCellSelected(action: WorkoutAction) -> Bool {
+        return presenter?.notifyCheckActionSelectionStatus(action: action) == true
     }
     
     override func viewWillLayoutSubviews() {
@@ -137,9 +126,13 @@ class CreationViewController: MTViewController, CreationViewProtocol, WorkoutGro
         embedViewController(containerView: backgroundContainerView, controller: cometsVc, previous: nil)
     }
     
-    func didSelectedAction(action: WorkoutAction, group: WorkoutGroup, cell: UICollectionViewCell) {
-         
+    
+    func didSelectedAction(action: WorkoutAction, group: WorkoutGroup, in Section: Int) {
+        let section = collectionView.sections[Section]
+        presenter?.notifyDidClicked(action: action, group: group, section: section)
+
     }
+ 
     
 }
 

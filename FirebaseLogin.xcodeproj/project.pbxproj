@@ -574,8 +574,8 @@
 			isa = PBXGroup;
 			children = (
 				C88474C32C2938FC004C6C0A /* WorkoutSelectionCollectionView.swift */,
-				C88474DA2C2947F8004C6C0A /* WorkoutSectionCell.xib */,
 				C88474DC2C294986004C6C0A /* WorkoutSectionCell.swift */,
+				C88474DA2C2947F8004C6C0A /* WorkoutSectionCell.xib */,
 				C88474DE2C2949D7004C6C0A /* WorkoutGroupCell.swift */,
 				C88474DF2C2949D7004C6C0A /* WorkoutGroupCell.xib */,
 				C88474E22C294C29004C6C0A /* WorkoutActionCell.swift */,

@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,6 +27,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="148" height="150"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l3B-aJ-G8O">
+                        <rect key="frame" x="0.0" y="0.0" width="148" height="150"/>
+                        <color key="backgroundColor" name="Pink0.7"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <imageReference key="image" image="icon_checkmark_40x40" symbolScale="large"/>
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2G-yl-lub">
                         <rect key="frame" x="8" y="8" width="124" height="13.333333333333336"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -37,27 +45,36 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="eEP-Ol-H9P" secondAttribute="trailing" id="2KP-Yb-c1o"/>
+                <constraint firstItem="l3B-aJ-G8O" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="B5K-L9-g03"/>
                 <constraint firstItem="cxc-Gh-YiU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="E3U-G0-TkK"/>
                 <constraint firstAttribute="trailing" secondItem="T2G-yl-lub" secondAttribute="trailing" constant="16" id="Jmr-QB-9Va"/>
                 <constraint firstItem="eEP-Ol-H9P" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="OTF-kq-YLA"/>
                 <constraint firstAttribute="bottom" secondItem="cxc-Gh-YiU" secondAttribute="bottom" id="QhB-4u-5eL"/>
                 <constraint firstAttribute="trailing" secondItem="cxc-Gh-YiU" secondAttribute="trailing" id="STC-d5-ro3"/>
+                <constraint firstItem="l3B-aJ-G8O" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="T2v-nR-yhV"/>
                 <constraint firstItem="T2G-yl-lub" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="cDM-zJ-56c"/>
                 <constraint firstAttribute="bottom" secondItem="eEP-Ol-H9P" secondAttribute="bottom" id="jyK-lf-fhT"/>
                 <constraint firstItem="T2G-yl-lub" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="kL8-Lp-bR9"/>
+                <constraint firstAttribute="bottom" secondItem="l3B-aJ-G8O" secondAttribute="bottom" id="o7H-KG-hVo"/>
                 <constraint firstItem="cxc-Gh-YiU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="t8c-AI-Pxz"/>
                 <constraint firstItem="eEP-Ol-H9P" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="vs9-f8-zLO"/>
+                <constraint firstAttribute="trailing" secondItem="l3B-aJ-G8O" secondAttribute="trailing" id="xVa-sG-nN8"/>
             </constraints>
             <size key="customSize" width="148" height="150"/>
             <connections>
                 <outlet property="nameLabel" destination="T2G-yl-lub" id="5ga-Sz-SrI"/>
+                <outlet property="selectionHoverView" destination="l3B-aJ-G8O" id="HMM-2v-cdS"/>
             </connections>
             <point key="canvasLocation" x="198.47328244274809" y="76.760563380281695"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="icon_checkmark_40x40" width="40" height="40"/>
         <namedColor name="Gray500">
             <color red="0.62000000476837158" green="0.62000000476837158" blue="0.62000000476837158" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Pink0.7">
+            <color red="0.94499999284744263" green="0.47099998593330383" blue="0.71399998664855957" alpha="0.69999998807907104" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

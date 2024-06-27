@@ -11,8 +11,9 @@ import UIKit
 typealias WorkoutActionSelectionDelegate = WorkoutSelectionCollectionViewDelegate & WorkoutSectionCellDelegate & WorkoutGroupCellDelegate
 
 protocol WorkoutGroupCellDelegate: AnyObject {
-        
-    func didSelectedAction(action: WorkoutAction, group: WorkoutGroup, cell: UICollectionViewCell)
+       
+    func isActionCellSelected(action: WorkoutAction) -> Bool
+    func didSelectedAction(action: WorkoutAction, group: WorkoutGroup, in Section: Int)
 }
 
 
@@ -67,7 +68,7 @@ class WorkoutSelectionCollectionView: UICollectionView, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "kWorkoutSectionCell", for: indexPath) as! WorkoutSectionCell
         let section = sections[indexPath.section]
-        cell.configure(with: section)
+        cell.configure(with: section, sectionIndex: indexPath.section)
         cell.delegate = self.workoutSelectionViewDelegate
         return cell
     }

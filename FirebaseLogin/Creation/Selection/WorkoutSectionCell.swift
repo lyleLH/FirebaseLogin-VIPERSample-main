@@ -9,6 +9,8 @@ import UIKit
 
 
 class WorkoutSectionCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    private var sectionIndex: Int = 0
     weak var delegate: WorkoutActionSelectionDelegate?
     @IBOutlet weak var containerView: UIView!
     
@@ -63,7 +65,8 @@ class WorkoutSectionCell: UICollectionViewCell, UICollectionViewDataSource, UICo
     }
     
     
-    func configure(with section: WorkoutSection) {
+    func configure(with section: WorkoutSection, sectionIndex: Int) {
+        self.sectionIndex = sectionIndex
         self.groups = section.groups
         self.actionPositionLabel.text = section.title
         collectionView.reloadData()
@@ -77,7 +80,7 @@ class WorkoutSectionCell: UICollectionViewCell, UICollectionViewDataSource, UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "kWorkoutGroupCell", for: indexPath) as! WorkoutGroupCell
-        cell.configure(with: groups[indexPath.item])
+        cell.configure(with: groups[indexPath.item], in: sectionIndex)
         cell.delegate = self.delegate
         return cell
     }
