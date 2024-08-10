@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreationViewController" customModule="FirebaseLogin" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundContainerView" destination="Pla-hs-D6h" id="pLd-NK-d6a"/>
+                <outlet property="buttonContainerView" destination="d8H-TG-i9k" id="IY9-lu-swp"/>
                 <outlet property="containerView" destination="2UJ-uQ-FoL" id="DLb-RF-2QK"/>
                 <outlet property="view" destination="iN0-l3-epB" id="BpY-PI-a0o"/>
             </connections>
@@ -36,12 +37,49 @@
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8H-TG-i9k">
+                    <rect key="frame" x="16" y="726" width="361" height="60"/>
+                    <subviews>
+                        <view alpha="0.34999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kcm-wV-iSq">
+                            <rect key="frame" x="0.0" y="0.0" width="361" height="60"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="30"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJ1-Tp-7d2" customClass="WhiteBlurView" customModule="FirebaseLogin" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="361" height="60"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="30"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="cJ1-Tp-7d2" firstAttribute="top" secondItem="d8H-TG-i9k" secondAttribute="top" id="1Aq-Nd-7yz"/>
+                        <constraint firstItem="cJ1-Tp-7d2" firstAttribute="leading" secondItem="d8H-TG-i9k" secondAttribute="leading" id="7wL-Qk-7L3"/>
+                        <constraint firstItem="Kcm-wV-iSq" firstAttribute="top" secondItem="d8H-TG-i9k" secondAttribute="top" id="Nuc-y0-0NB"/>
+                        <constraint firstAttribute="bottom" secondItem="cJ1-Tp-7d2" secondAttribute="bottom" id="Oph-IA-FsM"/>
+                        <constraint firstItem="Kcm-wV-iSq" firstAttribute="leading" secondItem="d8H-TG-i9k" secondAttribute="leading" id="U2p-kj-GSY"/>
+                        <constraint firstAttribute="trailing" secondItem="Kcm-wV-iSq" secondAttribute="trailing" id="UzR-R0-LVl"/>
+                        <constraint firstAttribute="height" constant="60" id="cO0-wO-U1H"/>
+                        <constraint firstAttribute="bottom" secondItem="Kcm-wV-iSq" secondAttribute="bottom" id="nEf-Yi-nyV"/>
+                        <constraint firstAttribute="trailing" secondItem="cJ1-Tp-7d2" secondAttribute="trailing" id="qQz-vw-0VL"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="2UJ-uQ-FoL" secondAttribute="bottom" id="7U9-Nv-tZQ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="d8H-TG-i9k" secondAttribute="trailing" constant="16" id="DS7-9z-y0b"/>
                 <constraint firstItem="2UJ-uQ-FoL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Hay-Dc-eyf"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="d8H-TG-i9k" secondAttribute="bottom" constant="32" id="Kma-2O-s3N"/>
                 <constraint firstItem="Hxy-bJ-Srr" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="LgK-Zr-BA1"/>
                 <constraint firstItem="Hxy-bJ-Srr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="RSZ-JH-dPq"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="2UJ-uQ-FoL" secondAttribute="trailing" id="XOw-vB-0s6"/>
@@ -53,6 +91,7 @@
                 <constraint firstItem="CZ8-Kh-vPB" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="mPK-9h-JKa"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Hxy-bJ-Srr" secondAttribute="bottom" id="nN6-PE-R9p"/>
                 <constraint firstItem="CZ8-Kh-vPB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="qwp-T1-aZc"/>
+                <constraint firstItem="d8H-TG-i9k" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="tBG-Za-G0c"/>
                 <constraint firstItem="Pla-hs-D6h" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="wnw-kT-D3O"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Hxy-bJ-Srr" secondAttribute="trailing" id="x7m-kq-zHT"/>
                 <constraint firstItem="2UJ-uQ-FoL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="yaP-XC-Ehn"/>

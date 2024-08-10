@@ -11,11 +11,14 @@ import Foundation
 protocol CreationInteractorProtocol {
     func getAllSections() -> [WorkoutSection]
     func fetchSectionsData()-> [WorkoutSection]
+    func getSelectedActions() -> [WorkoutAction]
     func addOrRemoveAnAction(action: WorkoutAction, group: WorkoutGroup) -> [WorkoutAction]
     func isActionSelected(action: WorkoutAction) -> Bool
+    func haveSelection() -> Bool
 }
 
 class CreationInteractor: CreationInteractorProtocol {
+    
     func getAllSections() -> [WorkoutSection] {
          return allSections
     }
@@ -82,4 +85,11 @@ class CreationInteractor: CreationInteractorProtocol {
         return false
     }
     
+    func haveSelection() -> Bool {
+        return selectSections.isEmpty == false
+    }
+    
+    func getSelectedActions() -> [WorkoutAction] {
+        return selectSections
+    }
 }

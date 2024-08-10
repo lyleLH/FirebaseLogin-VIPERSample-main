@@ -13,7 +13,7 @@ typealias WorkoutActionSelectionDelegate = WorkoutSelectionCollectionViewDelegat
 protocol WorkoutGroupCellDelegate: AnyObject {
        
     func isActionCellSelected(action: WorkoutAction) -> Bool
-    func didSelectedAction(action: WorkoutAction, group: WorkoutGroup, in Section: Int)
+    func didSelectedAction(action: WorkoutAction, group: WorkoutGroup, in sectionIndex: Int)
 }
 
 

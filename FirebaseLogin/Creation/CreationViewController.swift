@@ -8,7 +8,8 @@
 
 import UIKit
 import AVFoundation
-
+import SwiftUI
+import SlideButton
 
 struct WorkoutAction {
     var name: String
@@ -28,13 +29,19 @@ struct WorkoutSection {
 
 
 protocol CreationViewProtocol: AnyObject {
+    func showActionButton()
     func updateSectionViewData(sections: [WorkoutSection])
     func reloadSectionView(indexPath: IndexPath)
 }
 
 class CreationViewController: MTViewController, CreationViewProtocol, WorkoutGroupCellDelegate, WorkoutSectionCellDelegate, WorkoutSelectionCollectionViewDelegate {
  
-
+    @IBOutlet weak var buttonContainerView: UIView! {
+        didSet {
+            buttonContainerView.isHidden = true
+        }
+    }
+    
 
     let cometsVc = CometsViewController()
     
@@ -74,6 +81,7 @@ class CreationViewController: MTViewController, CreationViewProtocol, WorkoutGro
         configureUI()
         navigationItem.title = "创建训练"
         collectionView.workoutSelectionViewDelegate = self
+        
 
     }
     
@@ -102,8 +110,35 @@ class CreationViewController: MTViewController, CreationViewProtocol, WorkoutGro
 
         presenter?.notifyViewDidLoad()
         
+     
+        let slideButton = SlideButton("Go Trainning", styling: SlideButtonStyling(indicatorSize: 60,
+                                                                                  indicatorSpacing: 5,
+                                                                                  indicatorColor: Color(uiColor: UIColor.init(hex: "#ff8177")),
+                                                                                  backgroundColor: Color(uiColor: UIColor.init(hex: "#ff8177").withAlphaComponent(0.5)),
+                                                                                  textColor: .white,
+                                                                                  indicatorSystemName: "chevron.right",
+                                                                                  indicatorDisabledSystemName: "xmark",
+                                                                                  textAlignment: .globalCenter,
+                                                                                  textFadesOpacity: true,
+                                                                                  textHiddenBehindIndicator: true,
+                                                                                  textShimmers: false), action: {
+            let impact = UIImpactFeedbackGenerator(style: .heavy)
+            impact.impactOccurred()
+            self.buttonContainerView.isHidden = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak self] in
+                self?.presenter?.notifyRouteToTrainingPage()
+            }
+        })
+        let hostingController = UIHostingController(rootView: slideButton)
+        hostingController.view.backgroundColor = .clear
+        buttonContainerView.embedView(view: hostingController.view)
+        
     }
     
+    func showActionButton() {
+        self.buttonContainerView.isHidden = false
+
+    }
     func updateSectionViewData(sections: [WorkoutSection]) {
        
         collectionView.sections = sections
@@ -115,6 +150,7 @@ class CreationViewController: MTViewController, CreationViewProtocol, WorkoutGro
                 self.collectionView.reloadSections(IndexSet(integer: indexPath.section))
             }
         }
+        buttonContainerView?.isHidden = !(presenter?.notifyCheckIsHaveSelections() == true)
     }
     
     func isActionCellSelected(action: WorkoutAction) -> Bool {
@@ -127,10 +163,11 @@ class CreationViewController: MTViewController, CreationViewProtocol, WorkoutGro
     }
     
     
-    func didSelectedAction(action: WorkoutAction, group: WorkoutGroup, in Section: Int) {
-        let section = collectionView.sections[Section]
-        presenter?.notifyDidClicked(action: action, group: group, section: section)
-
+    func didSelectedAction(action: WorkoutAction, group: WorkoutGroup, in sectionIndex: Int) {
+        let impact = UIImpactFeedbackGenerator(style: .light)
+        impact.impactOccurred()
+        presenter?.notifyDidClicked(action: action, group: group, sectionIndex: sectionIndex)
+        
     }
  
     

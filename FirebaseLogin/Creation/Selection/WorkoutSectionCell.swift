@@ -60,7 +60,6 @@ class WorkoutSectionCell: UICollectionViewCell, UICollectionViewDataSource, UICo
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        addCellShadowEffect(cornerRadius: 8)
         
     }
     

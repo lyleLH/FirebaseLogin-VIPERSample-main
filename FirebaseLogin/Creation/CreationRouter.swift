@@ -12,13 +12,14 @@ typealias CreationEntry = CreationViewProtocol & UIViewController
 
 protocol CreationRouterProtocol {
     var entry: CreationEntry? { get set }
-    func routeToSignIn(_ view: CreationViewProtocol)
-    func routeToSignUp(_ view: CreationViewProtocol)
+    func routeToTraining(_ view: CreationViewProtocol, selections: [WorkoutAction])
+
 }
 
 class CreationRouter: CreationRouterProtocol {
     
     var entry: CreationEntry?
+    weak var presenter: CreationPresenter?
     
     static func createModule() -> CreationRouterProtocol {
         let view = CreationViewController()
@@ -32,19 +33,19 @@ class CreationRouter: CreationRouterProtocol {
         presenter.router = router
         presenter.interactor = interactor
         router.entry = view
+        router.presenter = presenter
         
         return router
     }
     
-    func routeToSignIn(_ view: CreationViewProtocol) {
-        let signInVC = SignInRouter.createModule()
+    func routeToTraining(_ view: CreationViewProtocol, selections: [WorkoutAction]) {
+        guard let presenter = presenter, let trainingVC = TrainingRouter.createModule(from: presenter).entry else { return  }
         guard let view = view as? UIViewController else { return }
-        view.navigationController?.pushViewController(signInVC, animated: true)
+        let trainingNaviVc = MTNavigationViewController(rootViewController: trainingVC)
+        trainingNaviVc.modalPresentationStyle = .fullScreen
+        trainingNaviVc.addCloseItem()
+        view.present(trainingNaviVc, animated: true)
     }
     
-    func routeToSignUp(_ view: CreationViewProtocol) {
-        let signUpVC = SignUpRouter.createModule()
-        guard let view = view as? UIViewController else { return }
-        view.navigationController?.pushViewController(signUpVC, animated: true)
-    }
+  
 }

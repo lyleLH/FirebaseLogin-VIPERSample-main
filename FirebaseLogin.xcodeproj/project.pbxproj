@@ -114,6 +114,21 @@
 		C8CDFF562C1A9C88003D8DDC /* Appwrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CDFF552C1A9C88003D8DDC /* Appwrite.swift */; };
 		C8CDFF592C1A9DBE003D8DDC /* Appwrite in Frameworks */ = {isa = PBXBuildFile; productRef = C8CDFF582C1A9DBE003D8DDC /* Appwrite */; };
 		C8CDFF5C2C1AEE79003D8DDC /* GoodPersistence in Frameworks */ = {isa = PBXBuildFile; productRef = C8CDFF5B2C1AEE79003D8DDC /* GoodPersistence */; };
+		C8F4E45A2C2D5193000D2163 /* SlideButton in Frameworks */ = {isa = PBXBuildFile; productRef = C8F4E4592C2D5193000D2163 /* SlideButton */; };
+		C8F4E45C2C2D5C51000D2163 /* DarkCometViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4E45B2C2D5C51000D2163 /* DarkCometViewController.swift */; };
+		C8F4E45E2C2D5D42000D2163 /* ViewController+Dismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4E45D2C2D5D42000D2163 /* ViewController+Dismiss.swift */; };
+		C8F4E4602C2D5DAD000D2163 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4E45F2C2D5DAD000D2163 /* CloseButton.swift */; };
+		C8F4E4622C2D5DD9000D2163 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4E4612C2D5DD9000D2163 /* DefaultButton.swift */; };
+		C8F4E4672C2D692F000D2163 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4E4662C2D692F000D2163 /* TimerViewController.swift */; };
+		C8F4E4692C2D696F000D2163 /* TrainingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8F4E4682C2D696F000D2163 /* TrainingViewController.xib */; };
+		C8F4E46B2C2D6A6F000D2163 /* TimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8F4E46A2C2D6A6F000D2163 /* TimerViewController.xib */; };
+		C8F4E46E2C2DBE6B000D2163 /* TrainingSetCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4E46D2C2DBE6B000D2163 /* TrainingSetCollectionView.swift */; };
+		C8F4E4712C2E5805000D2163 /* TrainingSetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8F4E4702C2E5805000D2163 /* TrainingSetCell.xib */; };
+		C8F4E4722C2E5805000D2163 /* TrainingSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4E46F2C2E5805000D2163 /* TrainingSetCell.swift */; };
+		C8F4E4752C2E583B000D2163 /* SectionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8F4E4742C2E583B000D2163 /* SectionFooterView.xib */; };
+		C8F4E4762C2E583B000D2163 /* SectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4E4732C2E583B000D2163 /* SectionFooterView.swift */; };
+		C8F4E4792C2E71A5000D2163 /* SwipeCellKit in Frameworks */ = {isa = PBXBuildFile; productRef = C8F4E4782C2E71A5000D2163 /* SwipeCellKit */; };
+		C8F4E47B2C3019A9000D2163 /* UIImage+EdgeInset.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4E47A2C3019A8000D2163 /* UIImage+EdgeInset.swift */; };
 		EBBCA19F87436469C6759C89 /* Pods_FirebaseLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8472CFC8935E6BA87CDA01 /* Pods_FirebaseLogin.framework */; };
 /* End PBXBuildFile section */
 
@@ -235,6 +250,19 @@
 		C8BC308D2C1D4C3F005BB19A /* ModuleRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleRoute.swift; sourceTree = "<group>"; };
 		C8BC308F2C1D872E005BB19A /* LocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
 		C8CDFF552C1A9C88003D8DDC /* Appwrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appwrite.swift; sourceTree = "<group>"; };
+		C8F4E45B2C2D5C51000D2163 /* DarkCometViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkCometViewController.swift; sourceTree = "<group>"; };
+		C8F4E45D2C2D5D42000D2163 /* ViewController+Dismiss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Dismiss.swift"; sourceTree = "<group>"; };
+		C8F4E45F2C2D5DAD000D2163 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		C8F4E4612C2D5DD9000D2163 /* DefaultButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
+		C8F4E4662C2D692F000D2163 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		C8F4E4682C2D696F000D2163 /* TrainingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainingViewController.xib; sourceTree = "<group>"; };
+		C8F4E46A2C2D6A6F000D2163 /* TimerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerViewController.xib; sourceTree = "<group>"; };
+		C8F4E46D2C2DBE6B000D2163 /* TrainingSetCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSetCollectionView.swift; sourceTree = "<group>"; };
+		C8F4E46F2C2E5805000D2163 /* TrainingSetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSetCell.swift; sourceTree = "<group>"; };
+		C8F4E4702C2E5805000D2163 /* TrainingSetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainingSetCell.xib; sourceTree = "<group>"; };
+		C8F4E4732C2E583B000D2163 /* SectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionFooterView.swift; sourceTree = "<group>"; };
+		C8F4E4742C2E583B000D2163 /* SectionFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionFooterView.xib; sourceTree = "<group>"; };
+		C8F4E47A2C3019A8000D2163 /* UIImage+EdgeInset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+EdgeInset.swift"; sourceTree = "<group>"; };
 		FE8472CFC8935E6BA87CDA01 /* Pods_FirebaseLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -243,7 +271,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8F4E45A2C2D5193000D2163 /* SlideButton in Frameworks */,
 				C81FE8052C1DA76100C4041A /* RealmSwift in Frameworks */,
+				C8F4E4792C2E71A5000D2163 /* SwipeCellKit in Frameworks */,
 				C884DC352C1D90D00059B1AD /* DateHelper in Frameworks */,
 				C80D7B9B2C2C1AFA0040A616 /* Gradients in Frameworks */,
 				C88474D32C294687004C6C0A /* VisualEffectView in Frameworks */,
@@ -406,6 +436,8 @@
 		6FC1BBBC28299491005BA04F /* Extension+ */ = {
 			isa = PBXGroup;
 			children = (
+				C8F4E47A2C3019A8000D2163 /* UIImage+EdgeInset.swift */,
+				C8F4E45D2C2D5D42000D2163 /* ViewController+Dismiss.swift */,
 				C80D7B972C2C08500040A616 /* UIView+Helper.swift */,
 				C88474D82C294728004C6C0A /* UIColor+Palette.swift */,
 				C88474D62C29470C004C6C0A /* Color+Extensions.swift */,
@@ -440,6 +472,7 @@
 			children = (
 				C80D7B9F2C2C1BD30040A616 /* CometsViewController.swift */,
 				C80D7BAA2C2C25FE0040A616 /* PeaceCometsViewController.swift */,
+				C8F4E45B2C2D5C51000D2163 /* DarkCometViewController.swift */,
 				C80D7BA32C2C1BE00040A616 /* Sources */,
 				C80D7BA42C2C1BE00040A616 /* Comets.h */,
 			);
@@ -471,6 +504,10 @@
 		C81FE8302C2932A700C4041A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				C8F4E4662C2D692F000D2163 /* TimerViewController.swift */,
+				C8F4E46A2C2D6A6F000D2163 /* TimerViewController.xib */,
+				C8F4E4612C2D5DD9000D2163 /* DefaultButton.swift */,
+				C8F4E45F2C2D5DAD000D2163 /* CloseButton.swift */,
 				C80D7BAC2C2C27180040A616 /* WhiteBlurView.swift */,
 				C80D7BA62C2C1BE00040A616 /* Comets */,
 				C88474CF2C29443D004C6C0A /* DefaultBlurView.swift */,
@@ -547,11 +584,13 @@
 		C88474AD2C2934EA004C6C0A /* Training */ = {
 			isa = PBXGroup;
 			children = (
+				C8F4E46C2C2DBE52000D2163 /* TrainingSetView */,
 				C88474A82C2934EA004C6C0A /* TrainingEntity.swift */,
 				C88474A92C2934EA004C6C0A /* TrainingInteractor.swift */,
 				C88474AA2C2934EA004C6C0A /* TrainingPresenter.swift */,
 				C88474AB2C2934EA004C6C0A /* TrainingRouter.swift */,
 				C88474AC2C2934EA004C6C0A /* TrainingViewController.swift */,
+				C8F4E4682C2D696F000D2163 /* TrainingViewController.xib */,
 			);
 			path = Training;
 			sourceTree = "<group>";
@@ -584,6 +623,18 @@
 			path = Selection;
 			sourceTree = "<group>";
 		};
+		C8F4E46C2C2DBE52000D2163 /* TrainingSetView */ = {
+			isa = PBXGroup;
+			children = (
+				C8F4E46D2C2DBE6B000D2163 /* TrainingSetCollectionView.swift */,
+				C8F4E4732C2E583B000D2163 /* SectionFooterView.swift */,
+				C8F4E4742C2E583B000D2163 /* SectionFooterView.xib */,
+				C8F4E46F2C2E5805000D2163 /* TrainingSetCell.swift */,
+				C8F4E4702C2E5805000D2163 /* TrainingSetCell.xib */,
+			);
+			path = TrainingSetView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -612,6 +663,8 @@
 				C88474D22C294687004C6C0A /* VisualEffectView */,
 				C80D7B9A2C2C1AFA0040A616 /* Gradients */,
 				C80D7B9D2C2C1BB70040A616 /* SnapKit */,
+				C8F4E4592C2D5193000D2163 /* SlideButton */,
+				C8F4E4782C2E71A5000D2163 /* SwipeCellKit */,
 			);
 			productName = FirebaseLogin;
 			productReference = 6F19C4152815323900EEC276 /* FirebaseLogin.app */;
@@ -649,6 +702,8 @@
 				C88474D12C294687004C6C0A /* XCRemoteSwiftPackageReference "VisualEffectView" */,
 				C80D7B992C2C1AF90040A616 /* XCRemoteSwiftPackageReference "Gradients" */,
 				C80D7B9C2C2C1BB70040A616 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				C8F4E4582C2D5193000D2163 /* XCRemoteSwiftPackageReference "SlideButton" */,
+				C8F4E4772C2E71A5000D2163 /* XCRemoteSwiftPackageReference "SwipeCellKit" */,
 			);
 			productRefGroup = 6F19C4162815323900EEC276 /* Products */;
 			projectDirPath = "";
@@ -664,12 +719,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8F4E46B2C2D6A6F000D2163 /* TimerViewController.xib in Resources */,
 				6F19C4252815323B00EEC276 /* LaunchScreen.storyboard in Resources */,
 				6F19C4222815323B00EEC276 /* Assets.xcassets in Resources */,
 				6F3E0F2D281826C600B7FE63 /* GoogleService-Info.plist in Resources */,
 				C88474CE2C294277004C6C0A /* CreationViewController.xib in Resources */,
+				C8F4E4712C2E5805000D2163 /* TrainingSetCell.xib in Resources */,
 				C88474E12C2949D7004C6C0A /* WorkoutGroupCell.xib in Resources */,
+				C8F4E4692C2D696F000D2163 /* TrainingViewController.xib in Resources */,
 				C88474DB2C2947F8004C6C0A /* WorkoutSectionCell.xib in Resources */,
+				C8F4E4752C2E583B000D2163 /* SectionFooterView.xib in Resources */,
 				6F2FAA70281F00EB00BBF644 /* news.mp4 in Resources */,
 				C88474E52C294C29004C6C0A /* WorkoutActionCell.xib in Resources */,
 				6F19C4202815323900EEC276 /* Main.storyboard in Resources */,
@@ -729,6 +788,7 @@
 				C8CDFF562C1A9C88003D8DDC /* Appwrite.swift in Sources */,
 				6F2FAA73281F067900BBF644 /* SignInPresenter.swift in Sources */,
 				6F3038D22819637F005EC476 /* MainViewController.swift in Sources */,
+				C8F4E4622C2D5DD9000D2163 /* DefaultButton.swift in Sources */,
 				C88474B12C2934EA004C6C0A /* TrainingRouter.swift in Sources */,
 				C88474732C2932ED004C6C0A /* UIColor+Additions.swift in Sources */,
 				C88474792C2932ED004C6C0A /* PTIndicatorView.swift in Sources */,
@@ -738,9 +798,14 @@
 				6F19C43128156CE400EEC276 /* SignInViewController.swift in Sources */,
 				C80D7B982C2C08500040A616 /* UIView+Helper.swift in Sources */,
 				C884749C2C2934D7004C6C0A /* RecordViewController.swift in Sources */,
+				C8F4E47B2C3019A9000D2163 /* UIImage+EdgeInset.swift in Sources */,
+				C8F4E4672C2D692F000D2163 /* TimerViewController.swift in Sources */,
+				C8F4E45C2C2D5C51000D2163 /* DarkCometViewController.swift in Sources */,
 				6FC28A1928203E80008B1228 /* SignUpPresenter.swift in Sources */,
 				6F19C41D2815323900EEC276 /* SplashViewController.swift in Sources */,
+				C8F4E4762C2E583B000D2163 /* SectionFooterView.swift in Sources */,
 				C81FE81C2C22A9B200C4041A /* CanvasPresenter.swift in Sources */,
+				C8F4E4722C2E5805000D2163 /* TrainingSetCell.swift in Sources */,
 				C88474772C2932ED004C6C0A /* PTCardTabBar.swift in Sources */,
 				C88474A52C2934E1004C6C0A /* ProfilePresenter.swift in Sources */,
 				C81FE82A2C26946C00C4041A /* CanvasView.swift in Sources */,
@@ -757,6 +822,7 @@
 				C88474A42C2934E1004C6C0A /* ProfileInteractor.swift in Sources */,
 				C88474AF2C2934EA004C6C0A /* TrainingInteractor.swift in Sources */,
 				6FC28A15281FCD7A008B1228 /* SplashInteractor.swift in Sources */,
+				C8F4E4602C2D5DAD000D2163 /* CloseButton.swift in Sources */,
 				C80D7BAD2C2C27180040A616 /* WhiteBlurView.swift in Sources */,
 				6FC1BBA5282991EA005BA04F /* MainEntity.swift in Sources */,
 				C81FE8282C22B5D000C4041A /* UIViewController+Container.swift in Sources */,
@@ -767,9 +833,11 @@
 				C8BC30882C1AF646005BB19A /* UserManager.swift in Sources */,
 				C88474BB2C2936A5004C6C0A /* CreationEntity.swift in Sources */,
 				C88474B02C2934EA004C6C0A /* TrainingPresenter.swift in Sources */,
+				C8F4E46E2C2DBE6B000D2163 /* TrainingSetCollectionView.swift in Sources */,
 				C80D7BA82C2C1BE00040A616 /* UIImage+Rotate.swift in Sources */,
 				6FC1BBAC28299308005BA04F /* DetailRouter.swift in Sources */,
 				C884747B2C293346004C6C0A /* MTTabbarViewController.swift in Sources */,
+				C8F4E45E2C2D5D42000D2163 /* ViewController+Dismiss.swift in Sources */,
 				C88474E02C2949D7004C6C0A /* WorkoutGroupCell.swift in Sources */,
 				6F19C41B2815323900EEC276 /* SceneDelegate.swift in Sources */,
 				C88474A62C2934E1004C6C0A /* ProfileRouter.swift in Sources */,
@@ -1093,6 +1161,22 @@
 				minimumVersion = 2.3.0;
 			};
 		};
+		C8F4E4582C2D5193000D2163 /* XCRemoteSwiftPackageReference "SlideButton" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/no-comment/SlideButton";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		C8F4E4772C2E71A5000D2163 /* XCRemoteSwiftPackageReference "SwipeCellKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwipeCellKit/SwipeCellKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1134,6 +1218,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C8CDFF5A2C1AEE79003D8DDC /* XCRemoteSwiftPackageReference "GoodPersistence" */;
 			productName = GoodPersistence;
+		};
+		C8F4E4592C2D5193000D2163 /* SlideButton */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C8F4E4582C2D5193000D2163 /* XCRemoteSwiftPackageReference "SlideButton" */;
+			productName = SlideButton;
+		};
+		C8F4E4782C2E71A5000D2163 /* SwipeCellKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C8F4E4772C2E71A5000D2163 /* XCRemoteSwiftPackageReference "SwipeCellKit" */;
+			productName = SwipeCellKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

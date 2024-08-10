@@ -8,38 +8,32 @@
 
 import Foundation
 
-protocol CreationPresenterProtocol: AnyObject {
-    func notifySignInTapped()
-    func notifySignUpTapped()
-    
-    func notifyDidClicked(action: WorkoutAction, group: WorkoutGroup, section: WorkoutSection)
+
+protocol CreationModuleProtocol: AnyObject {
+    func backToCreationFromTraining()
+}
+
+
+protocol CreationPresenterProtocol: AnyObject , CreationModuleProtocol {
+ 
+    func notifyDidClicked(action: WorkoutAction, group: WorkoutGroup, sectionIndex: Int)
     
     func notifyViewDidLoad()
     func notifyCheckActionSelectionStatus(action: WorkoutAction) -> Bool
+    func notifyCheckIsHaveSelections()-> Bool
+
+    func notifyRouteToTrainingPage()
+
 }
 
 class CreationPresenter: CreationPresenterProtocol {
-    func notifyCheckActionSelectionStatus(action: WorkoutAction) -> Bool {
-        return interactor?.isActionSelected(action: action) == true
-    }
-    
-  
-    
-    
- 
+
     
     weak var view: CreationViewProtocol?
     var router: CreationRouterProtocol?
     var interactor: CreationInteractorProtocol?
     
-    func notifySignInTapped() {
-        router?.routeToSignIn(view as! CreationViewController)
-    }
-    
-    func notifySignUpTapped() {
-        router?.routeToSignUp(view as! CreationViewController)
-    }
-    
+
     
     func notifyViewDidLoad() {
         
@@ -49,16 +43,31 @@ class CreationPresenter: CreationPresenterProtocol {
         
     }
     
-    func notifyDidClicked(action: WorkoutAction, group: WorkoutGroup, section: WorkoutSection) {
+    func notifyDidClicked(action: WorkoutAction, group: WorkoutGroup, sectionIndex: Int) {
         _ = interactor?.addOrRemoveAnAction(action: action, group: group)
         
-        if let section = interactor?.getAllSections().firstIndex(where: { tSection in
-            tSection.title == section.title
-        }) {
-            view?.reloadSectionView(indexPath: IndexPath(row: 0, section: section))
-        }
-        
+        view?.reloadSectionView(indexPath: IndexPath(row: 0, section: sectionIndex))
     }
     
+    func notifyCheckIsHaveSelections() -> Bool {
+        return interactor?.haveSelection() == true
+    }
+    
+    func notifyRouteToTrainingPage() {
+        if let view = view ,let actions = interactor?.getSelectedActions(){
+            router?.routeToTraining(view, selections: actions )
+            
+        }
+    }
+    
+    func notifyCheckActionSelectionStatus(action: WorkoutAction) -> Bool {
+        return interactor?.isActionSelected(action: action) == true
+    }
+    
+  
+    func backToCreationFromTraining() {
+        notifyViewDidLoad()
+        view?.showActionButton()
+    }
     
 }

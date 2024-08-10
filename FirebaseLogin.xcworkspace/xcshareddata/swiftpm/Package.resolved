@@ -1,5 +1,5 @@
 {
-  "originHash" : "0ae6c98e3b749d046b323ad32b9d4de00032799fd142949483c11311bc5e5db4",
+  "originHash" : "310f382eeab70e07b81bd613280683c9077ff6d782d3aae5641df3c53cfee24c",
   "pins" : [
     {
       "identity" : "async-http-client",
@@ -89,6 +89,15 @@
       "state" : {
         "revision" : "3b20b483dcc7a47ffb91cec8485c34b0e44e89c9",
         "version" : "6.0.0"
+      }
+    },
+    {
+      "identity" : "slidebutton",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/no-comment/SlideButton",
+      "state" : {
+        "branch" : "main",
+        "revision" : "5eacebba4d7deeb693592bc9a62ab2d2181e133b"
       }
     },
     {
@@ -206,6 +215,15 @@
       "state" : {
         "revision" : "f9266c85189c2751589a50ea5aec72799797e471",
         "version" : "1.3.0"
+      }
+    },
+    {
+      "identity" : "swipecellkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwipeCellKit/SwipeCellKit",
+      "state" : {
+        "revision" : "7219cad3098637176ace311510d11467dbfb9bb0",
+        "version" : "2.7.1"
       }
     },
     {

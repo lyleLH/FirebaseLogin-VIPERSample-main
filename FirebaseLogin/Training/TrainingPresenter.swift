@@ -8,12 +8,14 @@
 
 import Foundation
 
-protocol TrainingPresenterProtocol: AnyObject {
+protocol TrainingPresenterProtocol: TimerViewControllerDelegate {
     func notifySignInTapped()
     func notifySignUpTapped()
 }
 
 class TrainingPresenter: TrainingPresenterProtocol {
+  
+    
     weak var view: TrainingViewProtocol?
     var router: TrainingRouterProtocol?
     var interactor: TrainingInteractorProtocol?
@@ -24,5 +26,10 @@ class TrainingPresenter: TrainingPresenterProtocol {
     
     func notifySignUpTapped() {
         router?.routeToSignUp(view as! TrainingViewController)
+    }
+    
+    func resetTimerButtonClicked() {
+        router?.dissMissTrainingPage()
+        router?.creationModule?.backToCreationFromTraining()
     }
 }
