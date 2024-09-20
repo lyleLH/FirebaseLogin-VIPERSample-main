@@ -25,6 +25,7 @@ class CreationRouter: CreationRouterProtocol {
     }
     
     static func createModule() -> CreationRouterProtocol {
+        //FIXME: 使用DI 与否 带来的差别
         
 //        let view = CreationViewController()
 //        let interactor = CreationInteractor()
@@ -44,6 +45,8 @@ class CreationRouter: CreationRouterProtocol {
     }
     
     func routeToTraining(_ view: CreationViewProtocol, selections: [WorkoutAction]) {
+        //TODO: Training Module Assembly
+        
 //        guard let presenter = presenter, let trainingVC = TrainingRouter.createModule(from: presenter).entry else { return  }
 //        
 //        guard let view = view as? UIViewController else { return }
