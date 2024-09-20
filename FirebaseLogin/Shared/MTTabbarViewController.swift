@@ -11,7 +11,8 @@ class MTTabbarViewController: PTCardTabBarController {
 
     override func viewDidLoad() {
         view.backgroundColor = UIColor.black
-        let vc1 = MTNavigationViewController(rootViewController: CreationRouter.createModule().entry!)
+        let creationVc: CreationViewController = DIContainer.shared.resolve()
+        let vc1 = MTNavigationViewController(rootViewController: creationVc)
         let vc2 = MTNavigationViewController(rootViewController: RecordRouter.createModule().entry!)
         let vc3 = MTNavigationViewController(rootViewController: ProfileRouter.createModule().entry!)
         

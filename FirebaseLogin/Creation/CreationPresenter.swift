@@ -29,39 +29,41 @@ protocol CreationPresenterProtocol: AnyObject , CreationModuleProtocol {
 class CreationPresenter: CreationPresenterProtocol {
 
     
-    weak var view: CreationViewProtocol?
-    var router: CreationRouterProtocol?
-    var interactor: CreationInteractorProtocol?
+    private weak var view: CreationViewProtocol?
+    private var router: CreationRouterProtocol
+    private var interactor: CreationInteractorProtocol
     
-
+    init(view: CreationViewProtocol? = nil, router: CreationRouterProtocol, interactor: CreationInteractorProtocol) {
+        
+        self.router = router
+        self.view = router.viewController as? any CreationViewProtocol
+        self.interactor = interactor
+    }
     
     func notifyViewDidLoad() {
-        
-        if let sections = interactor?.fetchSectionsData() {
-            view?.updateSectionViewData(sections: sections)
-        }
-        
+        view?.updateSectionViewData(sections: interactor.fetchSectionsData())   
     }
     
     func notifyDidClicked(action: WorkoutAction, group: WorkoutGroup, sectionIndex: Int) {
-        _ = interactor?.addOrRemoveAnAction(action: action, group: group)
+        _ = interactor.addOrRemoveAnAction(action: action, group: group)
         
         view?.reloadSectionView(indexPath: IndexPath(row: 0, section: sectionIndex))
     }
     
     func notifyCheckIsHaveSelections() -> Bool {
-        return interactor?.haveSelection() == true
+        return interactor.haveSelection() == true
     }
     
     func notifyRouteToTrainingPage() {
-        if let view = view ,let actions = interactor?.getSelectedActions(){
-            router?.routeToTraining(view, selections: actions )
+        if let view = view {
+            let actions = interactor.getSelectedActions()
+            router.routeToTraining(view, selections: actions )
             
         }
     }
     
     func notifyCheckActionSelectionStatus(action: WorkoutAction) -> Bool {
-        return interactor?.isActionSelected(action: action) == true
+        return interactor.isActionSelected(action: action) == true
     }
     
   

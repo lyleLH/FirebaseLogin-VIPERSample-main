@@ -30,8 +30,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        self.window = window
 //        window.makeKeyAndVisible()
         
-        
-        
         let route = ModuleRoute()
         let userStateManager = UserManager.shared
         userStateManager.webService = Appwrite.shared
@@ -39,15 +37,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let keyWindow = UIWindow(windowScene: windowScene)
         keyWindow.rootViewController = UIViewController()
+        
         Task {
-            
             do {
                 let uerState = try await UserManager.shared.getUserState()
                 DispatchQueue.main.async {
                     if  uerState == .signedIn {
                         keyWindow.rootViewController = route.routeToModuleRootPage(.Home, withWindow: keyWindow)
                     } else if uerState == .signedOut {
-                        keyWindow.rootViewController = route.routeToModuleRootPage(.splashPage,withWindow: keyWindow)
+                        keyWindow.rootViewController = route.routeToModuleRootPage(.splashPage, withWindow: keyWindow)
                     }
                 }
             }

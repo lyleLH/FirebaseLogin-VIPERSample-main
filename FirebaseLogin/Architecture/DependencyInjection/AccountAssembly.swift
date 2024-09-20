@@ -10,14 +10,9 @@ import Swinject
 final class AccountAssembly: Assembly {
 
     func assemble(container: Container) {
-     
         
         container.register(SignInInteractorProtocol.self) { _ in
             return SignInInteractor()
-        }
-        
-        container.register(SignInRouter.self) { (_, view: SignInViewController) in
-             return SignInRouter(viewController: view)
         }
         
         container.register(SignInPresenterProtocol.self) { (resolver, view: SignInViewController) in
@@ -28,8 +23,7 @@ final class AccountAssembly: Assembly {
             guard let router = resolver.resolve(SignInRouter.self, argument: view) else {
                 fatalError("SignInRouter dependency could not be resolved")
             }
-            let presenter =  SignInPresenter(router: router, interactor: interactor)
-            return presenter
+            return  SignInPresenter(router: router, interactor: interactor)
         }
         
         container.register(SignInViewController.self) { (resolver) in
@@ -39,6 +33,10 @@ final class AccountAssembly: Assembly {
             }
             view.presenter = presenter
             return view
+        }
+        
+        container.register(SignInRouter.self) { (_, view: SignInViewController) in
+             return SignInRouter(viewController: view)
         }
     }
 

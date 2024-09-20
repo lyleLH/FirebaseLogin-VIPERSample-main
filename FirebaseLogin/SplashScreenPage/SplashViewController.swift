@@ -19,6 +19,10 @@ class SplashViewController: DefaultViewController, SplashViewProtocol {
         return true
     }
     
+    override var navigationBarBackgroundColor: UIColor {
+        return .clear
+    }
+    
     var presenter: SplashPresenterProtocol?
     
     private var player: AVPlayer?

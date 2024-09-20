@@ -14,6 +14,10 @@ protocol SignInViewControllerProtocol: AnyObject {
 
 class SignInViewController: DefaultViewController, SignInViewControllerProtocol {
     
+    override var navigationBarBackgroundColor: UIColor {
+        return .white
+    }
+    
     override var navigationBarHidden: Bool {
         return false
     }

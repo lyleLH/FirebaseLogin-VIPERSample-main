@@ -132,6 +132,7 @@
 		C8DCC8872C9D60EC00E1912C /* TransparentDefaultCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DCC8832C9D60EC00E1912C /* TransparentDefaultCollectionViewController.swift */; };
 		C8DCC8882C9D60EC00E1912C /* TransparentDefaultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DCC8842C9D60EC00E1912C /* TransparentDefaultTableViewController.swift */; };
 		C8DCC8892C9D60EC00E1912C /* TransparentDefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DCC8852C9D60EC00E1912C /* TransparentDefaultViewController.swift */; };
+		C8DCC88B2C9D690C00E1912C /* CreationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DCC88A2C9D690C00E1912C /* CreationAssembly.swift */; };
 		C8F4E45A2C2D5193000D2163 /* SlideButton in Frameworks */ = {isa = PBXBuildFile; productRef = C8F4E4592C2D5193000D2163 /* SlideButton */; };
 		C8F4E45C2C2D5C51000D2163 /* DarkCometViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4E45B2C2D5C51000D2163 /* DarkCometViewController.swift */; };
 		C8F4E45E2C2D5D42000D2163 /* ViewController+Dismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4E45D2C2D5D42000D2163 /* ViewController+Dismiss.swift */; };
@@ -286,6 +287,7 @@
 		C8DCC8832C9D60EC00E1912C /* TransparentDefaultCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentDefaultCollectionViewController.swift; sourceTree = "<group>"; };
 		C8DCC8842C9D60EC00E1912C /* TransparentDefaultTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentDefaultTableViewController.swift; sourceTree = "<group>"; };
 		C8DCC8852C9D60EC00E1912C /* TransparentDefaultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentDefaultViewController.swift; sourceTree = "<group>"; };
+		C8DCC88A2C9D690C00E1912C /* CreationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationAssembly.swift; sourceTree = "<group>"; };
 		C8F4E45B2C2D5C51000D2163 /* DarkCometViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkCometViewController.swift; sourceTree = "<group>"; };
 		C8F4E45D2C2D5D42000D2163 /* ViewController+Dismiss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Dismiss.swift"; sourceTree = "<group>"; };
 		C8F4E45F2C2D5DAD000D2163 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
@@ -677,25 +679,10 @@
 			isa = PBXGroup;
 			children = (
 				C8DCC8672C9D0C9700E1912C /* DIContainer.swift */,
-				C8DCC8692C9D0D9300E1912C /* Scenes */,
+				C8DCC86B2C9D0DB800E1912C /* AccountAssembly.swift */,
+				C8DCC88A2C9D690C00E1912C /* CreationAssembly.swift */,
 			);
 			path = DependencyInjection;
-			sourceTree = "<group>";
-		};
-		C8DCC8692C9D0D9300E1912C /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-				C8DCC86A2C9D0DA000E1912C /* Account */,
-			);
-			path = Scenes;
-			sourceTree = "<group>";
-		};
-		C8DCC86A2C9D0DA000E1912C /* Account */ = {
-			isa = PBXGroup;
-			children = (
-				C8DCC86B2C9D0DB800E1912C /* AccountAssembly.swift */,
-			);
-			path = Account;
 			sourceTree = "<group>";
 		};
 		C8DCC86D2C9D189800E1912C /* ErrorDefine */ = {
@@ -929,6 +916,7 @@
 				C8F4E4672C2D692F000D2163 /* TimerViewController.swift in Sources */,
 				C8F4E45C2C2D5C51000D2163 /* DarkCometViewController.swift in Sources */,
 				6FC28A1928203E80008B1228 /* SignUpPresenter.swift in Sources */,
+				C8DCC88B2C9D690C00E1912C /* CreationAssembly.swift in Sources */,
 				C8DCC8882C9D60EC00E1912C /* TransparentDefaultTableViewController.swift in Sources */,
 				6F19C41D2815323900EEC276 /* SplashViewController.swift in Sources */,
 				C8DCC87D2C9D560000E1912C /* DefaultViewController.swift in Sources */,

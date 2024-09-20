@@ -15,47 +15,7 @@ protocol SignInInteractorProtocol {
 }
 
 class SignInInteractor: SignInInteractorProtocol {
-   
-//    private let presenter: SignInPresenterProtocol
-//
-//    init(presenter: SignInPresenterProtocol) {
-//        self.presenter = presenter
-//    }
-//
-//    func didLoginByOauth2() {
-//        Task {
-//            do {
-//                try await Appwrite.shared.onOAuth2Regist()
-//                self.presenter.signInSuccess()
-//            }
-//            catch {
-//                self.presenter.signInNotSuccess()
-//            }
-//        }
-//    }
-//    
-//    func didFetchUser(username: String, password: String) {
-//        
-//        Task {
-//            do {
-//                if let _ = Appwrite.shared.session  {
-//                    self.presenter.signInSuccess()
-//                } else {
-//                    _ = try await Appwrite.shared.onLogin(username, password)
-//                    
-//                    self.presenter.signInSuccess()
-//                }
-//            } catch { error
-//                debugPrint(error)
-//                DispatchQueue.main.async {
-//                    self.presenter.signInNotSuccess()
-//                    
-//                }
-//            }
-//        }
-// 
-//    }
-//    
+
     func didLoginByOauth2() async throws -> Result<Bool, Error> {
         do {
             try await Appwrite.shared.onOAuth2Regist()

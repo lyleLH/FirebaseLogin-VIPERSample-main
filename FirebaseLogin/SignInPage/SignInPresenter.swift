@@ -12,46 +12,41 @@ import UIKit
 protocol SignInPresenterProtocol: AnyObject {
     func notifyDidButtonTapped(username: String, password: String)
     func notifyOauth2LoginUserButtonTapped()
-
-//    func signInSuccess()
-//    func signInNotSuccess()
 }
 
 class SignInPresenter: SignInPresenterProtocol {
     
+    private weak var view: SignInViewControllerProtocol?
+    private var router: SignInRouterProtocol
+    private var interactor: SignInInteractorProtocol
+    
+    init(router: SignInRouterProtocol, interactor: SignInInteractorProtocol) {
+        self.view = router.viewController as? any SignInViewControllerProtocol
+        self.router = router
+        self.interactor = interactor
+    }
     
     func notifyOauth2LoginUserButtonTapped() {
         Task {
             do {
-                if let _ = try await interactor?.didLoginByOauth2() {
-                    view?.updateWithSuccess()
-                    router?.routeToMain()
-                }
+                let _ = try await interactor.didLoginByOauth2()
+                view!.updateWithSuccess()
+                router.routeToMain()
+                
             } catch {
                 view?.updateWithNotSuccess()
             }
         }
-        
-    }
-    
-    weak var view: SignInViewControllerProtocol?
-    var router: SignInRouterProtocol?
-    var interactor: SignInInteractorProtocol?
-    
-    init(router: SignInRouterProtocol? = nil, interactor: SignInInteractorProtocol? = nil) {
-        self.view = router?.viewController as? any SignInViewControllerProtocol
-        self.router = router
-        self.interactor = interactor
     }
     
     func notifyDidButtonTapped(username: String, password: String) {
         Task {
             
             do {
-                if (try await interactor?.didFetchUser(username: username, password: password)) != nil  {
-                    view?.updateWithSuccess()
-                    router?.routeToMain()
-                }
+                let _  = try await interactor.didFetchUser(username: username, password: password)
+                view?.updateWithSuccess()
+                router.routeToMain()
+                
             } catch {
                 view?.updateWithNotSuccess()
             }
