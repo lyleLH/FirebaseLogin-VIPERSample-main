@@ -37,7 +37,7 @@ class RecordRouter: RecordRouterProtocol {
     }
     
     func routeToSignIn(_ view: RecordViewProtocol) {
-        let signInVC = SignInRouter.createModule()
+        let signInVC = SignInRouter.createModule().viewController
         guard let view = view as? UIViewController else { return }
         view.navigationController?.pushViewController(signInVC, animated: true)
     }

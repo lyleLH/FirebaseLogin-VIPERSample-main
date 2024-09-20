@@ -13,8 +13,12 @@ protocol SplashViewProtocol: AnyObject {
     
 }
 
-class SplashViewController: UIViewController, SplashViewProtocol {
+class SplashViewController: DefaultViewController, SplashViewProtocol {
 
+    override var navigationBarHidden: Bool {
+        return true
+    }
+    
     var presenter: SplashPresenterProtocol?
     
     private var player: AVPlayer?

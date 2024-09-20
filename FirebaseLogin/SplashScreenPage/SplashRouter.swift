@@ -36,7 +36,7 @@ class SplashRouter: SplashRouterProtocol {
     }
     
     func routeToSignIn(_ view: SplashViewProtocol) {
-        let signInVC = SignInRouter.createModule()
+        let signInVC = SignInRouter.createModule().viewController
         guard let view = view as? UIViewController else { return }
         view.navigationController?.pushViewController(signInVC, animated: true)
     }

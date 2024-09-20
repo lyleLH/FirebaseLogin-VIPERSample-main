@@ -10,5 +10,6 @@ target 'FirebaseLogin' do
 #pod 'Firebase/Auth'
 
   # Pods for FirebaseLogin
-
+  pod 'Swinject'
+  pod 'ProgressHUD'
 end

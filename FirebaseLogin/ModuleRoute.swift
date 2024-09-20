@@ -29,7 +29,7 @@ class ModuleRoute: NSObject {
             vc = UINavigationController(rootViewController: SplashRouter.createModule().entry as! UIViewController)
             
         case .loginPage:
-            vc = UINavigationController(rootViewController: SignInRouter.createModule())
+            vc = UINavigationController(rootViewController: SignInRouter.createModule().viewController)
             
         case .Home:
             vc = MTTabbarViewController()

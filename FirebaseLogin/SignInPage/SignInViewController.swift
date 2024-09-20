@@ -12,7 +12,11 @@ protocol SignInViewControllerProtocol: AnyObject {
     func updateWithNotSuccess()
 }
 
-class SignInViewController: UIViewController, SignInViewControllerProtocol {
+class SignInViewController: DefaultViewController, SignInViewControllerProtocol {
+    
+    override var navigationBarHidden: Bool {
+        return false
+    }
     
     var presenter: SignInPresenterProtocol?
     
@@ -51,7 +55,7 @@ class SignInViewController: UIViewController, SignInViewControllerProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = false
+
         userNameTextField.text = ""
         passwordTextField.text = ""
     }
@@ -74,7 +78,7 @@ class SignInViewController: UIViewController, SignInViewControllerProtocol {
      }
     
     func updateWithSuccess() {
-        presenter?.routeToMain()
+        showSuccessHud(labelText: "登陆成功~~~", delay: 2.0)
     }
     
     func updateWithNotSuccess() {

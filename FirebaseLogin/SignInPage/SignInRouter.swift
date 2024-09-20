@@ -8,35 +8,31 @@
 import UIKit
 
 protocol SignInRouterProtocol {
+    var viewController: UIViewController { get }
     func routeToMain()
 }
 
+
 class SignInRouter: SignInRouterProtocol {
-        
-    weak var view: UIViewController?
     
-    static func createModule() -> SignInViewController {
-        let view = SignInViewController()
-        let interactor = SignInInteractor()
-        let presenter = SignInPresenter()
-        let router = SignInRouter()
-        
-        view.presenter = presenter
-        interactor.presenter = presenter
-        router.view = view
-        presenter.view = view
-        presenter.router = router
-        presenter.interactor = interactor
-        
-        return view
+    internal var viewController: UIViewController
+    
+    init(viewController: UIViewController) {
+        self.viewController = viewController
+    }
+    
+    static func createModule() -> SignInRouter {
+        let view: SignInViewController =  DIContainer.shared.resolve()
+        let router: SignInRouter = DIContainer.shared.resolve(argument: view)
+        return router
     }
     
     func routeToMain() {
         DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
             let main = MainRouter.createModule()
-            guard let view = self.view else { return }
-            view.navigationController?.pushViewController(main, animated: true)
+            self?.viewController.navigationController?.pushViewController(main, animated: true)
         }
     }
+
+ 
 }

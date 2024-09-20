@@ -17,6 +17,7 @@ protocol CreationInteractorProtocol {
     func haveSelection() -> Bool
 }
 
+ 
 class CreationInteractor: CreationInteractorProtocol {
     
     func getAllSections() -> [WorkoutSection] {
