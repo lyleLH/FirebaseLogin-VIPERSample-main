@@ -1,0 +1,59 @@
+# .swiftlint.yml
+
+# 指定要包含的路径
+included:
+  - .
+
+# 指定要排除的路径
+excluded:
+  - Carthage
+  - Pods
+
+# 禁用某些规则
+disabled_rules:
+  - trailing_whitespace # 禁用行尾空格检查
+  - force_cast           # 禁用强制类型转换检查
+  # - force_try
+# 自定义规则设置
+opt_in_rules: # 启用额外的可选规则
+  - empty_count # 检查空数组或字典的使用
+
+# 指定警告阈值
+warning_threshold: 10 # 在达到10个警告后，构建会失败
+
+# 设置报告器类型
+reporter: "xcode" # 使用Xcode格式输出报告
+ 
+# 设置缓存路径
+cache_path: .swiftlint_cache # 缓存文件存储路径
+ 
+line_length:
+  warning: 150 # 设置警告阈值为120字符
+  error: 200 # 设置错误阈值为150字符
+  ignores_comments: true # 忽略注释中的长度
+  ignores_urls: true # 忽略URL中的长度
+  ignores_function_declarations: true # 忽略函数声明中的长度
+  ignores_interpolated_strings: true # 忽略插值字符串中的长度
+
+type_name:
+  min_length: 3 # 最小长度
+  max_length: 50 # 增加最大长度
+  excluded: # 可以排除特定的类型名
+    # - TransparentDefaultCollectionViewController
+
+identifier_name:
+  min_length: 3 # 最小长度为3个字符
+  max_length: 50 # 最大长度为40个字符
+  excluded: # 排除特定的标识符
+    - id
+    - URL
+    - db
+    - vc
+    - i
+    - r
+    - g 
+    - b
+    - a
+    - x
+    - y
+
