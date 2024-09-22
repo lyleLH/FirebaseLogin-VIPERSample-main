@@ -10,16 +10,16 @@ import UIKit
 class MakeProperty {
     
     static func makeTextField(_ placeholder: String) -> UITextField {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.placeholder = placeholder
-        tf.backgroundColor = .white
-        tf.layer.cornerRadius = 20
-        tf.clipsToBounds = true
-        tf.textAlignment = .center
-        tf.font = UIFont.systemFont(ofSize: 15)
-        tf.adjustsFontSizeToFitWidth = true
-        return tf
+        let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.placeholder = placeholder
+        textField.backgroundColor = .white
+        textField.layer.cornerRadius = 20
+        textField.clipsToBounds = true
+        textField.textAlignment = .center
+        textField.font = UIFont.systemFont(ofSize: 15)
+        textField.adjustsFontSizeToFitWidth = true
+        return textField
     }
     
     static func makeSplashButton(_ buttonTitle: String) -> UIButton {

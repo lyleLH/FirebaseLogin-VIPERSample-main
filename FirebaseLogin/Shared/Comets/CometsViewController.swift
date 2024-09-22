@@ -64,7 +64,7 @@ class CometsViewController: UIViewController {
                             cometColor: UIColor.red),
         
                       Comet(startPoint: CGPoint(x: 0.4 * width, y: 0),
-                            endPoint: CGPoint(x: 0.75 * width, y:  height),
+                            endPoint: CGPoint(x: 0.75 * width, y: height),
                             lineColor: UIColor.red.withAlphaComponent(0.2),
                             cometColor: UIColor.red),
         
@@ -76,7 +76,7 @@ class CometsViewController: UIViewController {
                       Comet(startPoint: CGPoint(x: 0.4 * width, y: 0.8 * height),
                             endPoint: CGPoint(x: width, y: 0.75 * height),
                             lineColor: UIColor.red.withAlphaComponent(0.2),
-                            cometColor: UIColor.red),]
+                            cometColor: UIColor.red) ]
         
         // draw track and animate
         for comet in comets {
@@ -92,4 +92,3 @@ class CometsViewController: UIViewController {
         backgroundLayer.frame = view.bounds
     }
 }
-

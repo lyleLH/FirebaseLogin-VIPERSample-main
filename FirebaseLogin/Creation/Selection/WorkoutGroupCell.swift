@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 class WorkoutGroupCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var delegate: WorkoutGroupCellDelegate?
@@ -16,7 +14,7 @@ class WorkoutGroupCell: UICollectionViewCell, UICollectionViewDataSource, UIColl
     
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
-    private var group:  WorkoutGroup?
+    private var group: WorkoutGroup?
     private var actions: [WorkoutAction] = []
     
     private let collectionView: UICollectionView = {
@@ -57,7 +55,6 @@ class WorkoutGroupCell: UICollectionViewCell, UICollectionViewDataSource, UIColl
         collectionView.register(UINib(nibName: "WorkoutActionCell", bundle: nil), forCellWithReuseIdentifier: "kWorkoutActionCell")
     }
     
-    
     func configure(with group: WorkoutGroup, in section: Int) {
         sectionNumber = section
         self.group = group
@@ -65,7 +62,6 @@ class WorkoutGroupCell: UICollectionViewCell, UICollectionViewDataSource, UIColl
         typeLabel.text = group.equipmentType
         collectionView.reloadData()
     }
-    
 
     // MARK: - UICollectionViewDataSource
     
@@ -79,10 +75,9 @@ class WorkoutGroupCell: UICollectionViewCell, UICollectionViewDataSource, UIColl
         cell.configure(with: action, isSelected: delegate?.isActionCellSelected(action: action) == true)
         return cell
     }
-    
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let group = group, let cell = collectionView.cellForItem(at: indexPath) {
+        if let group = group, let _ = collectionView.cellForItem(at: indexPath) {
             delegate?.didSelectedAction(action: actions[indexPath.item], group: group, in: sectionNumber)
         }
     }

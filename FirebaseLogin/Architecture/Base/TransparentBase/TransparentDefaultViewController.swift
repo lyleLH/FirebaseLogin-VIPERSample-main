@@ -9,7 +9,6 @@ import UIKit
 
 class TransparentDefaultViewController: DefaultViewController {
     
-    
     override var navigationBarBackgroundColor: UIColor {
         .clear
     }
@@ -37,5 +36,4 @@ class TransparentDefaultViewController: DefaultViewController {
         }
     }
     
-
 }

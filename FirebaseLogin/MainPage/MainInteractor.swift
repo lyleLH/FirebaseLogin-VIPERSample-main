@@ -26,12 +26,11 @@ class MainInteractor: MainInteractorProtocol {
         }
     }
     
-    
     var presenter: MainPresenterProtocol?
     
     func fetchNewsData(url: URL) {
                         
-        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+        URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
             guard let self = self else { return }
             guard let data = data, error == nil else {
                 self.presenter?.displayAlert("Domain Error!")

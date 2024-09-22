@@ -30,7 +30,7 @@ class RecordViewController: UIViewController, RecordViewProtocol {
 
     var presenter: RecordPresenterProtocol?
 
-    //MARK: - View LifeCycle
+    // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -52,7 +52,7 @@ class RecordViewController: UIViewController, RecordViewProtocol {
 
     }
     
-    //MARK: - View Configurations
+    // MARK: - View Configurations
     private func configureUI() {
         view.backgroundColor = .white
         embedViewController(containerView: view, controller: PeaceCometsViewController(), previous: nil)
@@ -65,7 +65,6 @@ class RecordViewController: UIViewController, RecordViewProtocol {
 
         setupConstraints()
     }
-    
     
     func setupConstraints() {
         button1.snp.makeConstraints { make in
@@ -82,17 +81,14 @@ class RecordViewController: UIViewController, RecordViewProtocol {
             make.height.equalTo(50)
         }
     }
-    
   
     @objc func sampleButton1Tapped() {
         print("sample button 1 tapped")
 
     }
-
   
     @objc func sampleButton2Tapped() {
         print("sample button 2 tapped")
   
     }
 }
-

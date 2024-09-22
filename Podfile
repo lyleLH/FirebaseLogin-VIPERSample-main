@@ -12,4 +12,6 @@ target 'FirebaseLogin' do
   # Pods for FirebaseLogin
   pod 'Swinject'
   pod 'ProgressHUD'
+  pod 'SwiftyJSON'
+  pod 'Alamofire'
 end

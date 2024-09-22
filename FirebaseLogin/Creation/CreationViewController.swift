@@ -26,23 +26,25 @@ struct WorkoutSection {
     var groups: [WorkoutGroup]
 }
 
-
-
 protocol CreationViewProtocol: AnyObject {
     func showActionButton()
     func updateSectionViewData(sections: [WorkoutSection])
     func reloadSectionView(indexPath: IndexPath)
 }
 
-class CreationViewController: MTViewController, CreationViewProtocol, WorkoutGroupCellDelegate, WorkoutSectionCellDelegate, WorkoutSelectionCollectionViewDelegate {
- 
+class CreationViewController:
+    MTViewController,
+    CreationViewProtocol,
+    WorkoutGroupCellDelegate,
+    WorkoutSectionCellDelegate,
+    WorkoutSelectionCollectionViewDelegate {
+    
     @IBOutlet weak var buttonContainerView: UIView! {
         didSet {
             buttonContainerView.isHidden = true
         }
     }
     
-
     let cometsVc = CometsViewController()
     
     override var navigationBarIsTranslucent: Bool {
@@ -71,18 +73,15 @@ class CreationViewController: MTViewController, CreationViewProtocol, WorkoutGro
         return list
     }()
     
-    
     private var groups: [WorkoutGroup] = []
     
-    
-    //MARK: - View LifeCycle
+    // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         navigationItem.title = "创建训练"
         collectionView.workoutSelectionViewDelegate = self
         
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,17 +99,17 @@ class CreationViewController: MTViewController, CreationViewProtocol, WorkoutGro
         
     }
     
-    //MARK: - View Configurations
+    // MARK: - View Configurations
     private func configureUI() {
         view.backgroundColor = .white
-       
+        
         containerView.embedView(view: collectionView)
         
         collectionView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 200, right: 0)
-
+        
         presenter?.notifyViewDidLoad()
         
-     
+        // swiftlint:disable line_length
         let slideButton = SlideButton("Go Trainning", styling: SlideButtonStyling(indicatorSize: 60,
                                                                                   indicatorSpacing: 5,
                                                                                   indicatorColor: Color(uiColor: UIColor.init(hex: "#ff8177")),
@@ -129,6 +128,8 @@ class CreationViewController: MTViewController, CreationViewProtocol, WorkoutGro
                 self?.presenter?.notifyRouteToTrainingPage()
             }
         })
+        // swiftlint:enable line_length
+        
         let hostingController = UIHostingController(rootView: slideButton)
         hostingController.view.backgroundColor = .clear
         buttonContainerView.embedView(view: hostingController.view)
@@ -137,10 +138,10 @@ class CreationViewController: MTViewController, CreationViewProtocol, WorkoutGro
     
     func showActionButton() {
         self.buttonContainerView.isHidden = false
-
+        
     }
     func updateSectionViewData(sections: [WorkoutSection]) {
-       
+        
         collectionView.sections = sections
     }
     
@@ -162,14 +163,11 @@ class CreationViewController: MTViewController, CreationViewProtocol, WorkoutGro
         embedViewController(containerView: backgroundContainerView, controller: cometsVc, previous: nil)
     }
     
-    
     func didSelectedAction(action: WorkoutAction, group: WorkoutGroup, in sectionIndex: Int) {
         let impact = UIImpactFeedbackGenerator(style: .light)
         impact.impactOccurred()
         presenter?.notifyDidClicked(action: action, group: group, sectionIndex: sectionIndex)
         
     }
- 
     
 }
-

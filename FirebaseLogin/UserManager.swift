@@ -12,8 +12,7 @@ enum UserSate: String {
     case firstLaunch = "first_launch"
     case signedIn = "login"
     case signedOut = "signed_out"
-    
-    
+
 }
 
 class UserManager {
@@ -35,7 +34,5 @@ class UserManager {
         }
         return .signedOut
     }
-    
-    
-    
+       
 }

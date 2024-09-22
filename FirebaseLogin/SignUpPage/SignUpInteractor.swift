@@ -23,24 +23,22 @@ class SignUpInteractor: SignUpInteractorProtocol {
         }
     }
     
-    
     weak var presenter: SignUpPresenterProtocol?
     
     func didCreateUser(username: String, password: String) {
         
         Task {
             do {
-                try await Appwrite.shared.onRegister(username, password)
+               _ = try await Appwrite.shared.onRegister(username, password)
                 DispatchQueue.main.async {
                     self.presenter?.userCreateSuccess()
                 }
-            } catch { error
+            } catch {
                 debugPrint(error)
                 DispatchQueue.main.async {
                     self.presenter?.userCreateNotSuccess()
                     
                 }
-                
                 
             }
         }

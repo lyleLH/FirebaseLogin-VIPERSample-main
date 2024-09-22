@@ -12,7 +12,6 @@ protocol TimerViewControllerDelegate: AnyObject {
     func resetTimerButtonClicked()
 }
 
-
 class TimerViewController: UIViewController {
     
     weak var delegate: TimerViewControllerDelegate?
@@ -28,8 +27,7 @@ class TimerViewController: UIViewController {
     private var minutes: Int = 0
     private var seconds: Int = 0
     
-    private var timer: Timer? = nil
-    
+    private var timer: Timer?
     
     private lazy var clockLabelView: UILabel = {
         let clockLabel = UILabel()
@@ -104,7 +102,6 @@ class TimerViewController: UIViewController {
         return playButton
     }()
     
-    
     // list ours elements view
     private lazy var listLayoutViews = [clockLabelView, stopButtonView, pauseButtonView, playButtonView]
     
@@ -116,7 +113,7 @@ class TimerViewController: UIViewController {
         view.backgroundColor = .clear
         
         // pass to every elements for show on screen
-        let _ = listLayoutViews.compactMap { $0 }
+        _ = listLayoutViews.compactMap { $0 }
         
         // first view timer therefore isHidden = true
         
@@ -165,7 +162,7 @@ class TimerViewController: UIViewController {
     @objc func startCountingTimer() {
         invalidateTimer()
         
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true){ tempTimer in
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             if self.seconds == 59 {
                 self.seconds = 0
                 if self.minutes == 59 {
@@ -177,10 +174,9 @@ class TimerViewController: UIViewController {
             } else {
                 self.seconds += 1
             }
-            self.clockLabelView.text = String(format:"%02i:%02i:%02i", self.hours, self.minutes, self.seconds)
+            self.clockLabelView.text = String(format: "%02i:%02i:%02i", self.hours, self.minutes, self.seconds)
         }
     }
-    
  
     @objc func pauseCountingTimer() {
         invalidateTimer()
@@ -191,7 +187,7 @@ class TimerViewController: UIViewController {
         seconds = 0
         minutes = 0
         hours = 0
-        clockLabelView.text = String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+        clockLabelView.text = String(format: "%02i:%02i:%02i", hours, minutes, seconds)
         delegate?.resetTimerButtonClicked()
         
     }
@@ -204,5 +200,4 @@ class TimerViewController: UIViewController {
     }
     
 }
-
  

@@ -7,8 +7,9 @@
 
 import UIKit
 
-
-typealias WorkoutActionSelectionDelegate = WorkoutSelectionCollectionViewDelegate & WorkoutSectionCellDelegate & WorkoutGroupCellDelegate
+typealias WorkoutActionSelectionDelegate = WorkoutSelectionCollectionViewDelegate 
+& WorkoutSectionCellDelegate
+& WorkoutGroupCellDelegate
 
 protocol WorkoutGroupCellDelegate: AnyObject {
        
@@ -16,11 +17,9 @@ protocol WorkoutGroupCellDelegate: AnyObject {
     func didSelectedAction(action: WorkoutAction, group: WorkoutGroup, in sectionIndex: Int)
 }
 
-
 protocol WorkoutSectionCellDelegate: AnyObject {
         
 }
-
 
 protocol WorkoutSelectionCollectionViewDelegate: AnyObject {
     
@@ -66,13 +65,13 @@ class WorkoutSelectionCollectionView: UICollectionView, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "kWorkoutSectionCell", for: indexPath) as! WorkoutSectionCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "kWorkoutSectionCell",
+                                                      for: indexPath) as! WorkoutSectionCell
         let section = sections[indexPath.section]
         cell.configure(with: section, sectionIndex: indexPath.section)
         cell.delegate = self.workoutSelectionViewDelegate
         return cell
     }
-    
 
     // MARK: - UICollectionViewDelegateFlowLayout
     

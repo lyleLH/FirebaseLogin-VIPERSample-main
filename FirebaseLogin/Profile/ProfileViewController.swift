@@ -16,7 +16,7 @@ class ProfileViewController: UIViewController, ProfileViewProtocol {
 
     var presenter: ProfilePresenterProtocol?
 
-    //MARK: - View LifeCycle
+    // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -38,10 +38,9 @@ class ProfileViewController: UIViewController, ProfileViewProtocol {
 
     }
     
-    //MARK: - View Configurations
+    // MARK: - View Configurations
     private func configureUI() {
         view.backgroundColor = .white
 
     }
 }
-

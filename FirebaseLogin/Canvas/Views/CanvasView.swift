@@ -9,10 +9,8 @@ import UIKit
 
 class CanvasView: UIView {
     
-    
     private var canvasItemViews: [CanvasItemView] = []
     private var selectedItem: CanvasItemView?
-
     
     init(frame: CGRect, itemViews: [CanvasItemView]) {
         super.init(frame: frame)
@@ -77,7 +75,7 @@ class CanvasView: UIView {
         return nil
     }
     
-    static func testItems() ->[CanvasItemView] {
+    static func testItems() -> [CanvasItemView] {
         var itemViews = [CanvasItemView]()
         for _ in 0...10 {
             let itemView = CanvasItemView(frame: .zero)
@@ -85,7 +83,6 @@ class CanvasView: UIView {
         }
         return itemViews
     }
-    
     
 }
 
@@ -95,8 +92,6 @@ extension CanvasView {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         self.addGestureRecognizer(tapGesture)
     }
-    
-    
     
     // 添加 pan 手势识别器
     func addPanGesture() {
@@ -128,9 +123,6 @@ extension CanvasView {
         self.addGestureRecognizer(swipeGesture)
     }
     
-    
-    
-    
     // 添加 double tap 手势识别器
     func addDoubleTapGesture() {
         let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(_:)))
@@ -150,12 +142,10 @@ extension CanvasView {
     
 }
 
-
 extension CanvasView {
     @objc func handleTap(_ gesture: UITapGestureRecognizer) {
         // 处理 tap 手势
     }
-    
     
     @objc private func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
             let location = gesture.location(in: self)
@@ -166,7 +156,8 @@ extension CanvasView {
             case .changed:
                 if let selectedItem = selectedItem {
                     let translation = gesture.translation(in: self)
-                    selectedItem.center = CGPoint(x: selectedItem.center.x + translation.x, y: selectedItem.center.y + translation.y)
+                    selectedItem.center = CGPoint(x: selectedItem.center.x + translation.x, 
+                                                  y: selectedItem.center.y + translation.y)
                     gesture.setTranslation(.zero, in: self)
                 }
             case .ended, .cancelled:
@@ -212,22 +203,16 @@ extension CanvasView {
             }
         }
     
-    
     @objc func handleLongPress(_ gesture: UILongPressGestureRecognizer) {
         // 处理 long press 手势
     }
-    
     
     @objc func handleSwipe(_ gesture: UISwipeGestureRecognizer) {
         // 处理 swipe 手势
     }
     
-    
-    
-    
     @objc func handleDoubleTap(_ gesture: UITapGestureRecognizer) {
         // 处理 double tap 手势
     }
-    
     
 }

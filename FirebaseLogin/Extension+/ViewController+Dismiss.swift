@@ -15,7 +15,7 @@ extension UIViewController {
 	}
     
     func addCloseItem(closeFunction: Selector = #selector(closeClicked), force: Bool = false, hasBackground: Bool = false) {
-        let adjsutView = UIView(frame: CGRectMake(0, 0, 67, 44))
+        let adjsutView = UIView(frame: CGRect(x: 0, y: 0, width: 67, height: 44))
         adjsutView.backgroundColor = .clear
         
         let closeButton = CloseButton(frame: CGRect(x: 0, y: 6, width: 32, height: 32))

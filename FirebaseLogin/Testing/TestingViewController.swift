@@ -29,7 +29,7 @@ class TestingViewController: UIViewController, TestingViewProtocol {
             return button
         }()
 
-        //MARK: - View LifeCycle
+        // MARK: - View LifeCycle
         override func viewDidLoad() {
             super.viewDidLoad()
             configureUI()
@@ -51,7 +51,7 @@ class TestingViewController: UIViewController, TestingViewProtocol {
 
         }
 
-        //MARK: - View Configurations
+        // MARK: - View Configurations
         private func configureUI() {
             view.backgroundColor = .white
             embedViewController(containerView: view, controller: PeaceCometsViewController(), previous: nil)
@@ -64,7 +64,6 @@ class TestingViewController: UIViewController, TestingViewProtocol {
 
             setupConstraints()
         }
-
 
         func setupConstraints() {
             button1.snp.makeConstraints { make in
@@ -82,16 +81,13 @@ class TestingViewController: UIViewController, TestingViewProtocol {
             }
         }
 
-
         @objc func sampleButton1Tapped() {
             print("sample button 1 tapped")
 
         }
-
 
         @objc func sampleButton2Tapped() {
             print("sample button 2 tapped")
 
         }
 }
-

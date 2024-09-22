@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class TransparentDefaultCollectionViewController: DefaultCollectionViewController {
 
     override var navigationBarBackgroundColor: UIColor {

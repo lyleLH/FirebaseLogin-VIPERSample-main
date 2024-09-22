@@ -10,20 +10,18 @@ import Foundation
 
 protocol CreationInteractorProtocol {
     func getAllSections() -> [WorkoutSection]
-    func fetchSectionsData()-> [WorkoutSection]
+    func fetchSectionsData() -> [WorkoutSection]
     func getSelectedActions() -> [WorkoutAction]
     func addOrRemoveAnAction(action: WorkoutAction, group: WorkoutGroup) -> [WorkoutAction]
     func isActionSelected(action: WorkoutAction) -> Bool
     func haveSelection() -> Bool
 }
 
- 
 class CreationInteractor: CreationInteractorProtocol {
     
     func getAllSections() -> [WorkoutSection] {
          return allSections
     }
-    
     
     private var allSections: [WorkoutSection] = []
     private var selectSections: [WorkoutAction] = []
@@ -57,7 +55,7 @@ class CreationInteractor: CreationInteractorProtocol {
         let sections = [WorkoutSection(title: "Chest", groups: chestGroup),
                         WorkoutSection(title: "Back", groups: backGroup),
                         WorkoutSection(title: "Chest", groups: chestGroup),
-                        WorkoutSection(title: "Chest", groups: chestGroup),
+                        WorkoutSection(title: "Chest", groups: chestGroup)
         ]
         allSections = sections
         return sections
@@ -76,11 +74,12 @@ class CreationInteractor: CreationInteractorProtocol {
         return selectSections
     }
     
-    
     func isActionSelected(action: WorkoutAction) -> Bool {
         if selectSections.contains(where: { tAction in
             action.name == tAction.name
-        })  { return true }
+        }) {
+            return true
+        }
         return false
     }
     

@@ -49,18 +49,19 @@ extension UIColor {
         }
         
         if alpha {
-            return String(format: "%02lX%02lX%02lX%02lX", lroundf(r * 255), lroundf(g * 255), lroundf(b * 255), lroundf(a * 255))
+            return String(format: "%02lX%02lX%02lX%02lX", lroundf(r * 255), 
+                          lroundf(g * 255), lroundf(b * 255), lroundf(a * 255))
         } else {
             return String(format: "%02lX%02lX%02lX", lroundf(r * 255), lroundf(g * 255), lroundf(b * 255))
         }
     }
-    //视图调试，添加随机色
-    //random color for debugging view hierarchy 
-    static func random(_ alpha:CGFloat? = 1.0) -> UIColor {
+    // 视图调试，添加随机色
+    // random color for debugging view hierarchy 
+    static func random(_ alpha: CGFloat? = 1.0) -> UIColor {
         return UIColor(
-            red:   .random(),
+            red: .random(),
             green: .random(),
-            blue:  .random(),
+            blue: .random(),
             alpha: alpha ?? 1.0
         )
     }

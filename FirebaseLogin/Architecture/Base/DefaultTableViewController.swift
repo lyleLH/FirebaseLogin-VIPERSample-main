@@ -5,7 +5,6 @@
 //  Created by Tom.Liu on 2024/9/20.
 //
 
-
 import UIKit
 
 class DefaultTableViewController: UITableViewController {
@@ -65,7 +64,7 @@ class DefaultTableViewController: UITableViewController {
             navigationController?.navigationBar.tintColor = parent.navigationBarTintColor
             navigationController?.navigationBar.titleTextAttributes?[.foregroundColor] = parent.navigationBarTintColor
             navigationController?.view.backgroundColor = parent.navigationViewBackgroundColor
-        }  else if let parent: DefaultCollectionViewController = parent as? DefaultCollectionViewController {
+        } else if let parent: DefaultCollectionViewController = parent as? DefaultCollectionViewController {
             navigationController?.navigationBar.isHidden = parent.navigationBarHidden
             navigationController?.navigationBar.isTranslucent = parent.navigationBarIsTranslucent
             navigationController?.navigationBar.backgroundColor = parent.navigationBarBackgroundColor
@@ -93,14 +92,11 @@ class DefaultTableViewController: UITableViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
     }
-    
- 
   
 }

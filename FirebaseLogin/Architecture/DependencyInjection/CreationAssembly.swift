@@ -19,7 +19,7 @@ final class CreationAssembly: Assembly {
              return CreationRouter(viewController: view)
         }
         
-        container.register(CreationPresenter.self) { (resolver, view: CreationViewController) in
+        container.register(CreationPresenter.self) { (_, view: CreationViewController) in
             guard let router = container.resolve(CreationRouter.self, argument: view) else {
                 fatalError("CreationRouter dependency could not be resolved")
             }
@@ -29,9 +29,9 @@ final class CreationAssembly: Assembly {
             return CreationPresenter(router: router, interactor: interactor)
         }
         
-        container.register(CreationViewController.self) { (resolver) in
+        container.register(CreationViewController.self) { (_) in
             let view = CreationViewController()
-            guard let presenter = container.resolve(CreationPresenter.self,argument: view) else {
+            guard let presenter = container.resolve(CreationPresenter.self, argument: view) else {
                 fatalError("CreationPresenter dependency could not be resolved")
             }
             view.presenter = presenter

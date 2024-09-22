@@ -30,7 +30,7 @@ class LabelViewController: UIViewController {
     
     @IBInspectable var labelTitle: String?
     
-    init(title: String?){
+    init(title: String?) {
         super.init(nibName: nil, bundle: nil)
         self.labelTitle = title
     }
@@ -41,7 +41,6 @@ class LabelViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         view.backgroundColor = UIColor(white: 0.98, alpha: 1)
 
@@ -61,12 +60,11 @@ class LabelViewController: UIViewController {
         }
         
         doneButton.addTarget(self, action: #selector(doneButtonTapped), for: .touchUpInside)
-
         
         self.label.text = labelTitle
     }
     
-    @objc func doneButtonTapped(){
+    @objc func doneButtonTapped() {
         self.dismiss(animated: true, completion: nil)
     }
 }

@@ -11,9 +11,7 @@ protocol LocalDataManagerProtocol: NSObject {
     
     func getSessionIds() -> [String]?
     
-    
 }
-
 
 class SessionObject: Object {
     @Persisted var sesseionId: String
@@ -24,7 +22,6 @@ class LocalDataManager: NSObject, LocalDataManagerProtocol {
     
     static let shared = LocalDataManager()
 
-    
     func getSessionIds() -> [String]? {
             do {
                 let realm = try Realm()
@@ -41,10 +38,12 @@ class LocalDataManager: NSObject, LocalDataManagerProtocol {
     func saveSessionId(_ sesseionId: String) {
         let sessionObj = SessionObject()
         sessionObj.sesseionId = sesseionId
-        let realm = try! Realm()
-        try! realm.write {
-            realm.add(sessionObj)
+        if let realm = try? Realm() {
+            try? realm.write {
+                realm.add(sessionObj)
+            }
         }
+        
     }
     
 }

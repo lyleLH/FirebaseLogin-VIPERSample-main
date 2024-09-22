@@ -5,15 +5,12 @@ import DateHelper
 
 let pId = "666a5e7b0004c231ffda"
 
-
 protocol UserServerSateProtocol: NSObject {
     func isUserLoggin(sessionId: String) async throws -> Bool
 }
 
-
 class Appwrite: NSObject, UserServerSateProtocol {
   
-    
     static let shared = Appwrite()
     
     var client: Client
@@ -27,7 +24,6 @@ class Appwrite: NSObject, UserServerSateProtocol {
         
         self.account = Account(client)
     }
-    
     
     func isUserLoggin(sessionId: String) async throws -> Bool {
         let session = try await account.getSession(sessionId: sessionId)
@@ -70,7 +66,6 @@ class Appwrite: NSObject, UserServerSateProtocol {
         )
         self.session = nil
     }
-    
     
     func onOAuth2Regist() async throws {
         // Go to OAuth provider login page

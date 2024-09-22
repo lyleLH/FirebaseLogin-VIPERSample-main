@@ -21,16 +21,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
     @IBAction func storyboardButtonTapped(_ sender: Any) {
         let tabBarController = self.storyboard?.instantiateViewController(withIdentifier: "CardTabBarController") as! PTCardTabBarController
         present(tabBarController, animated: true, completion: nil)
     }
-    
 
     @IBAction func codeButtonTapped(_ sender: Any) {
         let tabBarController = PTTabBarViewController()
         present(tabBarController, animated: true, completion: nil)
     }
 }
-

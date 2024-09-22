@@ -5,7 +5,6 @@
 //  Created by Tom.Liu on 2024/9/20.
 //
 
-
 import UIKit
 
 class DefaultCollectionViewController: UICollectionViewController {
@@ -29,8 +28,6 @@ class DefaultCollectionViewController: UICollectionViewController {
     var navigationViewBackgroundColor: UIColor {
         return .white
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +58,7 @@ class DefaultCollectionViewController: UICollectionViewController {
             navigationController?.navigationBar.tintColor = parent.navigationBarTintColor
             navigationController?.navigationBar.titleTextAttributes?[.foregroundColor] = parent.navigationBarTintColor
             navigationController?.view.backgroundColor = parent.navigationViewBackgroundColor
-        }  else if let parent: DefaultCollectionViewController = parent as? DefaultCollectionViewController {
+        } else if let parent: DefaultCollectionViewController = parent as? DefaultCollectionViewController {
             navigationController?.navigationBar.isHidden = parent.navigationBarHidden
             navigationController?.navigationBar.isTranslucent = parent.navigationBarIsTranslucent
             navigationController?.navigationBar.backgroundColor = parent.navigationBarBackgroundColor
@@ -86,13 +83,12 @@ class DefaultCollectionViewController: UICollectionViewController {
     
     func safeReload(indexPath: IndexPath) {
         self.collectionView.reloadData()
-// TODO: still occasionally crash when performing specific reload
+//  TODO: still occasionally crash when performing specific reload
 //        if self.collectionView.cellForItem(at: indexPath) != nil {
 //            self.collectionView.reloadItems(at: [indexPath])
 //        } else {
 //            self.collectionView.reloadData()
 //        }
     }
-        
 
 }

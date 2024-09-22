@@ -66,7 +66,6 @@ extension UIColor {
         return #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1)
     }
 
-
     static var gray700: UIColor {
         return #colorLiteral(red: 0.3803921569, green: 0.3803921569, blue: 0.3803921569, alpha: 1)
     }
@@ -157,7 +156,5 @@ extension UIColor {
     static var nGray700: UIColor {
         return #colorLiteral(red: 0.2705882353, green: 0.2705882353, blue: 0.2705882353, alpha: 1)
     }
-
-   
     
 }

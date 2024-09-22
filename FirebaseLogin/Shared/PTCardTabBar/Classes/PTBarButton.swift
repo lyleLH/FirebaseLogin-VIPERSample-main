@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 public class PTBarButton: UIButton {
     
     var selectedColor: UIColor! = .black {
@@ -28,7 +27,7 @@ public class PTBarButton: UIButton {
         setImage(item.image, for: .normal)
     }
     
-    init(image: UIImage){
+    init(image: UIImage) {
         super.init(frame: .zero)
         setImage(image, for: .normal)
     }
@@ -37,14 +36,13 @@ public class PTBarButton: UIButton {
         super.init(coder: aDecoder)
     }
     
-    
     override public var isSelected: Bool {
         didSet {
             reloadApperance()
         }
     }
     
-    func reloadApperance(){
+    func reloadApperance() {
         self.tintColor = isSelected ? selectedColor : unselectedColor
     }
 }

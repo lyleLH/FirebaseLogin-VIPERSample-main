@@ -32,14 +32,12 @@ class DefaultNavigationViewController: UINavigationController, UINavigationContr
   
     }
     
- 
-    
     private func naviBarSetting() {
-        
-
+        // swiftlint:disable line_length
         for controlState in [UIControl.State.normal, UIControl.State.highlighted, UIControl.State.disabled] {
             UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .subheadline) as Any], for: controlState)
         }
+        // swiftlint:enable line_length
         
         navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.shadowImage = UIImage()
@@ -47,10 +45,12 @@ class DefaultNavigationViewController: UINavigationController, UINavigationContr
         navigationBar.isTranslucent = isTranslucent
         navigationBar.backItem?.backButtonDisplayMode = .minimal
 //        navigationBar.tintColor = UIColor.dark
-        navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline) as Any]
-        
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.font:
+                                                UIFont.preferredFont(forTextStyle: .headline) as Any]
+        // swiftlint:disable line_length
         navigationBar.backIndicatorImage = UIImage(systemName: "chevron.backward", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20, weight: UIImage.SymbolWeight.bold, scale: .medium))?.withInsets(UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0))
         navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "chevron.backward", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20, weight: UIImage.SymbolWeight.bold, scale: .medium))?.withInsets(UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0))
+        // swiftlint:enable line_length
     }
     
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
@@ -72,7 +72,8 @@ class DefaultNavigationViewController: UINavigationController, UINavigationContr
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        if let presentationController = presentationController, let presentationControllerDelegate = presentationController.delegate {
+        if let presentationController = presentationController, 
+            let presentationControllerDelegate = presentationController.delegate {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 // reset status bar
                 presentationControllerDelegate.presentationControllerDidDismiss?(presentationController)
@@ -98,7 +99,7 @@ extension UINavigationBar {
                         }
                         obj.backgroundColor = color
                     }
-                }else {
+                } else {
                     if let navBarBackgroundCls = NSClassFromString("_UINavigationBarBackground") {
                         if obj.isKind(of: navBarBackgroundCls) {
                             DispatchQueue.main.async {

@@ -1,12 +1,12 @@
-
 import UIKit
 
 extension UIViewController {
 
-	func embedViewController(containerView: UIView,
-		controller: UIViewController,
-                             previous: UIViewController?, withConstriant: Bool = true) {
-		
+    func embedViewController(containerView: UIView,
+                             controller: UIViewController,
+                             previous: UIViewController?,
+                             withConstriant: Bool = true) {
+        
 		if let previous = previous {
 			previous.willMove(toParent: nil)
 			previous.view.removeFromSuperview()

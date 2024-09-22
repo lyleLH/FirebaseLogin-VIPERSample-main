@@ -5,7 +5,6 @@
 //  Created by Tom.Liu on 2024/9/20.
 //
 
-
 import UIKit
 import ProgressHUD
 
@@ -46,7 +45,6 @@ class DefaultViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
  
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -65,7 +63,7 @@ class DefaultViewController: UIViewController {
             navigationController?.navigationBar.tintColor = parent.navigationBarTintColor
             navigationController?.navigationBar.titleTextAttributes?[.foregroundColor] = parent.navigationBarTintColor
             navigationController?.view.backgroundColor = parent.navigationViewBackgroundColor
-        }  else if let parent: DefaultCollectionViewController = parent as? DefaultCollectionViewController {
+        } else if let parent: DefaultCollectionViewController = parent as? DefaultCollectionViewController {
             navigationController?.navigationBar.isHidden = parent.navigationBarHidden
             navigationController?.navigationBar.isTranslucent = parent.navigationBarIsTranslucent
             navigationController?.navigationBar.backgroundColor = parent.navigationBarBackgroundColor
@@ -83,7 +81,6 @@ class DefaultViewController: UIViewController {
 
         navigationController?.setNeedsStatusBarAppearanceUpdate()
     }
-    
  
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -99,10 +96,8 @@ class DefaultViewController: UIViewController {
         super.viewDidDisappear(animated)
    
     }
-    
  
 }
-
 
 extension UIViewController {
     
@@ -119,7 +114,7 @@ extension UIViewController {
         return currentVC
     }
     
-    func showHud(labelText: String){
+    func showHud(labelText: String) {
         ProgressHUD.banner("", labelText, delay: 0.0)
     }
     

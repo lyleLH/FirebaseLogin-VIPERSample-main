@@ -7,14 +7,11 @@
 
 import UIKit
 
-
 enum ModuleType: String {
     
     case splashPage = "splash"
     case loginPage = "login"
-    case Home = "home"
-    
-    
+    case home = "home"
 }
 
 class ModuleRoute: NSObject {
@@ -22,22 +19,21 @@ class ModuleRoute: NSObject {
     private(set) weak var window: UIWindow?
     
     @MainActor
-    func routeToModuleRootPage(_ module: ModuleType, withWindow: UIWindow )  -> UIViewController {
+    func routeToModuleRootPage(_ module: ModuleType, withWindow: UIWindow ) ->
+    UIViewController {
         var vc = UIViewController()
         switch module {
         case .splashPage:
-            vc = UINavigationController(rootViewController: SplashRouter.createModule().entry as! UIViewController)
-            
+            vc = UINavigationController(rootViewController: SplashRouter.createModule().entry!)
         case .loginPage:
             vc = UINavigationController(rootViewController: SignInRouter.createModule().viewController)
             
-        case .Home:
+        case .home:
             vc = MTTabbarViewController()
         }
         self.window = withWindow
         
         return vc
     }
-    
     
 }

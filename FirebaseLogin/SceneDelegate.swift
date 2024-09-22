@@ -12,23 +12,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
-//        let window = UIWindow(windowScene: windowScene)
-//        window.rootViewController = UINavigationController(rootViewController: SplashViewController())
-//        window.makeKeyAndVisible()
-//        self.window = window
-        
-        
-//        let router = SplashRouter.createModule()
-//        let initailVC = router.entry
-//        
-//        let window = UIWindow(windowScene: windowScene)
-//        window.rootViewController = UINavigationController(rootViewController: initailVC!)
-//        self.window = window
-//        window.makeKeyAndVisible()
         
         let route = ModuleRoute()
         let userStateManager = UserManager.shared
@@ -43,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 let uerState = try await UserManager.shared.getUserState()
                 DispatchQueue.main.async {
                     if  uerState == .signedIn {
-                        keyWindow.rootViewController = route.routeToModuleRootPage(.Home, withWindow: keyWindow)
+                        keyWindow.rootViewController = route.routeToModuleRootPage(.home, withWindow: keyWindow)
                     } else if uerState == .signedOut {
                         keyWindow.rootViewController = route.routeToModuleRootPage(.splashPage, withWindow: keyWindow)
                     }
@@ -92,4 +77,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 }
-

@@ -25,32 +25,30 @@ class SignInViewController: DefaultViewController, SignInViewControllerProtocol 
     var presenter: SignInPresenterProtocol?
     
     private var userNameTextField: UITextField = {
-        let tf = MakeProperty.makeTextField("username")
-        tf.autocapitalizationType = .none
-        tf.becomeFirstResponder()
-        return tf
+        let textField = MakeProperty.makeTextField("username")
+        textField.autocapitalizationType = .none
+        textField.becomeFirstResponder()
+        return textField
     }()
     
     private var passwordTextField: UITextField = {
-        let tf = MakeProperty.makeTextField("password")
-        tf.isSecureTextEntry = true
-        tf.textContentType = .oneTimeCode
-        return tf
+        let textField = MakeProperty.makeTextField("password")
+        textField.isSecureTextEntry = true
+        textField.textContentType = .oneTimeCode
+        return textField
     }()
     
     private var goToAppButton: UIButton = {
         let button = MakeProperty.makeLoginButton("Go to the App")
-        button.addTarget(self, action: #selector(handleGoAppButton), for: .touchUpInside)
+        button.addTarget(SignInViewController.self, action: #selector(handleGoAppButton), for: .touchUpInside)
         return button
     }()
-    
     
     private var facebookLoginButton: UIButton = {
         let button = MakeProperty.makeIconButton()
-        button.addTarget(self, action: #selector(handleGoAppByGoogleLoginButton), for: .touchUpInside)
+        button.addTarget(SignInViewController.self, action: #selector(handleGoAppByGoogleLoginButton), for: .touchUpInside)
         return button
     }()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,12 +62,10 @@ class SignInViewController: DefaultViewController, SignInViewControllerProtocol 
         passwordTextField.text = ""
     }
     
-    
     @objc private func handleGoAppByGoogleLoginButton() {
  
         presenter?.notifyOauth2LoginUserButtonTapped()
     }
-    
     
     @objc private func handleGoAppButton() {
         if (userNameTextField.text != "") && (passwordTextField.text != "") {
@@ -87,17 +83,17 @@ class SignInViewController: DefaultViewController, SignInViewControllerProtocol 
     
     func updateWithNotSuccess() {
         let alert = UIAlertController(title: "Error!", message: "Your password or username is wrong!", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .cancel) { [weak self] _ in
+        let okAction = UIAlertAction(title: "OK", style: .cancel) { [weak self] _ in
             guard let self = self else { return }
             self.userNameTextField.text = nil
             self.passwordTextField.text = nil
             self.userNameTextField.becomeFirstResponder()
         }
-        alert.addAction(ok)
+        alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }
     
-    //MARK: - UI Configurations
+    // MARK: - UI Configurations
     private func configureUI() {
         view.backgroundColor = UIColor(red: 248/255, green: 248/255, blue: 1, alpha: 1)
         view.addSubview(userNameTextField)

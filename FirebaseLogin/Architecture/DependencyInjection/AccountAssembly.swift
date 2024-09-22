@@ -28,7 +28,7 @@ final class AccountAssembly: Assembly {
         
         container.register(SignInViewController.self) { (resolver) in
             let view = SignInViewController()
-            guard let presenter = resolver.resolve(SignInPresenterProtocol.self,argument: view ) else {
+            guard let presenter = resolver.resolve(SignInPresenterProtocol.self, argument: view ) else {
                 fatalError("SignInPresenter dependency could not be resolved")
             }
             view.presenter = presenter

@@ -1,26 +1,34 @@
 PODS:
+  - Alamofire (5.7.1)
   - LookinServer (1.1.6):
     - LookinServer/Core (= 1.1.6)
   - LookinServer/Core (1.1.6)
   - ProgressHUD (14.1.1)
+  - SwiftyJSON (5.0.1)
   - Swinject (2.8.3)
 
 DEPENDENCIES:
+  - Alamofire
   - LookinServer
   - ProgressHUD
+  - SwiftyJSON
   - Swinject
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - LookinServer
     - ProgressHUD
+    - SwiftyJSON
     - Swinject
 
 SPEC CHECKSUMS:
+  Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
   LookinServer: c4b8303b0e832448fe4ff005e2e0e4bf815a48c3
   ProgressHUD: abb9136ae23c85204236828562cb9a8ec98efb44
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Swinject: 893c9a543000ac2f10ee4cbaf0933c6992c935d5
 
-PODFILE CHECKSUM: 59a4e27d8b1c6fe5552c75eb28a03bfdae193d4c
+PODFILE CHECKSUM: e737c44cbf2a84a1f086a0765745ea7ff8c53fe1
 
 COCOAPODS: 1.15.2

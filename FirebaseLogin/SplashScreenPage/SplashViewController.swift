@@ -31,10 +31,10 @@ class SplashViewController: DefaultViewController, SplashViewProtocol {
     private var appEventSubscribers = [AnyCancellable]()
     
     private var backgroundView: UIView = {
-        let bv = UIView()
-        bv.translatesAutoresizingMaskIntoConstraints = false
-        bv.backgroundColor = UIColor(white: 0.1, alpha: 0.4)
-        return bv
+        let bgview = UIView()
+        bgview.translatesAutoresizingMaskIntoConstraints = false
+        bgview.backgroundColor = UIColor(white: 0.1, alpha: 0.4)
+        return bgview
     }()
     
     private var invisibleView: UIView = {
@@ -46,17 +46,17 @@ class SplashViewController: DefaultViewController, SplashViewProtocol {
     
     private var signInButton: UIButton = {
         let button = MakeProperty.makeSplashButton("Sign In")
-        button.addTarget(self, action: #selector(handleSignInButton), for: .touchUpInside)
+        button.addTarget(SplashViewController.self, action: #selector(handleSignInButton), for: .touchUpInside)
         return button
     }()
     
     private var signUpButton: UIButton = {
         let button = MakeProperty.makeSplashButton("Sign Up")
-        button.addTarget(self, action: #selector(handleSignUpButton), for: .touchUpInside)
+        button.addTarget(SplashViewController.self, action: #selector(handleSignUpButton), for: .touchUpInside)
         return button
     }()
     
-    //MARK: - View LifeCycle
+    // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -80,7 +80,7 @@ class SplashViewController: DefaultViewController, SplashViewProtocol {
         playerLayer?.frame = view.bounds
     }
     
-    //MARK: - View Configurations
+    // MARK: - View Configurations
     private func configureUI() {
         view.backgroundColor = .white
         view.addSubview(backgroundView)
@@ -124,7 +124,7 @@ class SplashViewController: DefaultViewController, SplashViewProtocol {
         presenter?.notifySignUpTapped()
     }
     
-    //MARK: - Video Settings
+    // MARK: - Video Settings
     private func buildPlayer() -> AVPlayer? {
         guard let filePath = Bundle.main.path(forResource: "news", ofType: "mp4") else { return nil }
         let url = URL(fileURLWithPath: filePath)
@@ -190,4 +190,3 @@ class SplashViewController: DefaultViewController, SplashViewProtocol {
         }
     }
 }
-

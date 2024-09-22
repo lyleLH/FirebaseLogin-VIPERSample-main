@@ -10,7 +10,6 @@ import Gradients
 
 class DarkCometViewController: CometsViewController {
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         backgroundLayer = Gradients.softCherish.layer
@@ -19,7 +18,5 @@ class DarkCometViewController: CometsViewController {
         
         // Do any additional setup after loading the view.
     }
-    
-    
     
 }

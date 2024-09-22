@@ -13,7 +13,6 @@ protocol TrainingViewProtocol: AnyObject {
 }
 
 class TrainingViewController: MTViewController, TrainingViewProtocol {
-
     
     override var navigationBarBackgroundColor: UIColor {
         return .clear
@@ -45,9 +44,9 @@ class TrainingViewController: MTViewController, TrainingViewProtocol {
     var collectionView: TrainingSetCollectionView = {
         let collectionView = TrainingSetCollectionView()
         return collectionView
-    } ()
+    }()
     
-    //MARK: - View LifeCycle
+    // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -68,20 +67,29 @@ class TrainingViewController: MTViewController, TrainingViewProtocol {
 
     }
     
-    //MARK: - View Configurations
+    // MARK: - View Configurations
     private func configureUI() {
         timerVc = TimerViewController()
         guard let timerVc = timerVc  else { return }
         timerVc.delegate = presenter
         view.backgroundColor = .white
-        embedViewController(containerView: backgroundContainerView, controller: DarkCometViewController(), previous: nil)
-        embedViewController(containerView: timerContainerView, controller: timerVc, previous: nil)
+        embedViewController(containerView: backgroundContainerView, 
+                            controller: DarkCometViewController(), previous: nil)
+        embedViewController(containerView: timerContainerView, 
+                            controller: timerVc, previous: nil)
         trainingGroupContainerView.embedView(view: collectionView)
         // Mock data
-        let section1 = TrainingSection(title: "Section 1", sets: [TrainingSet(setNumber: 1, weight: 20, repetitions: 10, isCompleted: false)])
-        let section2 = TrainingSection(title: "Section 2", sets: [TrainingSet(setNumber: 1, weight: 25, repetitions: 12, isCompleted: false)])
+        let section1 = TrainingSection(title: "Section 1", 
+                                       sets: [TrainingSet(setNumber: 1, 
+                                                          weight: 20,
+                                                          repetitions: 10,
+                                                          isCompleted: false)])
+        let section2 = TrainingSection(title: "Section 2",
+                                       sets: [TrainingSet(setNumber: 1, 
+                                                          weight: 25,
+                                                          repetitions: 12,
+                                                          isCompleted: false)])
         
         collectionView.sections = [section1, section2]
     }
 }
-

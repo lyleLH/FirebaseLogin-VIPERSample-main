@@ -56,7 +56,6 @@ open class PTCardTabBarController: UITabBarController {
         super.viewDidLoad()
         
         self.additionalSafeAreaInsets = UIEdgeInsets(top: 0, left: 0, bottom: tabBarHeight + bottomSpacing, right: 0)
-
         
         self.tabBar.isHidden = true
 
@@ -67,7 +66,7 @@ open class PTCardTabBarController: UITabBarController {
         customTabBar.select(at: selectedIndex)
     }
     
-    public func setTabBarHidden(_ isHidden: Bool, animated: Bool){
+    public func setTabBarHidden(_ isHidden: Bool, animated: Bool) {
         let block = {
             self.customTabBar.alpha = isHidden ? 0 : 1
             self.additionalSafeAreaInsets = isHidden ? .zero : UIEdgeInsets(top: 0, left: 0, bottom: self.tabBarHeight + self.bottomSpacing, right: 0)
@@ -80,28 +79,27 @@ open class PTCardTabBarController: UITabBarController {
         }
     }
     
-    fileprivate func addAnotherSmallView(){
+    fileprivate func addAnotherSmallView() {
         self.view.addSubview(smallBottomView)
         
         smallBottomView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         
-        
-        let cr: NSLayoutConstraint
+        let constraint: NSLayoutConstraint
         
         if #available(iOS 11.0, *) {
-            cr = smallBottomView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: tabBarHeight)
+            constraint = smallBottomView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: tabBarHeight)
         } else {
-            cr = smallBottomView.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.bottomAnchor, constant: tabBarHeight)
+            constraint = smallBottomView.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.bottomAnchor, constant: tabBarHeight)
         }
         
-        cr.priority = .defaultHigh
-        cr.isActive = true
+        constraint.priority = .defaultHigh
+        constraint.isActive = true
         
         smallBottomView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         smallBottomView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
-    fileprivate func setupTabBar(){
+    fileprivate func setupTabBar() {
         customTabBar.delegate = self
         self.view.addSubview(customTabBar)
         

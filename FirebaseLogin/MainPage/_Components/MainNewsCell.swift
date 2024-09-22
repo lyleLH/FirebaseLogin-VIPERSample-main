@@ -24,13 +24,13 @@ class MainNewsCell: UICollectionViewCell {
     }()
     
     var newsImage: UIImageView = {
-        let iv = UIImageView()
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.image = UIImage(named: "dummyImage")
-        iv.clipsToBounds = true
-        iv.sizeToFit()
-        iv.contentMode = .scaleToFill
-        return iv
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "dummyImage")
+        imageView.clipsToBounds = true
+        imageView.sizeToFit()
+        imageView.contentMode = .scaleToFill
+        return imageView
     }()
     
     var publishedDate: UILabel = {
@@ -77,7 +77,7 @@ class MainNewsCell: UICollectionViewCell {
         contentView.addSubview(publishedDate)
         NSLayoutConstraint.activate([
             publishedDate.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-            publishedDate.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            publishedDate.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)
         ])
         
         contentView.addSubview(blurView)
@@ -97,4 +97,3 @@ class MainNewsCell: UICollectionViewCell {
         ])
     }
 }
-

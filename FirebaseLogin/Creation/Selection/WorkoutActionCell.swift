@@ -9,7 +9,7 @@ import UIKit
 
 class WorkoutActionCell: UICollectionViewCell {
     
-    @IBOutlet weak var selectionHoverView: UIImageView!{
+    @IBOutlet weak var selectionHoverView: UIImageView! {
         didSet {
             selectionHoverView.isHidden = true
         }
@@ -43,9 +43,5 @@ class WorkoutActionCell: UICollectionViewCell {
         nameLabel?.text = action.name
         selectionHoverView.isHidden = isSelected == false
     }
-    
  
 }
-
-
-

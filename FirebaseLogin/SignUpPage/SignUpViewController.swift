@@ -17,35 +17,35 @@ class SignUpViewController: UIViewController, SignUpViewProtocol {
     var presenter: SignUpPresenterProtocol?
     
     private var userNameTextField: UITextField = {
-        let tf = MakeProperty.makeTextField("username")
-        tf.autocapitalizationType = .none
-        tf.becomeFirstResponder()
-        return tf
+        let textField = MakeProperty.makeTextField("username")
+        textField.autocapitalizationType = .none
+        textField.becomeFirstResponder()
+        return textField
     }()
     
     private var passwordTextField: UITextField = {
-        let tf = MakeProperty.makeTextField("password")
-        tf.isSecureTextEntry = true
-        tf.textContentType = .oneTimeCode
-        return tf
+        let textField = MakeProperty.makeTextField("password")
+        textField.isSecureTextEntry = true
+        textField.textContentType = .oneTimeCode
+        return textField
     }()
     
     private var passwordAgainTextField: UITextField = {
-        let tf = MakeProperty.makeTextField("password again")
-        tf.isSecureTextEntry = true
-        tf.textContentType = .oneTimeCode
-        return tf
+        let textField = MakeProperty.makeTextField("password again")
+        textField.isSecureTextEntry = true
+        textField.textContentType = .oneTimeCode
+        return textField
     }()
     
     private var signInAppButton: UIButton = {
         let button = MakeProperty.makeLoginButton("Create User")
-        button.addTarget(self, action: #selector(handleCreateUserButton), for: .touchUpInside)
+        button.addTarget(SignUpViewController.self, action: #selector(handleCreateUserButton), for: .touchUpInside)
         return button
     }()
     
     private var facebookLoginButton: UIButton = {
         let button = MakeProperty.makeIconButton()
-        button.addTarget(self, action: #selector(handleOAuth2LoginButton), for: .touchUpInside)
+        button.addTarget(SignUpViewController.self, action: #selector(handleOAuth2LoginButton), for: .touchUpInside)
         return button
     }()
     
@@ -65,7 +65,6 @@ class SignUpViewController: UIViewController, SignUpViewProtocol {
         presenter?.notifyOauth2CreateUserButtonTapped()
 
     }
-    
     
     @objc private func handleCreateUserButton() {
         if userNameTextField.text != "" && passwordTextField.text != "" && passwordAgainTextField.text != "" {
@@ -95,13 +94,13 @@ class SignUpViewController: UIViewController, SignUpViewProtocol {
     
     func userNotCreated() {
         let alert = UIAlertController(title: "Error!", message: "Something went wrong! Try again.", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .cancel) { [weak self] _ in
+        let okAction = UIAlertAction(title: "OK", style: .cancel) { [weak self] _ in
             guard let self = self else { return }
             self.userNameTextField.text = nil
             self.passwordTextField.text = nil
             self.userNameTextField.becomeFirstResponder()
         }
-        alert.addAction(ok)
+        alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }
 
@@ -156,8 +155,8 @@ class SignUpViewController: UIViewController, SignUpViewProtocol {
 extension UIViewController {
     func showCommonAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(ok)
+        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }
 }

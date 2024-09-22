@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class WorkoutSectionCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     private var sectionIndex: Int = 0
@@ -40,13 +39,12 @@ class WorkoutSectionCell: UICollectionViewCell, UICollectionViewDataSource, UICo
         commonInint()
     }
     
-    
     func commonInint() {
         collectionView.dataSource = self
         collectionView.delegate = self
         backgroundColor = .clear
-        collectionView.register(UINib(nibName: "WorkoutGroupCell", bundle: nil), forCellWithReuseIdentifier: "kWorkoutGroupCell")
-        
+        collectionView.register(UINib(nibName: "WorkoutGroupCell", bundle: nil),
+                                forCellWithReuseIdentifier: "kWorkoutGroupCell")
         
     }
     
@@ -56,13 +54,10 @@ class WorkoutSectionCell: UICollectionViewCell, UICollectionViewDataSource, UICo
         
     }
     
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        
     }
-    
     
     func configure(with section: WorkoutSection, sectionIndex: Int) {
         self.sectionIndex = sectionIndex

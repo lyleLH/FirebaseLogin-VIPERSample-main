@@ -7,8 +7,8 @@
 
 import UIKit
 enum CanvasItemContentType: String {
-    case image = "image"
-    case text = "text"
+    case image = "item_image"
+    case text = "item_text"
 }
 
 class CanvasItemView: UIView {
@@ -18,7 +18,10 @@ class CanvasItemView: UIView {
         let size: CGFloat = 200  // 默认尺寸
         let x = (superview.bounds.width - size) / 2
         let y = (superview.bounds.height - size) / 2
-        self.frame = CGRect(x: x + CGFloat(generateRandomNumber()), y: y + CGFloat(generateRandomNumber()), width: size, height: size)
+        self.frame = CGRect(x: x + CGFloat(generateRandomNumber()), 
+                            y: y + CGFloat(generateRandomNumber()), 
+                            width: size,
+                            height: size)
         
     }
     
@@ -26,9 +29,7 @@ class CanvasItemView: UIView {
     func generateRandomNumber() -> Int {
         let lowerBound = -100
         let upperBound = 100
-        return Int(arc4random_uniform(UInt32(upperBound - lowerBound + 1))) + lowerBound
+        return  Int.random(in: lowerBound...upperBound) + lowerBound
     }
     
 }
-
-

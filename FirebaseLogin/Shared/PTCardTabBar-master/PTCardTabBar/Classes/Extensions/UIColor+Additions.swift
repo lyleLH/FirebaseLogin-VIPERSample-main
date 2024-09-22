@@ -8,12 +8,10 @@
 
 import UIKit
 
-
-
 extension UIColor {
     static func by(r: Int, g: Int, b: Int, a: CGFloat = 1) -> UIColor {
-        let d = CGFloat(255)
-        return UIColor(red: CGFloat(r) / d, green: CGFloat(g) / d, blue: CGFloat(b) / d, alpha: a)
+        let divider = CGFloat(255)
+        return UIColor(red: CGFloat(r) / divider, green: CGFloat(g) / divider, blue: CGFloat(b) / divider, alpha: a)
     }
     
     convenience init(red: Int, green: Int, blue: Int) {

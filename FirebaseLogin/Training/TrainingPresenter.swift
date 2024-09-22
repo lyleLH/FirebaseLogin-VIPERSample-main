@@ -14,7 +14,6 @@ protocol TrainingPresenterProtocol: TimerViewControllerDelegate {
 }
 
 class TrainingPresenter: TrainingPresenterProtocol {
-  
     
     weak var view: TrainingViewProtocol?
     var router: TrainingRouterProtocol?

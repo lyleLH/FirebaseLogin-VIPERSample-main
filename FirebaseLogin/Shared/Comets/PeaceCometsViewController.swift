@@ -18,7 +18,5 @@ class PeaceCometsViewController: CometsViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-
 
 }

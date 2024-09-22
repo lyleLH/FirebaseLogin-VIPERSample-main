@@ -24,13 +24,10 @@ class CanvasViewController: UIViewController, CanvasViewProtocol {
         canvasContainerView.backgroundColor = .clear
         return canvasContainerView
     }()
-
     
     var canvasView: CanvasView = CanvasView(frame: .zero)
     
- 
-    
-    //MARK: - View LifeCycle
+    // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -51,7 +48,7 @@ class CanvasViewController: UIViewController, CanvasViewProtocol {
   
     }
     
-    //MARK: - View Configurations
+    // MARK: - View Configurations
     private func configureUI() {
         view.backgroundColor = .white
         view.embedView(view: canvasContainerView)
@@ -68,8 +65,5 @@ class CanvasViewController: UIViewController, CanvasViewProtocol {
     @objc private func handleSignUpButton() {
         presenter?.notifySignUpTapped()
     }
-    
-   
   
 }
-

@@ -15,7 +15,12 @@ struct TrainingSection {
     var sets: [TrainingSet]
 }
 
-class TrainingSetCollectionView: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, TrainingSetCellDelegate, SectionFooterViewDelegate, SwipeCollectionViewCellDelegate {
+class TrainingSetCollectionView: UICollectionView, 
+                                    UICollectionViewDataSource,
+                                    UICollectionViewDelegateFlowLayout,
+                                    TrainingSetCellDelegate,
+                                    SectionFooterViewDelegate,
+                                    SwipeCollectionViewCellDelegate {
     
     var sections: [TrainingSection] = []
     
@@ -29,8 +34,11 @@ class TrainingSetCollectionView: UICollectionView, UICollectionViewDataSource, U
         delegate = self
         alwaysBounceVertical = true
         contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 100, right: 0)
-        register(UINib(nibName: "TrainingSetCell", bundle: nil), forCellWithReuseIdentifier: TrainingSetCell.reuseIdentifier)
-        register(SectionFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: SectionFooterView.reuseIdentifier)
+        register(UINib(nibName: "TrainingSetCell", bundle: nil), 
+                 forCellWithReuseIdentifier: TrainingSetCell.reuseIdentifier)
+        register(SectionFooterView.self, forSupplementaryViewOfKind:
+                    UICollectionView.elementKindSectionFooter, 
+                 withReuseIdentifier: SectionFooterView.reuseIdentifier)
     }
     
     required init?(coder: NSCoder) {
@@ -59,7 +67,9 @@ class TrainingSetCollectionView: UICollectionView, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionFooter {
-            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionFooterView.reuseIdentifier, for: indexPath) as! SectionFooterView
+            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                             withReuseIdentifier: SectionFooterView.reuseIdentifier,
+                                                                             for: indexPath) as! SectionFooterView
             footerView.section = indexPath.section
             footerView.delegate = self
             return footerView
@@ -74,7 +84,7 @@ class TrainingSetCollectionView: UICollectionView, UICollectionViewDataSource, U
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.bounds.width  , height: 50)
+        return CGSize(width: collectionView.bounds.width, height: 50)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -100,11 +110,10 @@ class TrainingSetCollectionView: UICollectionView, UICollectionViewDataSource, U
     
     // MARK: - Swipe to delete
     
-    
     func collectionView(_ collectionView: UICollectionView, editActionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         guard orientation == .right else { return nil }
         
-        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { _, indexPath in
             // handle action by updating model with deletion
             self.deleteSet(at: indexPath)
         }
@@ -115,7 +124,6 @@ class TrainingSetCollectionView: UICollectionView, UICollectionViewDataSource, U
     func visibleRect(for collectionView: UICollectionView) -> CGRect? {
         return nil
     }
-    
     
     private func deleteSet(at indexPath: IndexPath) {
         sections[indexPath.section].sets.remove(at: indexPath.item)

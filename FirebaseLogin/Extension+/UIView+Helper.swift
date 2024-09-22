@@ -8,44 +8,37 @@
 
 import UIKit
 
-extension UIView
-{
+extension UIView {
 
 	@IBInspectable
-	public var cornerRadius: CGFloat
-	{
+	public var cornerRadius: CGFloat {
+        get {
+            return self.layer.cornerRadius
+        }
 		set (radius) {
 			self.layer.cornerRadius = radius
 			self.layer.masksToBounds = radius > 0
 		}
-
-		get {
-			return self.layer.cornerRadius
-		}
 	}
 
 	@IBInspectable
-	public var borderWidth: CGFloat
-	{
+	public var borderWidth: CGFloat {
+        get {
+            return self.layer.borderWidth
+        }
 		set (borderWidth) {
 			self.layer.borderWidth = borderWidth
 		}
-
-		get {
-			return self.layer.borderWidth
-		}
 	}
 
 	@IBInspectable
-	public var borderColor:UIColor?
-	{
+	public var borderColor: UIColor? {
 		set (color) {
 			self.layer.borderColor = color?.cgColor
 		}
 
 		get {
-			if let color = self.layer.borderColor
-			{
+			if let color = self.layer.borderColor {
 				return UIColor(cgColor: color)
 			} else {
 				return nil
@@ -76,8 +69,7 @@ extension UIView {
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        if (image != nil)
-        {
+        if image != nil {
             return image!
         }
         return UIImage()

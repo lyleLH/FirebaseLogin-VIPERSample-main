@@ -33,6 +33,5 @@ class WhiteBlurView: UIView {
         super.layoutSubviews()
         blurEffectView.frame = bounds
     }
-    
 
 }

@@ -19,11 +19,11 @@ class MainViewController: UIViewController, MainViewProtocol {
     
     fileprivate var newsCollection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.backgroundColor = UIColor(red: 224/255, green: 255/255, blue: 255/255, alpha: 1)
-        cv.register(MainNewsCell.self, forCellWithReuseIdentifier: "newsCell")
-        return cv
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = UIColor(red: 224/255, green: 255/255, blue: 255/255, alpha: 1)
+        collectionView.register(MainNewsCell.self, forCellWithReuseIdentifier: "newsCell")
+        return collectionView
     }()
     
     fileprivate var loadingAnimation = UIActivityIndicatorView()
@@ -68,7 +68,7 @@ class MainViewController: UIViewController, MainViewProtocol {
                                     target: self,
                                     action: #selector(changeRegionTr))
         
-        navigationItem.setRightBarButtonItems([profileItem,item1], animated: true)
+        navigationItem.setRightBarButtonItems([profileItem, item1], animated: true)
         newsCollection.delegate = self
         newsCollection.dataSource = self
         view.addSubview(newsCollection)
@@ -127,11 +127,10 @@ class MainViewController: UIViewController, MainViewProtocol {
     
     func updateData(with: String) {
         let alert = UIAlertController(title: "Error!", message: with, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(ok)
+        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }
-    
     
     @objc func handleProfileClickedEvent() {
         presenter?.showProfileButtonClickeEvent()
@@ -146,7 +145,7 @@ class MainViewController: UIViewController, MainViewProtocol {
     }
 }
 
-//MARK: - UICollectionView Delegate Methods
+// MARK: - UICollectionView Delegate Methods
 extension MainViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (collectionView.frame.width) - 3, height: collectionView.frame.height/3)

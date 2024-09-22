@@ -30,5 +30,4 @@ class TransparentDefaultTableViewController: DefaultTableViewController {
         tableView.backgroundColor = .clear
     }
 
-
 }

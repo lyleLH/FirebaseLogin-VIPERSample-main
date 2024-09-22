@@ -8,26 +8,23 @@
 
 import Foundation
 
-
 protocol CreationModuleProtocol: AnyObject {
     func backToCreationFromTraining()
 }
 
-
-protocol CreationPresenterProtocol: AnyObject , CreationModuleProtocol {
+protocol CreationPresenterProtocol: AnyObject, CreationModuleProtocol {
  
     func notifyDidClicked(action: WorkoutAction, group: WorkoutGroup, sectionIndex: Int)
     
     func notifyViewDidLoad()
     func notifyCheckActionSelectionStatus(action: WorkoutAction) -> Bool
-    func notifyCheckIsHaveSelections()-> Bool
+    func notifyCheckIsHaveSelections() -> Bool
 
     func notifyRouteToTrainingPage()
 
 }
 
 class CreationPresenter: CreationPresenterProtocol {
-
     
     private weak var view: CreationViewProtocol?
     private var router: CreationRouterProtocol
@@ -65,7 +62,6 @@ class CreationPresenter: CreationPresenterProtocol {
     func notifyCheckActionSelectionStatus(action: WorkoutAction) -> Bool {
         return interactor.isActionSelected(action: action) == true
     }
-    
   
     func backToCreationFromTraining() {
         notifyViewDidLoad()

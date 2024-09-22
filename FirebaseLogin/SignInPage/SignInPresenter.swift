@@ -29,7 +29,7 @@ class SignInPresenter: SignInPresenterProtocol {
     func notifyOauth2LoginUserButtonTapped() {
         Task {
             do {
-                let _ = try await interactor.didLoginByOauth2()
+                _ = try await interactor.didLoginByOauth2()
                 view!.updateWithSuccess()
                 router.routeToMain()
                 
@@ -43,7 +43,7 @@ class SignInPresenter: SignInPresenterProtocol {
         Task {
             
             do {
-                let _  = try await interactor.didFetchUser(username: username, password: password)
+                _  = try await interactor.didFetchUser(username: username, password: password)
                 view?.updateWithSuccess()
                 router.routeToMain()
                 

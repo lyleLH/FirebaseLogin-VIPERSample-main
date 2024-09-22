@@ -133,6 +133,14 @@
 		C8DCC8882C9D60EC00E1912C /* TransparentDefaultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DCC8842C9D60EC00E1912C /* TransparentDefaultTableViewController.swift */; };
 		C8DCC8892C9D60EC00E1912C /* TransparentDefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DCC8852C9D60EC00E1912C /* TransparentDefaultViewController.swift */; };
 		C8DCC88B2C9D690C00E1912C /* CreationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DCC88A2C9D690C00E1912C /* CreationAssembly.swift */; };
+		C8DCC8902CA0140D00E1912C /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DCC88F2CA0140D00E1912C /* AuthRepository.swift */; };
+		C8DCC8922CA0143000E1912C /* AuthRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DCC8912CA0143000E1912C /* AuthRepositoryProtocol.swift */; };
+		C8DCC8962CA014A600E1912C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DCC8952CA014A600E1912C /* User.swift */; };
+		C8DCC8992CA0150E00E1912C /* AuthLogInData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DCC8972CA0150E00E1912C /* AuthLogInData.swift */; };
+		C8DCC89A2CA0150E00E1912C /* AuthSignUpData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DCC8982CA0150E00E1912C /* AuthSignUpData.swift */; };
+		C8DCC89C2CA0155100E1912C /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DCC89B2CA0155100E1912C /* AuthError.swift */; };
+		C8DCC89E2CA0165F00E1912C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DCC89D2CA0165F00E1912C /* Endpoint.swift */; };
+		C8DCC8A02CA0171C00E1912C /* SignInEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DCC89F2CA0171C00E1912C /* SignInEndpoint.swift */; };
 		C8F4E45A2C2D5193000D2163 /* SlideButton in Frameworks */ = {isa = PBXBuildFile; productRef = C8F4E4592C2D5193000D2163 /* SlideButton */; };
 		C8F4E45C2C2D5C51000D2163 /* DarkCometViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4E45B2C2D5C51000D2163 /* DarkCometViewController.swift */; };
 		C8F4E45E2C2D5D42000D2163 /* ViewController+Dismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4E45D2C2D5D42000D2163 /* ViewController+Dismiss.swift */; };
@@ -288,6 +296,14 @@
 		C8DCC8842C9D60EC00E1912C /* TransparentDefaultTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentDefaultTableViewController.swift; sourceTree = "<group>"; };
 		C8DCC8852C9D60EC00E1912C /* TransparentDefaultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentDefaultViewController.swift; sourceTree = "<group>"; };
 		C8DCC88A2C9D690C00E1912C /* CreationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationAssembly.swift; sourceTree = "<group>"; };
+		C8DCC88F2CA0140D00E1912C /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		C8DCC8912CA0143000E1912C /* AuthRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepositoryProtocol.swift; sourceTree = "<group>"; };
+		C8DCC8952CA014A600E1912C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C8DCC8972CA0150E00E1912C /* AuthLogInData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthLogInData.swift; sourceTree = "<group>"; };
+		C8DCC8982CA0150E00E1912C /* AuthSignUpData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthSignUpData.swift; sourceTree = "<group>"; };
+		C8DCC89B2CA0155100E1912C /* AuthError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
+		C8DCC89D2CA0165F00E1912C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		C8DCC89F2CA0171C00E1912C /* SignInEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInEndpoint.swift; sourceTree = "<group>"; };
 		C8F4E45B2C2D5C51000D2163 /* DarkCometViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkCometViewController.swift; sourceTree = "<group>"; };
 		C8F4E45D2C2D5D42000D2163 /* ViewController+Dismiss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Dismiss.swift"; sourceTree = "<group>"; };
 		C8F4E45F2C2D5DAD000D2163 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
@@ -696,6 +712,8 @@
 		C8DCC8702C9D18DD00E1912C /* Architecture */ = {
 			isa = PBXGroup;
 			children = (
+				C8DCC8942CA0149300E1912C /* Entities */,
+				C8DCC88C2CA00E4900E1912C /* Network */,
 				C8DCC87A2C9D55A500E1912C /* Base */,
 				C8DCC8732C9D550700E1912C /* Common */,
 				C8DCC8662C9D0C5100E1912C /* DependencyInjection */,
@@ -736,6 +754,60 @@
 			path = TransparentBase;
 			sourceTree = "<group>";
 		};
+		C8DCC88C2CA00E4900E1912C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C8DCC88E2CA00ECE00E1912C /* Repositories */,
+				C8DCC88D2CA00E5400E1912C /* Endpoints */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C8DCC88D2CA00E5400E1912C /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				C8DCC89D2CA0165F00E1912C /* Endpoint.swift */,
+				C8DCC8A12CA0171F00E1912C /* SignIn */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		C8DCC88E2CA00ECE00E1912C /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C8DCC8932CA0143400E1912C /* Auth */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		C8DCC8932CA0143400E1912C /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				C8DCC89B2CA0155100E1912C /* AuthError.swift */,
+				C8DCC88F2CA0140D00E1912C /* AuthRepository.swift */,
+				C8DCC8912CA0143000E1912C /* AuthRepositoryProtocol.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		C8DCC8942CA0149300E1912C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C8DCC8972CA0150E00E1912C /* AuthLogInData.swift */,
+				C8DCC8982CA0150E00E1912C /* AuthSignUpData.swift */,
+				C8DCC8952CA014A600E1912C /* User.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		C8DCC8A12CA0171F00E1912C /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				C8DCC89F2CA0171C00E1912C /* SignInEndpoint.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
 		C8F4E46C2C2DBE52000D2163 /* TrainingSetView */ = {
 			isa = PBXGroup;
 			children = (
@@ -761,6 +833,7 @@
 				6F19C4132815323900EEC276 /* Resources */,
 				C339B1FA59B9F935E8694002 /* [CP] Embed Pods Frameworks */,
 				C80D7B962C295C230040A616 /* Embed Frameworks */,
+				C8DCC8A22CA0187200E1912C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -891,6 +964,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FirebaseLogin/Pods-FirebaseLogin-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C8DCC8A22CA0187200E1912C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint --path \"${SRCROOT}\"\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -939,6 +1029,7 @@
 				6FC1BBA7282991FC005BA04F /* MainRouter.swift in Sources */,
 				C88474A42C2934E1004C6C0A /* ProfileInteractor.swift in Sources */,
 				C8287CE32C8D86C80067286F /* TestingEntity.swift in Sources */,
+				C8DCC8962CA014A600E1912C /* User.swift in Sources */,
 				C88474AF2C2934EA004C6C0A /* TrainingInteractor.swift in Sources */,
 				6FC28A15281FCD7A008B1228 /* SplashInteractor.swift in Sources */,
 				C8F4E4602C2D5DAD000D2163 /* CloseButton.swift in Sources */,
@@ -949,6 +1040,7 @@
 				6FC1BBA3282991D6005BA04F /* MainInteractor.swift in Sources */,
 				C88474BD2C2936A5004C6C0A /* CreationPresenter.swift in Sources */,
 				C81FE81D2C22A9B200C4041A /* CanvasRouter.swift in Sources */,
+				C8DCC8902CA0140D00E1912C /* AuthRepository.swift in Sources */,
 				C8BC30882C1AF646005BB19A /* UserManager.swift in Sources */,
 				C88474BB2C2936A5004C6C0A /* CreationEntity.swift in Sources */,
 				C88474B02C2934EA004C6C0A /* TrainingPresenter.swift in Sources */,
@@ -963,6 +1055,7 @@
 				6F19C41B2815323900EEC276 /* SceneDelegate.swift in Sources */,
 				C88474A62C2934E1004C6C0A /* ProfileRouter.swift in Sources */,
 				C88474762C2932ED004C6C0A /* PTBarButton.swift in Sources */,
+				C8DCC89E2CA0165F00E1912C /* Endpoint.swift in Sources */,
 				C8DCC8682C9D0C9700E1912C /* DIContainer.swift in Sources */,
 				6FFEC11F28368BAB00FD8F76 /* SignUpEntity.swift in Sources */,
 				C88474BC2C2936A5004C6C0A /* CreationInteractor.swift in Sources */,
@@ -987,6 +1080,7 @@
 				C81FE81A2C22A9B200C4041A /* CanvasEntity.swift in Sources */,
 				6FC28A17281FCE17008B1228 /* SplashRouter.swift in Sources */,
 				6FC1BBA1282991B3005BA04F /* MainPresenter.swift in Sources */,
+				C8DCC8A02CA0171C00E1912C /* SignInEndpoint.swift in Sources */,
 				6FC1BBB328299366005BA04F /* DetailInteractor.swift in Sources */,
 				C88474C12C2936F7004C6C0A /* MTNavigationViewController.swift in Sources */,
 				C88474D92C294728004C6C0A /* UIColor+Palette.swift in Sources */,
@@ -995,18 +1089,22 @@
 				6F19C4332815718A00EEC276 /* SignUpViewController.swift in Sources */,
 				C8BC308E2C1D4C3F005BB19A /* ModuleRoute.swift in Sources */,
 				C88474722C2932ED004C6C0A /* CGPoint+Distance.swift in Sources */,
+				C8DCC8992CA0150E00E1912C /* AuthLogInData.swift in Sources */,
 				C88474D02C29443D004C6C0A /* DefaultBlurView.swift in Sources */,
 				C81FE82F2C26985E00C4041A /* UIColor+Hex.swift in Sources */,
 				C81FE81E2C22A9B200C4041A /* CanvasViewController.swift in Sources */,
 				6FC1BBB728299413005BA04F /* ConstantsApi.swift in Sources */,
 				6F19C4352815720800EEC276 /* Constants.swift in Sources */,
 				6F2FAA75281F069600BBF644 /* SignInInteractor.swift in Sources */,
+				C8DCC89A2CA0150E00E1912C /* AuthSignUpData.swift in Sources */,
 				C88474A72C2934E1004C6C0A /* ProfileViewController.swift in Sources */,
 				C8287CE52C8D86C80067286F /* TestingPresenter.swift in Sources */,
 				C8DCC86F2C9D18A900E1912C /* LocalError.swift in Sources */,
+				C8DCC8922CA0143000E1912C /* AuthRepositoryProtocol.swift in Sources */,
 				C8DCC87E2C9D560000E1912C /* DefaultNavigationViewController.swift in Sources */,
 				C8287CE62C8D86C80067286F /* TestingRouter.swift in Sources */,
 				C88474BF2C2936A5004C6C0A /* CreationViewController.swift in Sources */,
+				C8DCC89C2CA0155100E1912C /* AuthError.swift in Sources */,
 				C88474782C2932ED004C6C0A /* PTCardTabBarController.swift in Sources */,
 				C8DCC8812C9D57A800E1912C /* DefaultCollectionViewController.swift in Sources */,
 				C8DCC86C2C9D0DB800E1912C /* AccountAssembly.swift in Sources */,

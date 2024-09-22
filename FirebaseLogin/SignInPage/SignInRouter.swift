@@ -12,7 +12,6 @@ protocol SignInRouterProtocol {
     func routeToMain()
 }
 
-
 class SignInRouter: SignInRouterProtocol {
     
     internal var viewController: UIViewController
@@ -33,6 +32,5 @@ class SignInRouter: SignInRouterProtocol {
             self?.viewController.navigationController?.pushViewController(main, animated: true)
         }
     }
-
  
 }
