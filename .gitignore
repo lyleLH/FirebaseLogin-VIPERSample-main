@@ -10,10 +10,13 @@
 *.perspectivev3
 !default.perspectivev3
 xcuserdata/
+# 忽略xcuserdata文件夹
+*.xcuserdatad/
 profile/
 *.moved-aside
 DerivedData/
 .idea/
+.vscode/
 *.hmap
 *.xccheckout
 *.xcworkspace
