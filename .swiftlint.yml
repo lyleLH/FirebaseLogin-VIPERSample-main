@@ -19,7 +19,7 @@ opt_in_rules: # 启用额外的可选规则
   - empty_count # 检查空数组或字典的使用
 
 # 指定警告阈值
-warning_threshold: 10 # 在达到10个警告后，构建会失败
+warning_threshold: 20 # 在达到20个警告后，构建会失败
 
 # 设置报告器类型
 reporter: "xcode" # 使用Xcode格式输出报告

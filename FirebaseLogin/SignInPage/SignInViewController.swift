@@ -40,13 +40,13 @@ class SignInViewController: DefaultViewController, SignInViewControllerProtocol 
     
     private var goToAppButton: UIButton = {
         let button = MakeProperty.makeLoginButton("Go to the App")
-        button.addTarget(SignInViewController.self, action: #selector(handleGoAppButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleGoAppButton), for: .touchUpInside)
         return button
     }()
     
     private var facebookLoginButton: UIButton = {
         let button = MakeProperty.makeIconButton()
-        button.addTarget(SignInViewController.self, action: #selector(handleGoAppByGoogleLoginButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleGoAppByGoogleLoginButton), for: .touchUpInside)
         return button
     }()
     

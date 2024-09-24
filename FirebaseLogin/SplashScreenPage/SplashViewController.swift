@@ -46,13 +46,13 @@ class SplashViewController: DefaultViewController, SplashViewProtocol {
     
     private var signInButton: UIButton = {
         let button = MakeProperty.makeSplashButton("Sign In")
-        button.addTarget(SplashViewController.self, action: #selector(handleSignInButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleSignInButton), for: .touchUpInside)
         return button
     }()
     
     private var signUpButton: UIButton = {
         let button = MakeProperty.makeSplashButton("Sign Up")
-        button.addTarget(SplashViewController.self, action: #selector(handleSignUpButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleSignUpButton), for: .touchUpInside)
         return button
     }()
     
