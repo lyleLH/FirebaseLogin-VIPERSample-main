@@ -27,18 +27,19 @@ final class SignInInteractor: SignInInteractorProtocol {
 
     func didFetchUser(username: String, password: String) async throws -> Result<Bool, Error> {
         
-        
-        
-        do {
-            if let _ = Appwrite.shared.session {
-                return .success(true)
-            } else {
-                _ = try await Appwrite.shared.onLogin(username, password)
-                return .success(true)
+        if let _ = Appwrite.shared.session {
+            return .success(true)
+        } else {
+            do {
+                if let session = try await Appwrite.shared.onLogin(username, password) {
+                    LocalDataManager.shared.saveSessionId(session.id)
+                    return .success(true)
+                } else {
+                    throw LocalError(title: "登陆失败")
+                }
+            } catch {
+                throw error
             }
-        } catch {
-            debugPrint(error)
-            return .failure(error)
         }
     }
     

@@ -18,7 +18,6 @@ class ModuleRoute: NSObject {
     
     private(set) weak var window: UIWindow?
     
-    @MainActor
     func routeToModuleRootPage(_ module: ModuleType, withWindow: UIWindow ) ->
     UIViewController {
         var vc = UIViewController()

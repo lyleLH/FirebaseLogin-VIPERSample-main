@@ -9,7 +9,7 @@ import UIKit
 
 protocol SignInViewControllerProtocol: AnyObject {
     func updateWithSuccess()
-    func updateWithNotSuccess()
+    func updateWithNotSuccess(error: LocalError)
 }
 
 class SignInViewController: DefaultViewController, SignInViewControllerProtocol {
@@ -81,16 +81,19 @@ class SignInViewController: DefaultViewController, SignInViewControllerProtocol 
         showSuccessHud(labelText: "登陆成功~~~", delay: 2.0)
     }
     
-    func updateWithNotSuccess() {
-        let alert = UIAlertController(title: "Error!", message: "Your password or username is wrong!", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .cancel) { [weak self] _ in
-            guard let self = self else { return }
-            self.userNameTextField.text = nil
-            self.passwordTextField.text = nil
-            self.userNameTextField.becomeFirstResponder()
+    func updateWithNotSuccess(error: LocalError) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: error.title, message: error.message, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .cancel) { [weak self] _ in
+                guard let self = self else { return }
+                self.userNameTextField.text = nil
+                self.passwordTextField.text = nil
+                self.userNameTextField.becomeFirstResponder()
+            }
+            
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
         }
-        alert.addAction(okAction)
-        present(alert, animated: true, completion: nil)
     }
     
     // MARK: - UI Configurations

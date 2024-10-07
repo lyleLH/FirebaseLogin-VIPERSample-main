@@ -50,14 +50,22 @@ class Appwrite: NSObject, UserServerSateProtocol {
     func onLogin(
         _ email: String,
         _ password: String
-    ) async throws -> Session {
-       let session =  try await account.createEmailPasswordSession(
-            email: email,
-            password: password
-        )
-        self.session = session
-        LocalDataManager.shared.saveSessionId(session.id)
-        return session
+    ) async throws -> Session? {
+       
+        do {
+            let session =  try await account.createEmailPasswordSession(
+                email: email,
+                password: password
+           )
+               self.session = session
+               return session
+        } catch {
+            if let error = error as? AppwriteError {
+                throw LocalError(title: error.type, description: error.message)
+            } else {
+                throw error
+            }
+        }
     }
     
     func onLogout() async throws {

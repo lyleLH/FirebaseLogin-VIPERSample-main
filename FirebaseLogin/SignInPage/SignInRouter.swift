@@ -26,6 +26,7 @@ class SignInRouter: SignInRouterProtocol {
         return router
     }
     
+    @MainActor
     func routeToMain() {
         DispatchQueue.main.async { [weak self] in
             let main = MainRouter.createModule()

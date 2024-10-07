@@ -34,7 +34,7 @@ class SignInPresenter: SignInPresenterProtocol {
                 router.routeToMain()
                 
             } catch {
-                view?.updateWithNotSuccess()
+                view?.updateWithNotSuccess(error: error as! LocalError)
             }
         }
     }
@@ -48,7 +48,7 @@ class SignInPresenter: SignInPresenterProtocol {
                 router.routeToMain()
                 
             } catch {
-                view?.updateWithNotSuccess()
+                view?.updateWithNotSuccess(error: error as! LocalError)
             }
         }
     }
