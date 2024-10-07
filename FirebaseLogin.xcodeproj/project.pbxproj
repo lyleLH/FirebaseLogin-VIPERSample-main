@@ -146,6 +146,15 @@
 		C8DCC89C2CA0155100E1912C /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DCC89B2CA0155100E1912C /* AuthError.swift */; };
 		C8DCC89E2CA0165F00E1912C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DCC89D2CA0165F00E1912C /* Endpoint.swift */; };
 		C8DCC8A02CA0171C00E1912C /* SignInEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DCC89F2CA0171C00E1912C /* SignInEndpoint.swift */; };
+		C8E9C3F12CAAA64B004DF508 /* FirebaseLoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E9C3F02CAAA64B004DF508 /* FirebaseLoginTests.swift */; };
+		C8E9C3F82CAAA659004DF508 /* MockAppwrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E9C3F72CAAA659004DF508 /* MockAppwrite.swift */; };
+		C8E9C3FA2CAAA673004DF508 /* SignInInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E9C3F92CAAA673004DF508 /* SignInInteractorTests.swift */; };
+		C8E9C4052CAAAEC8004DF508 /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2FAA72281F067900BBF644 /* SignInPresenter.swift */; };
+		C8E9C4062CAAAEC8004DF508 /* SignInEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2FAA78281F08C100BBF644 /* SignInEntity.swift */; };
+		C8E9C4072CAAAEC8004DF508 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F19C43028156CE400EEC276 /* SignInViewController.swift */; };
+		C8E9C4082CAAAEC8004DF508 /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2FAA76281F072B00BBF644 /* SignInRouter.swift */; };
+		C8E9C4092CAAAEC8004DF508 /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2FAA74281F069600BBF644 /* SignInInteractor.swift */; };
+		C8E9C40B2CB3A9CD004DF508 /* TrainingAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E9C40A2CB3A9CD004DF508 /* TrainingAssembly.swift */; };
 		C8F4E45A2C2D5193000D2163 /* SlideButton in Frameworks */ = {isa = PBXBuildFile; productRef = C8F4E4592C2D5193000D2163 /* SlideButton */; };
 		C8F4E45C2C2D5C51000D2163 /* DarkCometViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4E45B2C2D5C51000D2163 /* DarkCometViewController.swift */; };
 		C8F4E45E2C2D5D42000D2163 /* ViewController+Dismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4E45D2C2D5D42000D2163 /* ViewController+Dismiss.swift */; };
@@ -163,6 +172,16 @@
 		C8F4E47B2C3019A9000D2163 /* UIImage+EdgeInset.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4E47A2C3019A8000D2163 /* UIImage+EdgeInset.swift */; };
 		EBBCA19F87436469C6759C89 /* Pods_FirebaseLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8472CFC8935E6BA87CDA01 /* Pods_FirebaseLogin.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C8E9C3F22CAAA64B004DF508 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6F19C40D2815323900EEC276 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6F19C4142815323900EEC276;
+			remoteInfo = FirebaseLogin;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		C80D7B962C295C230040A616 /* Embed Frameworks */ = {
@@ -314,6 +333,11 @@
 		C8DCC89B2CA0155100E1912C /* AuthError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		C8DCC89D2CA0165F00E1912C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		C8DCC89F2CA0171C00E1912C /* SignInEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInEndpoint.swift; sourceTree = "<group>"; };
+		C8E9C3EE2CAAA64B004DF508 /* FirebaseLoginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirebaseLoginTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E9C3F02CAAA64B004DF508 /* FirebaseLoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLoginTests.swift; sourceTree = "<group>"; };
+		C8E9C3F72CAAA659004DF508 /* MockAppwrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppwrite.swift; sourceTree = "<group>"; };
+		C8E9C3F92CAAA673004DF508 /* SignInInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractorTests.swift; sourceTree = "<group>"; };
+		C8E9C40A2CB3A9CD004DF508 /* TrainingAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingAssembly.swift; sourceTree = "<group>"; };
 		C8F4E45B2C2D5C51000D2163 /* DarkCometViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkCometViewController.swift; sourceTree = "<group>"; };
 		C8F4E45D2C2D5D42000D2163 /* ViewController+Dismiss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Dismiss.swift"; sourceTree = "<group>"; };
 		C8F4E45F2C2D5DAD000D2163 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
@@ -349,6 +373,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C8E9C3EB2CAAA64B004DF508 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -364,6 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				6F19C4172815323900EEC276 /* FirebaseLogin */,
+				C8E9C3EF2CAAA64B004DF508 /* FirebaseLoginTests */,
 				6F19C4162815323900EEC276 /* Products */,
 				71A57464CDA4628BD02F1A1B /* Pods */,
 				416549D06019D10DDD44016A /* Frameworks */,
@@ -374,6 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				6F19C4152815323900EEC276 /* FirebaseLogin.app */,
+				C8E9C3EE2CAAA64B004DF508 /* FirebaseLoginTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -750,6 +783,7 @@
 				C8DCC8672C9D0C9700E1912C /* DIContainer.swift */,
 				C8DCC86B2C9D0DB800E1912C /* AccountAssembly.swift */,
 				C8DCC88A2C9D690C00E1912C /* CreationAssembly.swift */,
+				C8E9C40A2CB3A9CD004DF508 /* TrainingAssembly.swift */,
 			);
 			path = DependencyInjection;
 			sourceTree = "<group>";
@@ -855,6 +889,16 @@
 			path = SignIn;
 			sourceTree = "<group>";
 		};
+		C8E9C3EF2CAAA64B004DF508 /* FirebaseLoginTests */ = {
+			isa = PBXGroup;
+			children = (
+				C8E9C3F02CAAA64B004DF508 /* FirebaseLoginTests.swift */,
+				C8E9C3F72CAAA659004DF508 /* MockAppwrite.swift */,
+				C8E9C3F92CAAA673004DF508 /* SignInInteractorTests.swift */,
+			);
+			path = FirebaseLoginTests;
+			sourceTree = "<group>";
+		};
 		C8F4E46C2C2DBE52000D2163 /* TrainingSetView */ = {
 			isa = PBXGroup;
 			children = (
@@ -903,6 +947,24 @@
 			productReference = 6F19C4152815323900EEC276 /* FirebaseLogin.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C8E9C3ED2CAAA64B004DF508 /* FirebaseLoginTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C8E9C3F42CAAA64B004DF508 /* Build configuration list for PBXNativeTarget "FirebaseLoginTests" */;
+			buildPhases = (
+				C8E9C3EA2CAAA64B004DF508 /* Sources */,
+				C8E9C3EB2CAAA64B004DF508 /* Frameworks */,
+				C8E9C3EC2CAAA64B004DF508 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C8E9C3F32CAAA64B004DF508 /* PBXTargetDependency */,
+			);
+			name = FirebaseLoginTests;
+			productName = FirebaseLoginTests;
+			productReference = C8E9C3EE2CAAA64B004DF508 /* FirebaseLoginTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -910,11 +972,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					6F19C4142815323900EEC276 = {
 						CreatedOnToolsVersion = 13.2.1;
+					};
+					C8E9C3ED2CAAA64B004DF508 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 6F19C4142815323900EEC276;
 					};
 				};
 			};
@@ -943,6 +1009,7 @@
 			projectRoot = "";
 			targets = (
 				6F19C4142815323900EEC276 /* FirebaseLogin */,
+				C8E9C3ED2CAAA64B004DF508 /* FirebaseLoginTests */,
 			);
 		};
 /* End PBXProject section */
@@ -966,6 +1033,13 @@
 				C88474E52C294C29004C6C0A /* WorkoutActionCell.xib in Resources */,
 				6F19C4202815323900EEC276 /* Main.storyboard in Resources */,
 				C88474D52C2946F9004C6C0A /* Colors.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8E9C3EC2CAAA64B004DF508 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1078,6 +1152,7 @@
 				C88474A42C2934E1004C6C0A /* ProfileInteractor.swift in Sources */,
 				C8287CE32C8D86C80067286F /* TestingEntity.swift in Sources */,
 				C8DCC8962CA014A600E1912C /* User.swift in Sources */,
+				C8E9C40B2CB3A9CD004DF508 /* TrainingAssembly.swift in Sources */,
 				C88474AF2C2934EA004C6C0A /* TrainingInteractor.swift in Sources */,
 				6FC28A15281FCD7A008B1228 /* SplashInteractor.swift in Sources */,
 				C8F4E4602C2D5DAD000D2163 /* CloseButton.swift in Sources */,
@@ -1167,7 +1242,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C8E9C3EA2CAAA64B004DF508 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8E9C4052CAAAEC8004DF508 /* SignInPresenter.swift in Sources */,
+				C8E9C4062CAAAEC8004DF508 /* SignInEntity.swift in Sources */,
+				C8E9C4072CAAAEC8004DF508 /* SignInViewController.swift in Sources */,
+				C8E9C4082CAAAEC8004DF508 /* SignInRouter.swift in Sources */,
+				C8E9C4092CAAAEC8004DF508 /* SignInInteractor.swift in Sources */,
+				C8E9C3FA2CAAA673004DF508 /* SignInInteractorTests.swift in Sources */,
+				C8E9C3F12CAAA64B004DF508 /* FirebaseLoginTests.swift in Sources */,
+				C8E9C3F82CAAA659004DF508 /* MockAppwrite.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C8E9C3F32CAAA64B004DF508 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6F19C4142815323900EEC276 /* FirebaseLogin */;
+			targetProxy = C8E9C3F22CAAA64B004DF508 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6F19C41E2815323900EEC276 /* Main.storyboard */ = {
@@ -1363,6 +1461,55 @@
 			};
 			name = Release;
 		};
+		C8E9C3F52CAAA64B004DF508 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9YAL9X38J8;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lylelh.FirebaseLoginTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FirebaseLogin.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FirebaseLogin";
+			};
+			name = Debug;
+		};
+		C8E9C3F62CAAA64B004DF508 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9YAL9X38J8;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lylelh.FirebaseLoginTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FirebaseLogin.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FirebaseLogin";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1380,6 +1527,15 @@
 			buildConfigurations = (
 				6F19C42A2815323B00EEC276 /* Debug */,
 				6F19C42B2815323B00EEC276 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C8E9C3F42CAAA64B004DF508 /* Build configuration list for PBXNativeTarget "FirebaseLoginTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8E9C3F52CAAA64B004DF508 /* Debug */,
+				C8E9C3F62CAAA64B004DF508 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

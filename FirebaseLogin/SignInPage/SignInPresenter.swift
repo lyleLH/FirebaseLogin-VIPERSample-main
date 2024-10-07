@@ -30,7 +30,7 @@ class SignInPresenter: SignInPresenterProtocol {
         Task {
             do {
                 _ = try await interactor.didLoginByOauth2()
-                view!.updateWithSuccess()
+                view?.updateWithSuccess()
                 router.routeToMain()
                 
             } catch {

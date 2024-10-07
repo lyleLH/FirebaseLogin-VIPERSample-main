@@ -1,6 +1,6 @@
 //
 //  TrainingRouter.swift
-//  
+//
 //
 //  Created by Tom.Liu on .
 //
@@ -19,23 +19,32 @@ protocol TrainingRouterProtocol {
 }
 
 class TrainingRouter: TrainingRouterProtocol {
-   weak var creationModule: (any CreationModuleProtocol)?
     
-    var entry: TrainingEntry?
+    var entry: (any TrainingEntry)?
     
-    static func createModule(from: CreationModuleProtocol) -> TrainingRouterProtocol {
-        let view = TrainingViewController()
-        let interactor = TrainingInteractor()
-        let presenter = TrainingPresenter()
-        let router = TrainingRouter()
-        
-        view.presenter = presenter
-        interactor.presenter = presenter
-        presenter.view = view
-        presenter.router = router
-        presenter.interactor = interactor
-        router.entry = view
-        router.creationModule = from
+    weak var creationModule: (any CreationModuleProtocol)?
+    
+    init(creationModule: (any CreationModuleProtocol)? = nil, entry: TrainingEntry) {
+        self.creationModule = creationModule
+        self.entry = entry
+    }
+    
+    static func createModule() -> TrainingRouterProtocol {
+        //        let view = TrainingViewController()
+        //        let interactor = TrainingInteractor()
+        //        let presenter = TrainingPresenter()
+        //
+        //        let router = TrainingRouter(entry: view)
+        //
+        //        view.presenter = presenter
+        //        interactor.presenter = presenter
+        //        presenter.view = view
+        //        presenter.router = router
+        //        presenter.interactor = interactor
+        //        router.entry = view
+        //        router.creationModule = from
+        let view: TrainingViewController = DIContainer.shared.resolve()
+        let router: TrainingRouter = DIContainer.shared.resolve(argument: view)
         return router
     }
     

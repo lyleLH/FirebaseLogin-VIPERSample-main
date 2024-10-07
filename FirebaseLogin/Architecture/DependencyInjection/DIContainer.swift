@@ -11,7 +11,8 @@ final class DIContainer {
         assembler = Assembler(
             [
                 AccountAssembly(),
-                CreationAssembly()
+                CreationAssembly(),
+                TraningAssembly()
                 
             ],
             container: container)

@@ -15,20 +15,26 @@ protocol TrainingPresenterProtocol: TimerViewControllerDelegate {
 
 class TrainingPresenter: TrainingPresenterProtocol {
     
-    weak var view: TrainingViewProtocol?
-    var router: TrainingRouterProtocol?
-    var interactor: TrainingInteractorProtocol?
+    private weak var view: TrainingViewProtocol?
+    private var router: TrainingRouterProtocol
+    private var interactor: TrainingInteractorProtocol
+    
+    init(view: TrainingViewProtocol? = nil, router: TrainingRouterProtocol, interactor: TrainingInteractorProtocol) {
+        self.view = view
+        self.router = router
+        self.interactor = interactor
+    }
     
     func notifySignInTapped() {
-        router?.routeToSignIn(view as! TrainingViewController)
+        router.routeToSignIn(view as! TrainingViewController)
     }
     
     func notifySignUpTapped() {
-        router?.routeToSignUp(view as! TrainingViewController)
+        router.routeToSignUp(view as! TrainingViewController)
     }
     
     func resetTimerButtonClicked() {
-        router?.dissMissTrainingPage()
-        router?.creationModule?.backToCreationFromTraining()
+        router.dissMissTrainingPage()
+        router.creationModule?.backToCreationFromTraining()
     }
 }

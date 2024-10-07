@@ -14,7 +14,7 @@ protocol SignInInteractorProtocol {
     
 }
 
-class SignInInteractor: SignInInteractorProtocol {
+final class SignInInteractor: SignInInteractorProtocol {
 
     func didLoginByOauth2() async throws -> Result<Bool, Error> {
         do {
@@ -26,6 +26,9 @@ class SignInInteractor: SignInInteractorProtocol {
     }
 
     func didFetchUser(username: String, password: String) async throws -> Result<Bool, Error> {
+        
+        
+        
         do {
             if let _ = Appwrite.shared.session {
                 return .success(true)

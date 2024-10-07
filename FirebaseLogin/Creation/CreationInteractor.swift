@@ -26,7 +26,10 @@ class CreationInteractor: CreationInteractorProtocol {
     private var allSections: [WorkoutSection] = []
     private var selectSections: [WorkoutAction] = []
     
+
+    
     func fetchSectionsData() -> [WorkoutSection] {
+        
         // Mock data
         let dumbbellActions = [WorkoutAction(name: "Dumbbell Bench Press", equipmentType: "Dumbbell"),
                                WorkoutAction(name: "Dumbbell Fly", equipmentType: "Dumbbell"),
