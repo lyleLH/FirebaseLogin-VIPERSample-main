@@ -584,3 +584,44 @@ class SignInEndpoint: Endpoint {
 }
 
 ```
+
+## 其他问题
+
+### AppRouter谁持有？
+
+`AppDelegate` 或者 `SceneDelegate`
+```swift 
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+
+    var window: UIWindow?
+    var appRouter: AppRouter?
+    
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        let window = UIWindow(windowScene: windowScene)
+        self.window = window
+        
+        appRouter = AppRouter(window: window)
+        appRouter?.start()
+    }
+    
+}
+```
+
+### MVVM的双向绑定会和我们IoC原则违背，不建议使用。
+
+```
+双向绑定确实可能违反**控制反转（IoC）**原则，主要体现在以下几个方面：
+1. 依赖关系的隐式性
+在双向绑定中，组件之间的依赖关系往往是隐式的。例如，A组件和B组件之间通过某种绑定机制相互影响。这种隐式的依赖关系使得组件之间的耦合度增加，从而违反了IoC原则，后者强调组件应当通过显式的接口进行交互。
+2. 难以测试
+由于双向绑定使得状态变化在多个组件之间传播，这会导致测试变得复杂。测试一个组件时，可能需要了解和设置其他组件的状态，从而增加了测试的复杂性和不确定性。这与IoC原则中的独立性和可测试性相悖。
+3. 状态管理混乱
+双向绑定可能导致状态管理变得混乱，尤其是在大型应用中。当多个组件同时修改同一状态时，可能会出现不可预期的行为。这种状态的不确定性与IoC原则中的明确责任分离相违背。
+4. 维护困难
+随着应用规模的扩大，双向绑定的复杂性可能导致维护困难。开发者需要跟踪多个组件之间的状态变化，这与IoC原则中提倡的简化和清晰的结构相矛盾。
+总结
+虽然双向绑定在某些场景下能够简化数据流动，但其潜在的问题，如隐式依赖、测试困难、状态管理混乱和维护复杂性，都可能导致违反IoC原则。因此，在设计系统时，需要谨慎考虑使用双向绑定的方式，以确保遵循良好的软件设计原则。
+
+```
